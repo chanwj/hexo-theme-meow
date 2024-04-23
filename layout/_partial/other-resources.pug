@@ -6,14 +6,14 @@ if theme.reward.enable
   | !{ js('js/theme/reward') }
 
 //- search function 搜索功能
-if config.search
+if theme.search.enable
   | !{ js('js/jquery-3.7.1.min') }
   | !{ js('js/theme/search') }
   
   script.
     var search_path = '#{config.search.path}';
     if (search_path.length == 0) {
-      search_path = "search.json";
+      search_path = "search.xml";
     }
     var path = '#{config.root}' + search_path;
     searchFunc(path, 'search-input', 'search-result');

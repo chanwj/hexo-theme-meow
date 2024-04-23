@@ -31,10 +31,10 @@ register_info:
   query_url: https://beian.miit.gov.cn/
 
 # the year which this site was built 网站发布所属年份
-since_year: 2023
+since_year: 2024
 
 # whether users could select text content 是否允许用户选取网站上的文本内容
-selectable: false
+selectable: true
 
 # toc of post 文章目录导航栏
 toc:
@@ -113,7 +113,6 @@ reward:
 
 # whether to show 'previous article' and 'next article' at the end of post or not 是否在文章最后生成'上一篇'和'下一篇'文章的链接
 post_prev_next: true
-
 
 # the root of site's path, must be as same as the 'root' configuration in the root's _config.yml 网站根目录，填写值与根目录下的_config.yml中的root项一致
 # if this site was not deployed on a project page(e.g. username.github.io/repository), the default root should be '/' 若网站并非部署在子目录下，root则默认为'/'
