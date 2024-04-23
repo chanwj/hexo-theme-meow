@@ -1,0 +1,5 @@
+if post.categories && post.categories.length>0
+  .post-categories
+    - for (cat of post.categories.toArray())
+      i.icon.fa-regular.fa-folder-open(title= __('menu.categories'))
+      a.post-category(href= url_for(cat.path))= cat.name

@@ -1,0 +1,31 @@
+doctype html
+html(lang= config.language)
+  //- html head html头部信息 
+  head
+    | !{ partial('_partial/head', null, {cache: false}) }
+
+  //- html body html主体
+  body
+    //- header bar at the top 顶部页眉信息
+    | !{ partial('_partial/header', null, {cache: false}) }
+    
+    //- blog's information display 博客信息展示
+    | !{ partial('_partial/blog-info', null, {cache: false}) }
+
+    //- page's main part 页面主题部分
+    //- index|category|tags|post|archive|...
+    .main
+      .main-content !{ body }
+
+    //- toolbar float on screen 悬浮工具栏
+    | !{ partial('_partial/tool-bar', null, {cache: false}) }
+
+    //- search panel 搜索面板
+    if config.search
+      | !{ partial('_partial/search', null, {cache: true}) }
+
+    //- footer information at the bottom 底部页脚信息
+    | !{ partial('_partial/footer', null, {cache: false}) }
+
+    //- link other resources at the end of the page 在页面最后引入其它资源
+    | !{ partial('_partial/other-resources', null, {cache: true}) }

@@ -1,0 +1,19 @@
+.page-container
+  .page-title
+    h1
+      i.fa-solid.fa-tags
+      | #{ __('menu.tags') }
+  
+  if theme.tags.tag_cloud
+    .tag-cloud
+      if theme.tags.show_count
+        | !{ tagcloud(site.tags, {min_font:16, max_font:22, color:true, start_color:'darkgrey', end_color:'#f9802d', show_count:true, count_class:'tag-count'}) }
+      else
+        | !{ tagcloud(site.tags, {min_font:12, max_font:22, color:true, start_color:'darkgrey', end_color:'#f9802d', show_count:false}) }
+
+  if theme.tags.tag_list
+    .tag-list-container
+      if theme.tags.show_count
+        | !{ list_tags({show_count:true, style:false, transform(str){return '#'+str}}) }
+      else
+        | !{ list_tags({show_count:false, style:false, transform(str){return '#'+str}}) }

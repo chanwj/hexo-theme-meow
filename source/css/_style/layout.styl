@@ -1,0 +1,29 @@
+html
+  background-color: yellow-light
+  // background-image: linear-gradient(to bottom right,#ffa751,#ffe259)
+  scroll-behavior: smooth
+
+body
+  margin: 0
+  padding: 0
+  font-size: default-font-size
+  font-family: default-font-family
+  color: text-black
+
+  if(! hexo-config('selectable'))
+    -webkit-user-select: none /* Safari */
+    -ms-user-select: none /* IE 10+ and Edge */
+    -moz-user-select: none  /* Firefox */
+    user-select: none /* Standard syntax */
+
+  .main
+    max-width: max-page-width
+    width: 95%
+    margin: 0 auto
+
+    .main-content
+      background-color: #ffffff
+      background-image: url($root-path + 'img/blog-background.png')
+      border-radius: 20px
+      margin: 0 auto
+      padding: 20px 0 40px

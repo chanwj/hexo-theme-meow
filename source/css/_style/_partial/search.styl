@@ -1,0 +1,91 @@
+#search-panel
+  &:not([search-show])
+    display: none
+  
+  position: fixed
+  top: header-height
+  z-index: 4
+  width: 100%
+  height: calc(100% - 50px)
+  background-color: rgba(255, 255, 255, 0.2)
+  backdrop-filter: blur(5px)
+  -webkit-backdrop-filter: blur(5px)
+  display: flex
+  align-items: center
+  justify-content: center
+
+.search-container
+  width: 80%
+  height: 70%
+  padding: 15px 20px
+  background-color: rgba(255, 255, 255, 0.95)
+  // box-shadow: 0.5px 0.5px 1px rgba(0, 0, 0, 0.125)
+  border: 1px solid rgba(209, 209, 209, 0.825)
+  border-radius: 20px
+  overflow-y: auto
+  overflow-x: hidden
+
+.search-head
+  display: flex
+  flex-flow: row nowrap
+  justify-content: space-between
+  align-items: center
+  font-size: article-title4-font-size
+  color: orange-middle
+
+.search-title
+  font-weight: bold
+  font-weight: 1000
+
+  i
+    margin-right: 5px
+
+.search-close-btn
+  margin-right: 5px
+  cursor: pointer
+
+  &:hover
+    animation: beat 1s infinite
+
+.search-box
+  margin: 15px auto 10px
+  display: flex
+  flex-flow: row nowrap
+  align-items: center
+  padding-bottom: 20px
+  border-bottom: 1px solid rgba(209, 209, 209, 0.825)
+
+  i
+    margin-right: 5px
+
+#search-input
+  flex: 1
+  -webkit-flex: 1
+  -ms-flex: 1
+  font-size: default-font-size
+  font-family: default-font-family
+  border: 1px solid text-black-light
+  border-radius: 15px
+  padding: 3px 8px
+
+#search-count
+  &:not([search-count-show])
+    display: none
+
+  color: text-grey
+
+#search-result
+  p
+    margin: 5px 0
+
+    em
+      color: orange-middle
+      font-weight: bold
+      font-style: normal
+  
+  ul
+    margin: 5px 0 0
+
+#search-result-empty
+  &:not([search-empty-show])
+    display: none

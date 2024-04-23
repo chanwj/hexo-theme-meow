@@ -1,0 +1,100 @@
+@media screen and (max-width: 1499px)
+  #post-toc
+    display: none
+
+    &[toc-show]
+      display: flex
+      z-index: 2
+      position: fixed
+      left: 0
+      top: 0
+      margin-top: header-height
+      height: calc(100% - 50px)
+      width: 100%
+      flex-flow: row nowrap
+      animation: show-toc-slide 0.5s
+
+    .toc-blank
+      width: 30%
+
+    .toc-aside
+      font-size: toc-font-size
+      width: 70%
+      padding: 15px 20px
+      background-color: rgba(255, 255, 255, 0.9)
+      backdrop-filter: blur(5px)
+      -webkit-backdrop-filter: blur(5px)
+      box-shadow: 1px 0 1px rgba(0, 0, 0, 0.125)
+
+      .toc-title
+        font-size: article-title4-font-size
+        font-weight: bold
+        color: orange-middle
+        padding-bottom: 5px
+        border-bottom: 1px solid rgba(209, 209, 209, 0.825)
+
+        i
+          margin-right: 5px
+
+      .toc-content, .toc-content-child
+        list-style: none
+        padding-left: 1em
+        line-height: 1.5em
+        border-left: 1px solid rgba(209, 209, 209, 0.5)
+        margin: 5px 0
+
+        &:first-child
+          padding-left: 0
+          border-left:0
+      
+      .toc-content-link
+        text-decoration: none
+
+        &:hover
+          text-decoration: underline
+
+@media screen and (min-width: 1499px)
+  #post-toc
+    display: block
+    font-size: toc-font-size
+    // float: left
+    // margin-left: 20px
+    position: fixed
+    right: 1.25%
+    top: header-height
+    margin-top: 20px
+    width: 150px
+    padding: 10px 10px 5px
+    background-color: rgba(255, 255, 255, 0.9)
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.125)
+    border-radius: 10px
+    animation: show-toc 0.5s
+
+    .toc-title
+      font-size: article-title4-font-size
+      font-weight: bold
+      color: orange-middle
+      padding-bottom: 5px
+      border-bottom: 1px solid rgba(209, 209, 209, 0.825)
+
+    .toc-content, .toc-content-child
+      list-style: none
+      padding-left: 1em
+      line-height: 1.5em
+      border-left: 1px solid rgba(209, 209, 209, 0.5)
+      white-space: nowrap
+      overflow: hidden
+      margin: 5px 0
+
+      &:first-child
+        padding-left: 0
+        border-left:0
+    
+    .toc-content-link
+      text-decoration: none
+
+      &:hover
+        text-decoration: underline
+
+    &:not([toc-show])
+      display: none

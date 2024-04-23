@@ -1,0 +1,131 @@
+article.post
+  //- article's title 文章标题
+  .post-title
+    h1
+      i.fa-solid.fa-paw
+      | #{ post.title }
+
+  //- article's info 文章相关信息
+  .post-info
+    .post-info-first-line
+      //- published date, updated date 发布日期、更新日期
+      | !{ partial('_partial/post/date') }
+
+      //- categories 分类
+      | !{ partial('_partial/post/post-categories') }
+
+      //- tags 标签
+      | !{ partial('_partial/post/post-tags') }
+
+    .post-info-second-line
+      //- copyright statement 版权声明
+      | !{ partial('_partial/post/copyright') }
+
+      //- words counting 字数
+      | !{ partial('_partial/post/word-count') }
+
+      //- article's page view 文章访问量统计
+      if theme.page_view.post_pv
+        | !{ partial('_partial/pageview/pageview-post') }
+
+  //- fiction has its own layout content 小说类型的文章有特别的展示内容
+  if post.type === 'fiction'
+    if post.meta_show
+      .fiction-meta
+        if post.meta_info.type
+          .fiction-meta-item
+            .fiction-meta-key
+              i.fa-solid.fa-caret-right
+              | #{ __('fiction.meta.type') }:
+            .fiction-meta-value
+              span= post.meta_info.type
+
+          if (post.meta_info.type === 'Fanfiction' || post.meta_info.type === '同人') && post.meta_info.fandom
+            .fiction-meta-item
+              .fiction-meta-key
+                i.fa-solid.fa-caret-right
+                | #{ __('fiction.meta.fandom') }:
+              .fiction-meta-value
+                span= post.meta_info.fandom
+        
+        if post.meta_info.relationship
+            .fiction-meta-item
+              .fiction-meta-key
+                i.fa-solid.fa-caret-right
+                | #{ __('fiction.meta.relationship') }:
+              .fiction-meta-value
+                span= post.meta_info.relationship
+        
+        if post.meta_info.character
+            .fiction-meta-item
+              .fiction-meta-key
+                i.fa-solid.fa-caret-right
+                | #{ __('fiction.meta.character') }:
+              .fiction-meta-value
+                span= post.meta_info.character
+        
+        if post.meta_info.rating
+          .fiction-meta-item#fiction-meta-rating
+            .fiction-meta-key
+              i.fa-solid.fa-caret-right
+              | #{ __('fiction.meta.rating') }:
+            .fiction-meta-value
+              - const rating = post.meta_info.rating
+              span(rating= rating)= __('fiction.rating.' + rating)
+        
+        if post.meta_info.warning
+          .fiction-meta-item#fiction-meta-warning
+            .fiction-meta-key
+              i.fa-solid.fa-caret-right
+              | #{ __('fiction.meta.warning') }:
+            .fiction-meta-value
+              span= post.meta_info.warning
+
+    if (post.summary || post.notes_before)
+      .fiction-before-content
+        if post.summary
+          .fiction-summary
+            h4= __('fiction.summary')
+            | !{ markdown(post.summary) }
+        
+        if post.notes_before
+          .fiction-notes-before
+            h4= __('fiction.notes')
+            | !{ markdown(post.notes_before) }
+
+  //- article's content 文章内容
+  .post-content
+    | !{ post.content }
+  
+  if post.type === 'fiction'
+    if post.status
+      .fiction-status
+        | ～ 
+        if post.status === 'complete'
+          | #{ __('fiction.status.complete') }
+        else
+          | #{ __('fiction.status.in_progress') }
+        |  ～
+
+    if post.notes_after
+      .fiction-notes-after
+        h4= __('fiction.notes')
+        | !{ markdown(post.notes_after) }
+
+  if theme.post_prev_next || theme.reward.enable
+    .post-end
+      //- previous post link 链接上一篇文章
+      .post-prev
+        if theme.post_prev_next && post.prev
+          a(href= url_for(post.prev.path), title= __('article.previous_post'))
+            i.fa-solid.fa-chevron-left.fa-lg
+
+      //- reward button 赞赏按钮
+      if theme.reward.enable
+        | !{ partial('_partial/post/reward') }
+      
+      //- next post link 链接下一篇文章
+      .post-next
+        if theme.post_prev_next && post.next
+          a(href= url_for(post.next.path), title= __('article.next_post'))
+            i.fa-solid.fa-chevron-right.fa-lg

@@ -1,0 +1,21 @@
+#search-panel
+  .search-container
+    .search-head
+      .search-title
+        span
+          i.fa-solid.fa-paw
+          | #{ __('menu.search') }
+      
+      .search-close-btn( onclick= "toggleSearchWindow()" )
+        i.fa-regular.fa-circle-xmark
+
+    .search-box
+      i.fa-solid.fa-magnifying-glass
+      input#search-input(type= 'text', placeholder= __('search.tips'), value= '')
+
+    .search-body
+      #search-count= __('search.result_count') + ': '
+
+      #search-result
+
+      #search-result-empty= __('search.no_result')

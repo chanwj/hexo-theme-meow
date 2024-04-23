@@ -1,0 +1,19 @@
+| !{ js('js/theme/tool-bar') }
+| !{ js('js/theme/menu') }
+
+//- reward function 奖赏功能
+if theme.reward.enable
+  | !{ js('js/theme/reward') }
+
+//- search function 搜索功能
+if config.search
+  | !{ js('js/jquery-3.7.1.min') }
+  | !{ js('js/theme/search') }
+  
+  script.
+    var search_path = '#{config.search.path}';
+    if (search_path.length == 0) {
+      search_path = "search.json";
+    }
+    var path = '#{config.root}' + search_path;
+    searchFunc(path, 'search-input', 'search-result');

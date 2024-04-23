@@ -1,0 +1,177 @@
+.post
+  margin: 0 auto
+  width: 85%
+
+.post-title
+  border-bottom: 2px solid border-grey
+
+  h1
+    margin: 20px 0 15px
+    font-size: article-title-font-size
+    color: orange-middle
+
+    i
+      margin-right: 5px
+
+.post-info
+  font-size: info-font-size-larger
+  color: text-grey-light
+
+.post-info-first-line
+  display: flex
+  flex-flow: row wrap
+  align-items: center
+  margin-top: 10px
+
+  div
+    overflow: visible
+    white-space: nowrap
+    margin: 5px 0
+
+.post-info-second-line
+  display: flex
+  flex-flow: row wrap
+  align-items: center
+  // margin-top: 5px
+
+  div
+    overflow: visible
+    white-space: nowrap
+    margin: 5px 0
+
+.pageview-post
+  margin: 5px 0
+  overflow: hidden
+  white-space: nowrap
+
+#busuanzi_container_page_pv
+  padding: 0 5px
+
+.post-end
+  display: flex
+  flex-flow: row nowrap
+  align-items: center
+  justify-content: space-between
+  margin: 50px auto 0
+
+.post-prev,.post-next
+  width: 45px
+  height: 45px
+  display: flex
+  justify-content: center
+  align-items: center
+
+  a
+    color: text-grey
+
+    &:hover
+      color: orange-fresh
+
+.post-prev a:hover
+  animation: to-left 0.8s infinite
+
+.post-next a:hover
+  animation: to-right 0.8s infinite
+
+.post-reward
+  border: 1px solid border-grey
+  border-radius: 50%
+  width: 45px
+  height: 45px
+  margin: 0 auto
+  display: flex
+  justify-content: center
+  align-items: center
+
+  &:hover
+    background-color: orange-normal
+    color: white
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.125)
+
+.fiction-meta
+  margin: 15px 0
+  padding: 15px 20px
+  background-color: code-light
+  border-radius: 15px
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.125)
+  display: flex
+  flex-flow: column nowrap
+
+.fiction-meta-item
+  display: flex
+  flex-flow: row nowrap
+  font-size: info-font-size-larger
+  margin-top: 8px
+
+  &:first-child
+    margin-top: 0
+  
+  &:hover
+    background-color: rgba(255, 255, 255, 0.8)
+
+.fiction-meta-key
+  width: 130px
+  margin-right 10px
+  border-right: 1px solid border-grey
+  font-weight: bold
+  color: text-black-light
+  white-space: nowrap
+
+  i
+    margin-right: 5px
+
+.fiction-meta-value
+  flex: 1
+
+#fiction-meta-rating
+  span[rating=Teen],span[rating=Mature],span[rating=Explicit]
+    font-weight: bold
+  
+  span[rating=Mature],span[rating=Explicit]
+    color: red-dark
+
+#fiction-meta-warning
+  span
+    font-weight: bold
+    color: red-dark
+
+.fiction-before-content
+  margin: 20px 0 35px
+  border-bottom: 2px solid transparent
+  border-image: linear-gradient(to right, rgba(31, 18, 53, 0.1), rgba(31, 18, 53, 0.35), rgba(31, 18, 53, 0.1)) 1
+
+.fiction-summary
+  margin: 20px 0 30px
+
+.fiction-notes-before
+  margin: 20px 0
+  padding-bottom: 10px
+
+.fiction-status
+  margin: 35px auto 20px
+  text-align: center
+  color: text-grey-light
+  font-weight: bold
+
+.fiction-notes-after
+  margin: 35px 0 0
+  padding-bottom: 10px
+  border-top: 2px solid transparent
+  border-image: linear-gradient(to right, rgba(31, 18, 53, 0.1), rgba(31, 18, 53, 0.35), rgba(31, 18, 53, 0.1)) 1
+
+  // blockquote
+  //   background-color: code-light
+  //   border-left: 10px solid code-normal
+
+@media screen and (max-width: 768px)
+  .fiction-meta-item
+    flex-flow: column nowrap
+
+  .fiction-meta-key
+    width: auto
+    border-right: 0
+
+  .fiction-meta-value
+    flex: initial
+    margin-top: 5px
+    text-indent: 1em

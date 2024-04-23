@@ -1,0 +1,29 @@
+footer
+  .footer-content
+    //- copyright information 版权信息
+    //- It's not easy to create a theme, please keep the copyright information of this theme in the footer to support theme author. Thank you very much! 制作主题不易，请保留footer中的主题版权信息来支持作者、支持创作，谢谢~
+    .copyright-info
+      i.fa-regular.fa-copyright.fa-xs
+      - let current_year = date(Date.now(), "YYYY");
+      if current_year != theme.since_year
+        span= theme.since_year + ' - ' + current_year
+      else
+        span= theme.since_year
+      a(href= url_for('/about'))= config.author
+      i.fa-solid.fa-cat.fa-sm
+      span= 'Powered by'
+      a(href="https://hexo.io/", target="_blank")= 'Hexo'
+      span= ' &'
+      a(href="https://github.com/chanwj/hexo-theme-meow", target="_blank", title=theme.version)= 'Theme Meow'
+
+    //- site register info 备案信息
+    if theme.register_info.enable
+      .register-info
+        a#register_link(
+          target="_blank"
+          href= theme.register_info.query_url)
+          = theme.register_info.record_info
+
+    //- site's page view 网站访问量统计
+    if theme.page_view.site_pv
+      | !{ partial('_partial/pageview/pageview-site') }

@@ -1,0 +1,108 @@
+# various menu item
+menu:
+  archives: Archives
+  category: Category
+  categories: Categories
+  tags: Tags
+  about: About
+  search: Search
+  home: Home
+  toc: TOC
+  settings: Settings
+
+# site information
+# only affects on page display and does not affect webpage meta
+blog_info:
+  title: MEOW
+  subtitle: A Cute and Bright Hexo Theme
+  description: 'Preview of MEOW: a cute and bright theme for Hexo blog. It optimizes the adaptability of original novel and fanfiction. It is also suitable for tutorial sharing, daily recording, and other purposes.'
+
+# posts related item
+article:
+  read_more: Read More
+  word_count: About %d words
+  copyright: Copyright
+  copyright_desc: BY-NC-ND 4.0
+  # description of reward for posts, Markdown available
+  reward: If you like this article, welcome to pay me a coffee, thanks&#128151;
+  previous_post: Previous Article
+  next_post: Next Article
+
+# navigation item
+navigation:
+  back_to_top: Back To Top
+  back_to_home: Back To Home
+  menu_toggle: Toggle Menu
+
+# pagination item
+pagination:
+  prev: Previous Page
+  next: Next Page
+
+# datetime item
+datetime:
+  published: Published date
+  updated: Updated date
+
+# 404 page
+page_not_found:
+  tips: This Page Dose Not Exist.
+
+# search panel item
+search:
+  tips: Please enter the content to search...
+  result_count: Matching results
+  no_result: No matching articles were found.
+
+# page view counting
+page_view:
+  site_pv: Total hits
+  site_uv: Total visitors
+  post_pv: Hits
+
+# posts with type 'fiction'
+fiction:
+  meta:
+    type: Type
+    fandom: Fandom
+    relationship: Relationship
+    character: Character
+    rating: Rating
+    warning: Warning
+  status:
+    complete: COMPLETE
+    in_progress: TO BE CONTINUED
+  summary: Summary
+  notes: Notes
+  rating:
+    General: General Audiences
+    Teen: Teen And Up Audiences
+    Mature: Mature
+    Explicit: Explicit
+
+# 'About' page
+about:
+  about_blog:
+    title: About This Site
+    # keywords of this blog, split with ','
+    keywords: Hexo,Theme,Blog,Tutorial
+    # introduction for this blog，Markdown available
+    introduction: '- 「Meow」is a theme for Hexo blog, the source code was already public on [Github](https://github.com/chanwj/hexo-theme-meow).
+    
+    - This theme has cute style and bright colors. I hope anyone who see it can have a good mood.
+    
+    - In addition to supporting the basic purpose of blogs, this theme has also been optimized for literary creation, allowing every author to use template to publish original novels and fanfiction easily.
+    
+    - This website provides preview for this theme. It also provides guides for theme installation and configuration. I hope it will be helpful to you.'
+    # Additional notes, Markdown available
+    supplement: '&#127775;<u>It cost a lot of time and efforts for me to make this work. If you need to use this theme, please keep the copyright information of the theme in the footer. Thank you very much!</u>'
+  about_author:
+    title: About The Author
+    description: A ginger cat focuses on writing and coding.
+  about_contact: Contact Me
+  about_links: Links
+  reward:
+    title: Rewards
+    # description of reward for the author or the site, Markdown available
+    description: If this theme is helpful to you, welcome to scan the QR Code to reward the author. Your encouragement and support are very important for my continuous creation. Thank you!&#128151;
+

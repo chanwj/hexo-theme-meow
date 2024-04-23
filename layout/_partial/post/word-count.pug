@@ -1,0 +1,11 @@
+-
+  var pure_content = strip_html(post.content);
+  //- count only English words, numbers and Chinese characters 只统计中文字符、英文单词和数字
+  var word_num = pure_content.match(/[\u4E00-\u9FA5]|[A-Za-z]+|[0-9]+/g) || [];
+  //- console.log(word_num.toString())
+  //- console.log(word_num.length);
+
+if theme.word_count.enable
+  .post-word-count
+    i.icon.fa-solid.fa-pen-to-square
+    span= _p('article.word_count',word_num.length)

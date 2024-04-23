@@ -1,0 +1,173 @@
+header
+  background-color: #ffffff
+  position: sticky
+  top: 0
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.125)
+  z-index: 6
+
+.top-nav
+  height: header-height
+  max-width: max-page-width
+  display: flex
+  justify-content: space-between
+  align-items: center
+  margin: 0 auto
+  width: 90%
+  
+
+.nav-info
+  display: flex
+  align-items: center
+  font-weight: 1000
+
+  div
+    vertical-align: text-bottom
+    display: inline-block
+
+    #nav-icon
+      width: 40px
+      height: 40px
+      margin: 0
+      display: inline
+
+      &:hover
+        animation: fade 1.2s ease-in-out infinite
+
+    #nav-title
+      font-size: 30px
+      font-weight: bold
+      text-decoration: none
+      color: orange-fresh
+      margin-left: 5px
+
+      &:hover
+        color: orange-middle
+
+#top-menu-hidden
+  display: none
+
+.nav-ribbon
+  display: flex
+  align-items: center
+
+#top-menu-btn
+  display: none
+
+.top-menu-expanded
+  display: inline-block
+  font-size: header-item-font-size
+  font-weight: 800
+
+  .top-menu-item
+    text-decoration: none
+    color: orange-fresh
+    margin-right: 20px
+
+    i
+      margin-right: 5px
+
+    &:hover
+      color: orange-middle
+
+.top-search
+  display: inline-block
+  cursor: pointer
+
+  &:hover
+    i
+      animation: fade 1s infinite
+
+  #top-search-btn
+    padding: 2px 10px 2px 8px
+    background-color: transparent
+    border: 1px solid border-grey
+    border-radius: 70px
+    font-size: info-font-size-larger
+
+    // &:hover
+    //   box-shadow: 1.5px 1.5px 2px shadow-grey
+
+    span
+      margin-left: 5px
+      color: icon-grey
+
+@media screen and (max-width: 768px)
+  #top-menu-btn
+    display: inline-block
+    width: 22px
+    height: 22px
+    margin-left: 15px
+    font-size: info-font-size-larger
+    cursor: pointer
+  
+  .top-menu-expanded
+    display: none
+  
+  .top-search
+    span
+      display: none
+    #top-search-btn
+      border-radius: 50%
+      padding: 2px 5px
+
+  #top-menu-hidden
+    z-index: 5
+    position: fixed
+    top: header-height
+    width: 100%
+    height: calc(100% - 50px)
+    margin: 0 auto
+    animation: show-menu 0.5s
+    background-color: rgba(255, 255, 255, 0.5)
+    backdrop-filter: blur(8px)
+    -webkit-backdrop-filter: blur(8px)
+    flex-direction: column
+    font-weight: 1000
+
+    &:not([menu-show])
+      animation: disable-menu 0.5s
+
+    .menu-hidden-content
+      background-color: rgba(255, 255, 255, 0.5)
+      box-shadow: 0 1px 1px rgba(0, 0, 0, 0.125)
+      max-height: 80%
+      overflow-y: auto
+
+      .menu-hidden-nav
+        width: 90%
+        display: flex
+        flex-flow: row wrap
+        align-items: center
+        justify-content: center
+        margin: 0 auto
+        padding: 20px 0
+
+      .menu-hidden-item
+        padding: 8px 35px
+        margin: 8px 10px
+        border: 1px solid orange-light
+        border-radius: 15px
+        text-decoration: none
+        line-height: 1.5em
+        font-size: header-item-font-size
+        background-color: yellow-light
+        opacity: 0.8
+        flex: 1
+        display: flex
+        flex-flow: row nowrap
+        align-items: center
+        justify-content: center
+
+        i
+          margin-right: 5px
+
+        &:hover
+          background-color: quote-background
+
+          i
+            animation: beat 1s infinite
+    
+    .menu-hidden-blank
+      flex: 1
+      -webkit-flex: 1
+      -ms-flex: 1

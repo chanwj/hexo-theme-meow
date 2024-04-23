@@ -1,0 +1,13 @@
+#tool-bar
+  //- tools toggle button 工具栏显示开关
+  #tool-toggle( onclick= "toolToggle()", title= __('menu.settings') )
+    i.fa-solid.fa-gear
+
+  //- TOC switch TOC显示开关
+  if (is_post() && theme.toc.enable && !(undefined != page.toc && !page.toc))
+    #toc-toggle( onclick= "tocToggle()", title= __('menu.toc') )
+      i.fa-solid.fa-list-ul
+  
+  //- back to top button 返回顶部
+  #back-to-top( onclick= "scrollToTop()", title= __('navigation.back_to_top') )
+    i.fa-solid.fa-chevron-up

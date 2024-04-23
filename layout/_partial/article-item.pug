@@ -1,0 +1,11 @@
+.article-item
+  a.article-item-card(href= url_for(post.path))
+    .article-item-title
+      span= post.title
+
+    .article-item-preview
+      span= strip_html(truncate(post.content, {length: 130}))
+    
+    .article-item-hover
+      span= date(post.date)
+      i.fa-solid.fa-paw

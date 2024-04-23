@@ -1,0 +1,12 @@
+//- index menu bar 首页菜单栏
+//- .index-menu
+//-   | !{ partial('_partial/menu-index', null, {cache: true}) }
+
+//- posts list 文章列表
+.index-posts
+  - for (post of page.posts.toArray())
+    | !{ partial('_partial/article-index', {post: post}) }
+
+//- pagination function 分页功能
+.pagination
+  | !{ partial('_partial/pagination', {page: page}) }

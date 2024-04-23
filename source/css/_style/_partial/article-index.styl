@@ -1,0 +1,66 @@
+.index-posts
+  margin: 0 auto
+  width: 85%
+
+  .index-post-item
+    margin-top: 10px
+    padding-bottom: 20px
+    border-bottom: 1px solid transparent
+    border-image: linear-gradient(to right, rgba(31, 18, 53, 0.1), rgba(31, 18, 53, 0.35), rgba(31, 18, 53, 0.1)) 1
+
+    h1
+      margin-bottom: 10px
+
+      a
+        text-decoration: none
+        color: orange-middle
+
+        &:hover
+          color: orange-fresh
+        
+        i
+          margin-right: 5px
+    
+    .post-head-info
+      font-size: info-font-size
+      color: text-grey-light
+      // display: flex
+      // flex-flow: row nowrap
+      overflow: hidden
+      white-space: nowrap
+      
+      div
+        margin-top: 5px
+        display: inline-block
+    
+    .read-more
+      background-color: orange-low-saturation
+      padding: 3px 10px
+      border-radius: 20px
+      display: inline-block
+      text-align: center
+      margin: 10px 0
+
+      i
+        margin-right: 3px
+        color: white
+
+      .read-more-link
+        text-decoration: none
+        color: white
+        font-size: info-font-size
+
+      &:hover
+        background-color: yellow-normal
+        box-shadow: 1.5px 1.5px 2px shadow-grey
+    
+    .post-tags
+      font-size: info-font-size
+      display: block
+      white-space: nowrap
+      overflow: hidden
+
+.post-excerpt[excerpt-title-simplify=true]
+  h1,h2,h3,h4,h5,h6
+    font-size: default-font-size
+    margin: 1em 0

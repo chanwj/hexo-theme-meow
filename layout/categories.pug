@@ -1,0 +1,31 @@
+-
+  var categories_list = [];
+  for (cat of site.categories.toArray()){
+    categories_list.push(cat.slug);
+  }
+  categories_list.sort();
+
+.page-container
+  .page-title
+    h1
+      i.fa-regular.fa-folder-open
+      | #{ __('menu.categories') }
+
+  //- sorted list
+  .categories-list-container
+    - for (category of categories_list)
+      a.categories-item(href= url_for('categories/'+category))
+        i.fa-regular.fa-folder-closed
+        span.categories-item-name= category
+  
+  //- use hexo helpers
+  //- .categories-list-container-helpers
+  //-   | !{ list_categories({show_count:theme.categories.show_count, style:'list', depth:theme.categories.depth}) }
+
+  //- unsorted list
+  //- .categories-list-container
+  //-   - for (category of site.categories.toArray())
+  //-     a.categories-item(href= url_for(category.path))
+  //-       i.fa-regular.fa-folder-closed
+  //-       span.categories-item-name= category.slug
+  //-       span.categories-item-count= '( ' + category.length + ' )'

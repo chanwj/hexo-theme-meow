@@ -1,0 +1,14 @@
+- for(const item in theme.menu)
+  case item
+    when "archives"
+      a.menu-item(href= url_for(config.archive_dir))
+        span= __('menu.' + item)
+    when "categories"
+      a.menu-item(href= url_for(config.category_dir))
+        span= __('menu.' + item)
+    when "tags"
+      a.menu-item(href= url_for(config.tag_dir))
+        span= __('menu.' + item)
+    default
+      a.menu-item(href= url_for(theme.menu[item]))
+        span= __('menu.' + item)

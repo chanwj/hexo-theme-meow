@@ -1,0 +1,14 @@
+.blog-info
+  //- display site icon 展示博客图标
+  .blog-pic
+    img#blog-pic(src= url_for(theme.blog_pic))
+
+  //- blog's title 博客标题
+  .blog-title
+    i.fa-solid.fa-paw.fa-2xs.fa-rotate-by
+    span= __('blog_info.title')
+    i.fa-solid.fa-paw.fa-2xs.fa-rotate-by
+
+  //- blog's description 博客介绍
+  .blog-desc
+    | !{ __('blog_info.description') }

@@ -1,0 +1,6 @@
+if theme.copyright.enable
+  .post-copyright
+    i.icon.fa-brands.fa-creative-commons(title= __('article.copyright'))
+    span= __('article.copyright') + ': '
+    a(href= theme.copyright.link, title= theme.copyright.license)
+      = __('article.copyright_desc')

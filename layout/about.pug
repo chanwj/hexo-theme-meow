@@ -1,0 +1,107 @@
+.about-container
+  .about-blog
+    h1
+      i.fa-solid.fa-paw
+      | #{ __('about.about_blog.title') }
+
+    .about-keywords
+      - const keywords = __('about.about_blog.keywords');
+      - const keywords_list = keywords.split(',');
+      - for (kw of keywords_list)
+        span.about-keywords-tag= kw
+
+    .about-blog-intro
+      | !{ markdown(__('about.about_blog.introduction')) }
+
+    .about-blog-supplement
+      | !{ markdown(__('about.about_blog.supplement')) }
+
+  .about-author
+    h1
+      i.fa-solid.fa-paw
+      | #{ __('about.about_author.title') }
+
+    .about-author-nav
+      img#author-img(src= url_for(theme.author_pic))
+
+      .about-author-info
+        .author-name= config.author
+
+        .author-desc= __('about.about_author.description')
+
+  .about-contact
+    h1
+      i.fa-solid.fa-paw
+      | #{ __('about.about_contact') }
+
+    .contact-nav
+      - for (contact_item in theme.contact_info)
+        if theme.contact_info[contact_item] != null
+          .contact-item(title= contact_item)
+            case contact_item
+              when 'Email'
+                i.fa-solid.fa-envelope.fa-xl
+              when '邮箱'
+                i.fa-solid.fa-envelope.fa-xl
+              when 'Github'
+                i.fa-brands.fa-github.fa-xl
+              when 'Twitter'
+                i.fa-brands.fa-twitter.fa-xl
+              when 'Facebook'
+                i.fa-brands.fa-facebook.fa-xl
+              when 'Instagram'
+                i.fa-brands.fa-instagram.fa-xl
+              when 'Tiktok'
+                i.fa-brands.fa-tiktok.fa-xl
+              when '抖音'
+                i.fa-brands.fa-tiktok.fa-xl
+              when 'Bilibili'
+                i.fa-brands.fa-bilibili.fa-xl
+              when 'Weibo'
+                i.fa-brands.fa-weibo.fa-xl
+              when '微博'
+                i.fa-brands.fa-weibo.fa-xl
+              when 'Wechat'
+                i.fa-brands.fa-weixin.fa-xl
+              when '公众号'
+                i.fa-brands.fa-weixin.fa-xl
+              when 'Mastodon'
+                i.fa-brands.fa-mastodon.fa-xl
+              default
+                i.fa-solid.fa-paw.fa-xl
+          
+            if contact_item === 'Email' || contact_item === '邮箱'
+              a(href= 'mailto:'+theme.contact_info[contact_item])= contact_item
+            else if contact_item === 'Wechat' || contact_item === '公众号'
+              span= theme.contact_info[contact_item]
+            else
+              a(href= theme.contact_info[contact_item])= contact_item
+
+  if theme.links.enable
+    .about-links
+      h1
+        i.fa-solid.fa-paw
+        | #{ __('about.about_links') }
+      
+      .links-nav
+        - for (links_item in theme.links.links_list)
+          a.links-item(href= theme.links.links_list[links_item].url)
+            span.links-item-title
+              i.fa-solid.fa-link
+              |  #{ links_item }
+            span.links-item-desc= theme.links.links_list[links_item].desc
+
+  if theme.reward.enable
+    .about-reward
+      h1
+        i.fa-solid.fa-paw
+        | #{ __('about.reward.title') }
+      
+      .about-reward-desc
+        | !{ markdown(__('about.reward.description')) }
+      
+      .about-reward-nav
+        - for (reward_item in theme.reward.QR_code)
+          .about-reward-item
+            img.about-reward-img(src= url_for(theme.reward.QR_code[reward_item]), title= reward_item, alt= reward_item)
+            span= reward_item

@@ -1,0 +1,66 @@
+#reward-panel
+  &:not([reward-show])
+    display: none
+  
+  position: fixed
+  top: header-height
+  left: 0
+  z-index: 3
+  width: 100%
+  height: calc(100% - 50px)
+  background-color: rgba(255, 255, 255, 0.2)
+  backdrop-filter: blur(5px)
+  -webkit-backdrop-filter: blur(5px)
+  display: flex
+  align-items: center
+  justify-content: center
+  animation: showup 0.3s
+
+.reward-container
+  width: 70%
+  height: 380px
+  padding: 15px 20px
+  background-color: white
+  border: 1px solid rgba(209, 209, 209, 0.825)
+  border-radius: 20px
+  overflow-y: auto
+
+  p
+    text-align: center
+    font-weight: bold
+
+.reward-nav
+  display: flex
+  flex-flow: row wrap
+  justify-content: center
+  align-items: center
+
+.reward-item
+  display: flex
+  flex-flow: column nowrap
+  justify-content: center
+  align-items: center
+  width: 250px
+  aspect-ratio: 1/1
+  margin: 0 1.5% 5px
+
+.reward-img
+  width: 90%
+  aspect-ratio: 1/1
+
+@media screen and (max-width: 768px)
+  .reward-container
+    width: 80%
+    height: 80%
+
+  .reward-container
+    p
+      text-align: left
+
+  .reward-nav
+    display: flex
+    flex-flow: column nowrap
+
+  .reward-item
+    width: 300px
+    margin: 5px auto

@@ -1,0 +1,13 @@
+.post-date
+  if is_home()
+    //- show relative date at index page 在首页显示相对时间
+    i.icon.fa-solid.fa-clock-rotate-left(title= __('datetime.published'))
+    span= relative_date(date(post.date))
+  else
+    //- post's published date(formatted by config.date_format) 文章发表日期(显示格式由config.date_format配置)
+    i.icon.fa-regular.fa-calendar-plus(title= __('datetime.published'))
+    time.publish-time= date(post.date)
+
+    //- post's updated date 文章更新日期
+    i.icon.fa-regular.fa-calendar-check(title= __('datetime.updated'))
+    time.update-time= date(post.updated)

@@ -1,0 +1,179 @@
+.about-container
+  width: 85%
+  margin: 0 auto
+
+  h1
+    color: orange-middle
+    padding-bottom: 12px
+    border-bottom: 2px solid transparent
+    border-image: linear-gradient(to right, rgba(31, 18, 53, 0.35), rgba(31, 18, 53, 0.1)) 1
+    
+    i
+      margin-right: 5px
+
+.about-blog,.about-author,.about-contact,.about-links,.about-reward
+  margin-bottom: 40px
+
+.about-keywords
+  display: flex
+  align-items: center
+  justify-content: center
+  flex-flow: row wrap
+  margin: 10px auto
+
+.about-keywords-tag
+  display: inline-flex
+  align-items: center
+  justify-content: center
+  margin: 5px 5px 0
+  width: 80px
+  height: 25px
+  background-color: rgba(255, 182, 79, 0.9)
+  border-radius: 15px
+  box-shadow: 1px 1px 2px shadow-grey
+  text-align: center
+  color: white
+  font-size: info-font-size-normal
+
+.about-blog-supplement
+  color: orange-low-saturation
+
+#author-img
+  width: 100px
+  height: 100px
+  border-radius: 50%
+  margin: 0 0 5px
+
+.about-author-nav
+  display: flex
+  flex-flow: row nowrap
+
+.about-author-info
+  margin-left: 25px
+  display: flex
+  flex-flow: column wrap
+  justify-content: center
+
+.author-name
+  font-size: article-title3-font-size
+  font-weight: bold
+  margin-bottom: 5px
+
+.contact-nav
+  display: flex
+  flex-flow: row wrap
+
+.contact-item
+  margin: 0 1% 15px 1%
+  display: flex
+  align-items: center
+  width: 18%
+  height: 30px
+  white-space: nowrap
+
+  i
+    margin-right: 5px
+    margin-left: 5px
+  
+  a
+    color: text-black
+    text-decoration: none
+    margin-right: 5px
+    overflow: hidden
+  
+  span
+    margin-right: 5px
+  
+  &:hover
+    background-color: orange-normal
+    border-radius: 10px
+    color: white
+
+    a
+      text-decoration: underline
+      color: white
+    
+    i
+      animation: fade 1s infinite
+
+.links-nav
+  display: flex
+  flex-flow: row wrap
+
+.links-item
+  display: flex
+  flex-flow: column nowrap
+  width: 30%
+  height: 95px
+  border-radius: 15px
+  border: 1px solid code-normal
+  margin: 0 1.5% 15px 1.5%
+  text-decoration: none
+  color: text-black
+
+  &:hover
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.125)
+
+    .links-item-title
+      background-color: orange-normal
+      color: white
+
+.links-item-title
+  height: 30%
+  padding: 5px 15px
+  margin-bottom: 5px
+  font-weight: bold
+  background-color: code-normal
+  border-radius: 15px 15px 0 0
+
+.links-item-desc
+  margin: 0 15px 5px
+  overflow: hidden
+  font-size: info-font-size-normal
+
+.about-reward-nav
+  display: flex
+  flex-flow: row wrap
+  justify-content: center
+  align-items: center
+
+.about-reward-item
+  display: flex
+  flex-flow: column nowrap
+  justify-content: center
+  align-items: center
+  width: 30%
+  aspect-ratio: 1/1
+  margin: 0 1.5% 5px
+
+.about-reward-img
+  width: 90%
+  aspect-ratio: 1/1
+
+@media screen and (max-width: 768px)
+  .contact-item
+    width: 30%
+
+  .about-author-nav
+    flex-flow: column wrap
+    justify-content: center
+    align-items: center
+
+  .author-name
+    text-align: center
+
+  .about-author-info
+    margin-left: 0
+    display: block
+
+  .links-item
+    width: 100%
+    height: 90px
+
+  .about-reward-nav
+    display: flex
+    flex-flow: column nowrap
+
+  .about-reward-item
+    width: 300px
+    margin: 5px auto

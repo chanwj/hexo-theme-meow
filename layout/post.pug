@@ -1,0 +1,6 @@
+//- post page's content 文章内容
+| !{ partial('_partial/article', {post: page}) }
+
+//- TOC module TOC导航栏
+if theme.toc.enable
+  | !{ partial('_partial/post/toc', {post: page}) }

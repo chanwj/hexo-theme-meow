@@ -1,0 +1,14 @@
+//- reward button 赞赏按钮
+.post-reward( onclick="openPostReward()", title= __('about.reward.title') )
+  i.fa-regular.fa-thumbs-up.fa-xl.fa-beat-fade
+
+//- reward panel expanded 展开的赞赏栏
+#reward-panel( onclick="closePostReward()" )
+  .reward-container
+    | !{ markdown(__('article.reward')) }
+
+    .reward-nav
+      - for (reward_item in theme.reward.QR_code)
+        .reward-item
+          img.reward-img(src= url_for(theme.reward.QR_code[reward_item]), title= reward_item, alt= reward_item)
+          span= reward_item

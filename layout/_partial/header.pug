@@ -1,0 +1,68 @@
+header
+  .top-nav( ondblclick= "scrollToTop()" )
+    //- blog's information at the left 左侧的博客信息
+    .nav-info
+      //- site icon 网站图标
+      .nav-icon: img#nav-icon(src= url_for(theme.blog_pic))
+
+      //- site's title, link to homepage 网站标题，可跳转回首页
+      .nav-title: a#nav-title(href= url_for(), title= __('menu.home'))
+        = config.title
+
+    //- functional ribbon at the right 右侧的功能区
+    .nav-ribbon
+      //- top menu 导航菜单项
+      .top-menu-expanded
+        - for(const item in theme.menu)
+          case item
+            when "archives"
+              a.top-menu-item(href= url_for(config.archive_dir))
+                //- i.fa-solid.fa-box-archive.fa-sm
+                span= __('menu.archives')
+            when "categories"
+              a.top-menu-item(href= url_for(config.category_dir))
+                //- i.fa-regular.fa-folder-open.fa-sm
+                span= __('menu.categories')
+            when "tags"
+              a.top-menu-item(href= url_for(config.tag_dir))
+                //- i.fa-solid.fa-tags.fa-sm
+                span= __('menu.tags')
+            default
+              a.top-menu-item(href= url_for(theme.menu[item]))
+                //- i.fa-solid.fa-paw.fa-sm
+                span= __('menu.' + item)
+
+      //- search module 搜索框
+      if theme.search.enable
+        .top-search( onclick= "toggleSearchWindow()" )
+          #top-search-btn(title= __('menu.search'))
+            i.icon.fa-solid.fa-magnifying-glass
+            span= __('menu.search')
+
+      //- menu button(display at small screen) 导航菜单展开按钮（使用小屏设备时显示）
+      #top-menu-btn( onclick= "openTopMenu()", title= __('navigation.menu_toggle') )
+        i.fa-solid.fa-bars.fa-lg
+
+//- menu display at small screen after click the button 小屏设备下的下拉导航菜单
+#top-menu-hidden
+  .menu-hidden-content
+    .menu-hidden-nav
+      - for(const item in theme.menu)
+          case item
+            when "archives"
+              a.menu-hidden-item(href= url_for(config.archive_dir))
+                i.fa-solid.fa-box-archive.fa-sm
+                span= __('menu.archives')
+            when "categories"
+              a.menu-hidden-item(href= url_for(config.category_dir))
+                i.fa-regular.fa-folder-open.fa-sm
+                span= __('menu.categories')
+            when "tags"
+              a.menu-hidden-item(href= url_for(config.tag_dir))
+                i.fa-solid.fa-tags.fa-sm
+                span= __('menu.tags')
+            default
+              a.menu-hidden-item(href= url_for(theme.menu[item]))
+                i.fa-solid.fa-paw.fa-sm
+                span= __('menu.' + item)
+  .menu-hidden-blank( onclick= "closeTopMenu()" )

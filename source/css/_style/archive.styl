@@ -1,0 +1,121 @@
+.page-container
+  width: 85%
+  margin: 0 auto
+
+  a
+    text-decoration: none
+    color: text-black
+
+.page-title
+  color: orange-middle
+
+  h1
+    margin: 0.5em 0
+
+  i
+    margin-right: 5px
+
+.archives-year
+  margin: 20px 0
+
+.archives-year-link
+  font-size: article-title1-font-size
+  font-weight: bold
+  display: block
+  width: 100%
+  padding: 5px 0
+  border-bottom: 2px solid border-grey
+  vertical-align: middle
+
+  i
+    display: none
+
+  &:hover
+    color: orange-middle
+
+    i
+      display: inline
+      margin-left: 5px
+
+
+.archives-month
+  margin: 20px 0
+
+.archives-month-link
+  margin: 10px 0
+  display: block
+  font-size: article-title3-font-size
+  font-weight: bold
+
+  i
+    display: none
+
+  &:hover
+    color: orange-middle
+
+    i
+      display: inline
+      margin-left: 5px
+
+.archives-article-list
+  display: flex
+  flex-flow: row wrap
+  align-items: center
+
+.article-item
+  width: 17.5%
+  aspect-ratio: 1/1
+  border: 1px solid border-grey
+  margin-right: 2.3%
+  margin-top: 10px
+
+.article-item-card
+  display: flex
+  flex-flow: column nowrap
+  width: 100%
+  height: 100%
+  font-size: info-font-size-normal
+
+  &:hover
+    background-color: rgba(249, 173, 8, 0.7)
+
+    .article-item-title,.article-item-preview
+      display: none
+
+    .article-item-hover
+      display: flex
+      width: 100%
+      height: 100%
+      flex-flow: column nowrap
+      justify-content: center
+      align-items: center
+      color: white
+      font-size: article-title4-font-size
+      font-weight: bold
+      animation: showup 0.5s
+
+      i
+        margin-top: 10px
+
+.article-item-title
+  font-weight: bold
+  margin: 10px 10px 5px
+
+.article-item-preview
+  margin: 0 10px 10px
+  overflow: hidden
+  text-align: justify
+
+.article-item-hover
+  display: none
+
+@media screen and (max-width: 768px)
+  .article-item
+    width: 45%
+    margin-right: 4%
+  
+  .article-item-title
+    margin: 5px 5px 3px
+
+  .article-item-preview
+    margin: 0 5px 5px

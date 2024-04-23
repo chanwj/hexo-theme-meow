@@ -1,0 +1,120 @@
+# Theme Configuration 主题配置
+# Source: https://github.com/chanwj/hexo-theme-meow
+# Docs: https://chanwj.github.io
+
+# theme version 主题所使用的版本
+version: v1.0.0
+
+# site icon 网站图标
+blog_pic: /img/site-icon.png
+
+# author picture 作者头像
+author_pic: /img/author.jpg
+
+# menu config 导航栏菜单项
+# archives/categories/tags will use the path in root config automatically 归档、分类以及标签页使用根目录配置中的路径
+# other custom pages require path configuration manually 其他自定义页面需要配置页面路径
+menu:
+  archives:
+  categories:
+  tags:
+  about: /about
+
+# search function 搜索功能
+search:
+  enable: true
+
+# site register info 网站备案信息（比如ICP）
+register_info:
+  enable: false
+  record_info: 京ICP备………………号
+  query_url: https://beian.miit.gov.cn/
+
+# the year which this site was built 网站发布所属年份
+since_year: 2023
+
+# whether users could select text content 是否允许用户选取网站上的文本内容
+selectable: false
+
+# toc of post 文章目录导航栏
+toc:
+  enable: true
+  list_number: true # whether to show list number or not 是否显示编号
+  max_depth: 6 # Maximum heading depth of generated toc 生成 TOC 的最大深度
+
+# count words in post 文章字数统计
+word_count:
+  enable: true
+
+# copyright statement 版权声明（比如CC协议）
+copyright:
+  enable: true
+  license: CC BY-NC-ND 4.0
+  link: https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh-hans
+
+# whether to simplify titles style in post excerpt or not, set false to make titles show in the original way 是否简化摘要中的标题样式，false则按文章中的样式来显示
+excerpt_title_simplify: true
+
+# tags page config 标签页面设置
+# tag cloud & tag list: just choose one to display 标签云与标签列表只需要选择其一显示
+tags:
+  show_count: true # whether to show posts total count of each tag or not 是否显示每个标签的文章总数
+  tag_cloud: true
+  tag_list: false
+
+# categories page config 分类页面设置
+categories:
+  show_count: true # whether to show posts total count of each category or not 是否显示每个分类的文章总数
+  # depth config unavailable now, defalut: display all 层级配置暂不可用，目前默认显示全部
+  # depth: 0 # decide the depth of categories to display: 0-all, 1-only first layer 显示分类层级：0-显示全部层级，1-只显示第一层……
+
+# page view counting(with busuanzi) 访问量统计（使用不蒜子）
+page_view:
+  enable: true
+  site_pv: true # whether to show site's page view or not 是否显示网站访问量信息
+  post_pv: true # whether to show post's page view or not 是否显示文章访问量信息
+
+# contact information, add item in 'name: url' format, stay blank if you don't want to show that item 联系方式，新增项请按'名称: 链接网址'配置，不需要显示的项目则置空
+# currently support icons of items below, any other links will be display in paw icon 目前支持以下网站图标，其他链接统一用猫爪图标显示
+# Email|邮箱,Github,Twitter,Facebook,Instagram,Tiktok|抖音,Bilibili,Weibo|微博,Mastodon,Wechat|公众号
+contact_info:
+  Email: chan.wj@outlook.com
+  Github: https://github.com/chanwj
+  Twitter: /
+  Facebook: /
+  Instagram:
+  Tiktok: /
+  Bilibili: /
+  Weibo: /
+  AO3: /
+  Mastodon:
+  公众号: '@公众号名称' # format:'@account' 配置格式:'@公众号名称'
+
+# other links to display 其他链接
+links:
+  enable: true
+  links_list:
+    hexo-theme-meow: # link name 链接名称
+      desc: 本主题的Github仓库 # link description 链接简介
+      url: https://github.com/chanwj/hexo-theme-meow
+    技术博客A:
+      desc: 好友A的个人博客，此处仅用于展示效果
+      url: /
+    Friend's Blog:
+      desc: My Friend's Blog, for example.
+      url: /
+
+# reward module 赞赏栏目
+reward:
+  enable: true
+  QR_code: # list your payment QR Code so that users can pay you a coffee 列出你的收款二维码，让用户可以扫描打赏
+    Wechat: /img/reward/wechat.jpg # payment name: QRCode's image url 支付方式名称: 二维码图片路径
+    Alipay: /img/reward/alipay.jpg
+
+# whether to show 'previous article' and 'next article' at the end of post or not 是否在文章最后生成'上一篇'和'下一篇'文章的链接
+post_prev_next: true
+
+
+# the root of site's path, must be as same as the 'root' configuration in the root's _config.yml 网站根目录，填写值与根目录下的_config.yml中的root项一致
+# if this site was not deployed on a project page(e.g. username.github.io/repository), the default root should be '/' 若网站并非部署在子目录下，root则默认为'/'
+root: /
