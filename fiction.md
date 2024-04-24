@@ -8,8 +8,8 @@ type: fiction
 toc: false
 meta_show: true # true: show meta info | false: disable meta info
 meta_info:
-  type: # Original Work | Fanfiction
-  fandom: # show only if type is Fanfiction or 同人
+  type: # Original Work | Fanfiction | ...
+  fandom: # If type is 'Fanction', it's generally necessary to indicate the fandom | stay blank if you don't want to show fandom info
   relationship: # stay blank if you don't want to show relationships info
   character: # stay blank if you don't want to show characters info
   rating: # General | Teen | Mature | Explicit | stay blank if you don't want to show rating

@@ -40,13 +40,13 @@ article.post
             .fiction-meta-value
               span= post.meta_info.type
 
-          if (post.meta_info.type === 'Fanfiction' || post.meta_info.type === '同人') && post.meta_info.fandom
-            .fiction-meta-item
-              .fiction-meta-key
-                i.fa-solid.fa-caret-right
-                | #{ __('fiction.meta.fandom') }:
-              .fiction-meta-value
-                span= post.meta_info.fandom
+        if post.meta_info.fandom
+          .fiction-meta-item
+            .fiction-meta-key
+              i.fa-solid.fa-caret-right
+              | #{ __('fiction.meta.fandom') }:
+            .fiction-meta-value
+              span= post.meta_info.fandom
         
         if post.meta_info.relationship
             .fiction-meta-item
