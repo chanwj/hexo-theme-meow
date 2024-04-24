@@ -18,7 +18,7 @@ title
 
 //- favicon 网站图标
 if theme.blog_pic
-  | !{ favicon_tag(url_for(theme.blog_pic)) }
+  | !{ favicon_tag(theme.blog_pic) }
 
 //- link css 引入css
 | !{ css('css/style') }
