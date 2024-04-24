@@ -1,5 +1,5 @@
 if !(undefined != post.toc && !post.toc)
-  #post-toc( onclick= "tocToggle()" )
+  #post-toc
     aside.toc-aside
       .toc-title
         span
@@ -9,4 +9,4 @@ if !(undefined != post.toc && !post.toc)
       .toc-container
         | !{ toc(post.content, { class: 'toc-content', list_number: theme.toc.list_number, max_depth:theme.toc.max_depth}) }
 
-    .toc-blank
+    .toc-blank( onclick= "tocToggle()" )

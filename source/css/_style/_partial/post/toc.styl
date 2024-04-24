@@ -35,6 +35,10 @@
 
         i
           margin-right: 5px
+      
+      .toc-container
+        height: 90%
+        overflow-y: auto
 
       .toc-content, .toc-content-child
         list-style: none
@@ -55,20 +59,25 @@
 
 @media screen and (min-width: 1499px)
   #post-toc
-    display: block
+    display: flex
     font-size: toc-font-size
-    // float: left
-    // margin-left: 20px
     position: fixed
     right: 1.25%
     top: header-height
-    margin-top: 20px
+    margin-top: 50px
     width: 150px
-    padding: 10px 10px 5px
+    height: 60%
+    padding: 10px 10px
     background-color: rgba(255, 255, 255, 0.9)
     box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.125)
     border-radius: 10px
     animation: show-toc 0.5s
+    overflow: hidden
+
+    .toc-aside
+      width: 100%
+      display: flex
+      flex-flow: column nowrap
 
     .toc-title
       font-size: article-title4-font-size
@@ -76,6 +85,9 @@
       color: orange-middle
       padding-bottom: 5px
       border-bottom: 1px solid rgba(209, 209, 209, 0.825)
+    
+    .toc-container
+      overflow-y: auto
 
     .toc-content, .toc-content-child
       list-style: none
@@ -83,7 +95,7 @@
       line-height: 1.5em
       border-left: 1px solid rgba(209, 209, 209, 0.5)
       white-space: nowrap
-      overflow: hidden
+      overflow-x: hidden
       margin: 5px 0
 
       &:first-child
