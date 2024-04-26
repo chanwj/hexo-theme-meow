@@ -15,7 +15,7 @@ menu:
 blog_info:
   title: MEOW
   subtitle: A Cute and Bright Hexo Theme
-  description: 'Preview of MEOW: a cute and bright theme for Hexo blog. It optimizes the adaptability of original novel and fanfiction. It is also suitable for tutorial sharing, daily recording, and other purposes.'
+  description: 'Preview of Meow: a cute and bright theme for Hexo blog. It optimizes the adaptability of original novel and fanfiction. It is also suitable for tutorial sharing, daily recording, and other purposes.'
 
 # posts related item
 article:
@@ -91,7 +91,7 @@ about:
     
     - This theme has cute style and bright colors. I hope anyone who see it can have a good mood.
     
-    - In addition to supporting the basic purpose of blogs, this theme has also been optimized for literary creation, allowing every author to use template to publish original novels and fanfiction easily.
+    - In addition to supporting the basic purpose of blogs, this theme also optimizes the creation of literary works, allowing every author to use scaffold to publish original novel and fanfiction easily.
     
     - This website provides preview for this theme. It also provides guides for theme installation and configuration. I hope it will be helpful to you.'
     # Additional notes, Markdown available

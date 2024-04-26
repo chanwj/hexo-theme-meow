@@ -22,7 +22,7 @@ html(lang= config.language)
 
     //- search panel 搜索面板
     if config.search
-      | !{ partial('_partial/search', null, {cache: true}) }
+      | !{ partial('_partial/search', null, {cache: false}) }
 
     //- footer information at the bottom 底部页脚信息
     | !{ partial('_partial/footer', null, {cache: false}) }

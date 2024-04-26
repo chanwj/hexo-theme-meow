@@ -88,7 +88,7 @@ contact_info:
   Weibo: /
   AO3: /
   Mastodon:
-  公众号: '@公众号名称' # format:'@account' 配置格式:'@公众号名称'
+  公众号: '公众号名称' # format:'account' 配置格式:'公众号名称'
 
 # other links to display 其他链接
 links:
