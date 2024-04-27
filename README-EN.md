@@ -4,11 +4,15 @@ Language: [简体中文](README.md) | English
 
 **Meow** is a cute and bright Hexo theme. It optimizes the adaptability of original novel and fanfiction. It is also suitable for tutorial sharing, daily recording, and other purposes.
 
-![Meow](https://chanwj.github.io/images/theme-preview.jpg)
+![Meow](https://chanwj.github.io/images/theme-preview.png)
+
+<br/>
 
 ## 😺 Theme Preview
 
 - **[Meow Preview Station](https://chanwj.github.io/)**
+
+<br/>
 
 ## 💻️ Installation
 
@@ -30,9 +34,13 @@ theme: meow
 npm install hexo-renderer-pug --save
 ```
 
+<br/>
+
 ## 📚️ Documents
 
 - **[Meow Configuration Guide](https://chanwj.github.io/en/Meow-Theme-Guide/#Theme-Configuration)**
+
+<br/>
 
 ## ⭐️ Features
 
@@ -46,3 +54,10 @@ npm install hexo-renderer-pug --save
 - Floating toolbar
 - Configurable reward module
 - Integrate multiple function switches, customize them as needed
+
+## ⏳️ TO DO
+
+- [ ] Install more toolbar functions（e.g. dark mode）
+- [ ] Add function: copy codes with one click
+- [ ] Add support for photos gallery
+- [ ] ...
