@@ -1,18 +1,11 @@
-// @import url('https://fonts.googleapis.com/css2?family=Noto Sans SC&display=swap')
-@import url('https://fonts.googleapis.com/css2?family=Noto Serif&display=swap')
-@import url('https://fonts.googleapis.com/css2?family=Noto Serif SC&display=swap')
+importUrl(url_list)
+  if url_list
+    for url_item in url_list
+      @import url(url_item)
+
+importUrl(hexo-config('font.url_list'))
 
 @import '_style/_default/*'
 @import '_style/*'
 @import '_style/_partial/*'
 @import '_style/_partial/post/*'
-
-// @import '_variables'
-// @import '_partial/post/*'
-// @import 'loading'
-// @import 'layout'
-// @import 'index'
-// @import 'tags'
-// @import 'category'
-// @import 'about'
-// @import 'search'

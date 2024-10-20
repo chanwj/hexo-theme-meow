@@ -1,8 +1,11 @@
 meta(charset='utf-8')
 meta(name="viewport" content="width=device-width, initial-scale=1.0")
 meta(name="author" content= config.author)
-meta(name="description" content= config.description)
+//- meta(name="description" content= config.description)
 meta(name="keyword" content= config.keywords)
+
+//- Open Graph message for SEO 优化SEO的Open Graph信息
+| !{ open_graph({description:page.summary}) }
 
 //- page title: current page name - blog's name - blog's subtitle 页面标题：当前页面名称 - 博客标题 - 博客副标题
 title
@@ -21,7 +24,7 @@ if theme.blog_pic
   | !{ favicon_tag(theme.blog_pic) }
 
 //- link css 引入css
-| !{ css('css/style') }
+| !{ css({href: 'css/style', id: 'dm-light'}) }
 //- icon library 图标库
 | !{ css('https://cdn.bootcdn.net/ajax/libs/font-awesome/6.4.2/css/all.min.css') }
 
@@ -29,3 +32,8 @@ if theme.blog_pic
 //- page view counting 统计网站浏览量数据
 if theme.page_view.enable
   | !{ js({src:'//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js', async: true}) }
+
+//- aplayer 音乐播放器
+if theme.aplayer.enable
+  | !{ css('css/third-party/APlayer.min') }
+  | !{ js('js/third-party/APlayer.min') }

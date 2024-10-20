@@ -60,7 +60,18 @@
       white-space: nowrap
       overflow: hidden
 
+.post-excerpt
+  margin: 1em 0
+
 .post-excerpt[excerpt-title-simplify=true]
   h1,h2,h3,h4,h5,h6
     font-size: default-font-size
     margin: 1em 0
+
+@media screen and (max-width: 768px)
+  .index-post-item
+    h1
+      font-size: article-title2-font-size
+  .post-excerpt[excerpt-title-simplify=true]
+    h1,h2,h3,h4,h5,h6
+      font-size: default-font-size-smaller

@@ -6,7 +6,7 @@ if !(undefined != post.toc && !post.toc)
           i.fa-solid.fa-paw
           | #{ __('menu.toc') }
 
-      .toc-container
-        | !{ toc(post.content, { class: 'toc-content', list_number: theme.toc.list_number, max_depth:theme.toc.max_depth}) }
+      .toc-container#toc-body
+        | !{ toc(post.encrypt ? post.origin : post.content, { class: 'toc-content', list_number: theme.toc.list_number, max_depth: theme.toc.max_depth, max_items: theme.toc.max_items}) }
 
     .toc-blank( onclick= "tocToggle()" )

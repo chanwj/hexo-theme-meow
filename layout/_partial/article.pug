@@ -28,6 +28,9 @@ article.post
       if theme.page_view.post_pv
         | !{ partial('_partial/pageview/pageview-post') }
 
+  //- determine whether to indent the first line of paragraph by 2em 判断是否需要段落首行缩进两字符
+  - var text_indent = (theme.text_indent.enable && (post.indent == undefined || post.indent)) || (!theme.text_indent.enable && (post.indent)) ? true.toString() : false
+  
   //- fiction has its own layout content 小说类型的文章有特别的展示内容
   if post.type === 'fiction'
     if post.meta_show
@@ -82,7 +85,7 @@ article.post
               span= post.meta_info.warning
 
     if (post.summary || post.notes_before)
-      .fiction-before-content
+      .fiction-before-content(text-indent=text_indent)
         if post.summary
           .fiction-summary
             h4= __('fiction.summary')
@@ -94,21 +97,21 @@ article.post
             | !{ markdown(post.notes_before) }
 
   //- article's content 文章内容
-  .post-content
+  .post-content(text-indent=text_indent)
     | !{ post.content }
   
   if post.type === 'fiction'
     if post.status
       .fiction-status
         | ～ 
-        if post.status === 'complete'
-          | #{ __('fiction.status.complete') }
-        else
+        if post.status === 'N' || post.status === 'inProgress'
           | #{ __('fiction.status.in_progress') }
+        else
+          | #{ __('fiction.status.complete') }
         |  ～
 
     if post.notes_after
-      .fiction-notes-after
+      .fiction-notes-after(text-indent=text_indent)
         h4= __('fiction.notes')
         | !{ markdown(post.notes_after) }
 

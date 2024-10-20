@@ -14,7 +14,7 @@ meta_info:
   character: # stay blank if you don't want to show characters info
   rating: # General | Teen | Mature | Explicit | stay blank if you don't want to show rating
   warning: # Anything that audiences should know before reading | stay blank if you don't want to show warnings
-status: # complete | inProgress | stay blank if you don't want to show status
+status: # Y | N | stay blank if you don't want to show status
 summary: # stay blank if you don't want to show summary. Markdown available.
 notes_before: # Anything you want to show at the beginning. Markdown available.
 notes_after: # Anything you want to show at the end. Markdown available.

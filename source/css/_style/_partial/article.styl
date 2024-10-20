@@ -88,6 +88,10 @@
     color: white
     box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.125)
 
+.post-content[text-indent=true]
+  p
+    text-indent: 2em
+
 .fiction-meta
   margin: 15px 0
   padding: 15px 20px
@@ -140,6 +144,10 @@
   border-bottom: 2px solid transparent
   border-image: linear-gradient(to right, rgba(31, 18, 53, 0.1), rgba(31, 18, 53, 0.35), rgba(31, 18, 53, 0.1)) 1
 
+  &[text-indent=true]
+    p
+      text-indent: 2em
+
 .fiction-summary
   margin: 20px 0 30px
 
@@ -159,13 +167,14 @@
   border-top: 2px solid transparent
   border-image: linear-gradient(to right, rgba(31, 18, 53, 0.1), rgba(31, 18, 53, 0.35), rgba(31, 18, 53, 0.1)) 1
 
-  // blockquote
-  //   background-color: code-light
-  //   border-left: 10px solid code-normal
+  &[text-indent=true]
+    p
+      text-indent: 2em
 
 @media screen and (max-width: 768px)
   .fiction-meta-item
     flex-flow: column nowrap
+    font-size: info-font-size-smaller
 
   .fiction-meta-key
     width: auto
@@ -174,4 +183,10 @@
   .fiction-meta-value
     flex: initial
     margin-top: 5px
-    text-indent: 1em
+    margin-left: 1em
+  
+  .post-info
+    font-size: info-font-size-smaller
+  
+  .post-title h1
+    font-size: article-title1-font-size

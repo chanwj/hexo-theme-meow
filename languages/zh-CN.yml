@@ -9,18 +9,20 @@ menu:
   home: 主页
   toc: 目录
   settings: 设置
+  comment: 评论
+  darkmode: 深色模式
 
 # 网站信息
 # 此处的配置仅影响页内展示，不影响网页meta
 blog_info:
   title: MEOW
   subtitle: 可爱明亮的Hexo主题
-  description: Hexo主题「Meow」展示站。本主题优化了原创小说、同人作品的发布适配性，也适用于教程分享、日常记录等用途。
+  description: Hexo主题「Meow」展示站。本主题尤其适用于发布原创小说、同人二创等文学作品。
 
 # 文章相关显示值
 article:
   read_more: 阅读全文
-  word_count: 全文约%d字
+  word_count: 全文约%s字
   copyright: 版权声明
   copyright_desc: 署名-非商业性使用-禁止演绎 4.0
   # 关于文章赞赏支持的说明，支持Markdown语法
@@ -58,7 +60,7 @@ search:
 page_view:
   site_pv: 总访问量
   site_uv: 总访客数
-  post_pv: 本文阅读次数
+  post_pv: 阅读次数
 
 # fiction类型的文章相关显示值
 fiction:
@@ -89,7 +91,7 @@ about:
     # 介绍博客，支持Markdown语法
     introduction: '- 「Meow」是一款可应用于Hexo博客框架的主题，源码已在[Github](https://github.com/chanwj/hexo-theme-meow)上公开。
     
-    - 本主题风格可爱，色彩明亮，希望大家看到就能拥有一份好心情~
+    - 本主题风格可爱，色彩明亮，希望大家看到就能拥有一份好心情～
     
     - 除了支持博客的基本用途之外，本主题还针对文学创作进行了优化，让各位作者大大可以更方便地使用模板发表原创小说、同人作品。
     
@@ -105,4 +107,8 @@ about:
     title: 赞赏
     # 关于赞赏支持的说明，支持Markdown语法
     description: 如果这个主题对您有帮助，欢迎扫码赞赏作者~各位的鼓励与支持是我持续创作的动力，谢谢&#128151;
+  credits:
+    title: 致谢
+    # 致谢词，支持Markdown语法
+    description: '感谢这些朋友的大力支持～比心&#128149;<br/><span style="font-size: 16px; color: grey">注：字体加粗=重要贡献，下划线=打赏支持</span>'
 

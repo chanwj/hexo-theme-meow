@@ -5,11 +5,14 @@ $root-path = hexo-config('root')
 max-page-width = 1080px
 
 // font-family
-default-font-family = 'Noto Serif', 'Noto Serif SC', Sans-serif, Serif
-code-font = 'Lucida Console', Monaco, monospace, 'Courier New', Courier, Sans-serif, Serif
+default-font-family = 'PingFang SC', 'Microsoft YaHei', Sans-serif, Serif
+if hexo-config('font.font_family')
+  default-font-family = unquote(hexo-config('font.font_family'))
+code-font = 'Lucida Console', Courier, 'PingFang SC', 'Microsoft YaHei', Monaco,'Courier New', Sans-serif, Serif, monospace
 
 // font-size
 default-font-size = 18px
+default-font-size-smaller = 16px
 article-title-font-size = 28px
 article-title1-font-size = 26px
 article-title2-font-size = 24px
@@ -17,10 +20,12 @@ article-title3-font-size = 22px
 article-title4-font-size = 20px
 article-title5-font-size = 18px
 article-title6-font-size = 18px
-header-item-font-size = 19px
+header-item-font-size = 20px
+header-item-font-size-smaller = 18px
 info-font-size = 16px
 info-font-size-normal = 16px
 info-font-size-larger = 17px
+info-font-size-smaller = 16px
 code-font-size = 16px
 code-line-number-font-size = 16px
 footer-font-size = 15px
@@ -48,9 +53,13 @@ yellow-normal = #FFCF2F
 yellow-light = #ffdf6a
 purple-normal = #67568c
 green-normal = #50a14f
+green-light = #B8E05A
+green-fresh = #A4CF3E
+green-dark = #809B3E
 cream = #fef1e1
 code-light = #f0f0f0
 code-normal = #e9e9e9
+code-dark = #E4E4E4
 quote-background = #fff7dc
 text-black = #1f1235
 text-black-light = #4e4a55
@@ -59,6 +68,25 @@ text-grey-light = #b1b1b1
 border-grey = #cccccc
 shadow-grey = #d7d7d7
 icon-grey = #b0b0b0
+blue-light = #A3DCF3
+blue-normal = #78CCEF
+background-dark-light = rgba(78, 74, 85, 0.4)
+background-dark = rgb(43, 41, 46)
+background-dark-lighter = rgba(135, 135, 135, 0.4)
 
 // container
 header-height = 50px
+
+// site background
+site-background-color = yellow-light
+site-background-image = ''
+site-background-gradient = linear-gradient(to bottom right,#ffa751,#ffe259)
+if hexo-config('background.type') == 1
+  if hexo-config('background.image_url')
+    site-background-image = hexo-config('background.image_url')
+else if hexo-config('background.type') == 2
+  if hexo-config('background.color')
+    site-background-color = unquote(hexo-config('background.color'))
+else
+  if hexo-config('background.gradient')
+    site-background-gradient = unquote(hexo-config('background.gradient'))

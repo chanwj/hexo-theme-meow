@@ -1,13 +1,27 @@
 #tool-bar
-  //- tools toggle button 工具栏显示开关
-  #tool-toggle( onclick= "toolToggle()", title= __('menu.settings') )
-    i.fa-solid.fa-gear
+  #tool-bar-main
+    //- more functions toggle button 更多功能开关按钮
+    #tool-toggle( onclick= "toolToggle()", title= __('menu.settings') )
+      i.fa-solid.fa-gear
 
-  //- TOC switch TOC显示开关
-  if (is_post() && theme.toc.enable && !(undefined != page.toc && !page.toc))
-    #toc-toggle( onclick= "tocToggle()", title= __('menu.toc') )
-      i.fa-solid.fa-list-ul
-  
-  //- back to top button 返回顶部
-  #back-to-top( onclick= "scrollToTop()", title= __('navigation.back_to_top') )
-    i.fa-solid.fa-chevron-up
+    //- TOC switch TOC开关
+    if (is_post() && theme.toc.enable && !(undefined != page.toc && !page.toc))
+      #toc-toggle( onclick= "tocToggle()", title= __('menu.toc') )
+        i.fa-solid.fa-list-ul
+    
+    //- go to comment 跳转至评论区
+    if (is_post() && theme.comment.post_enable && page.comments) || (page.layout == 'about' && theme.comment.about_enable)
+      #go-to-comment( onclick= "gotoComment()", title= __('menu.comment') )
+        i.fa-regular.fa-message.fa-flip-horizontal
+    
+    //- back to top button 返回顶部
+    #back-to-top( onclick= "scrollToTop()", title= __('navigation.back_to_top') )
+      i.fa-solid.fa-chevron-up
+
+  //- "more functions" module "更多工具"模块
+  if theme.tool_bar.more_tools
+    #tool-bar-more(style="display: none;")
+      //- darkmode switch 深色模式开关
+      if theme.darkmode.enable
+        #darkmode-switch( onclick= "darkmodeSwitch()", title= __('menu.darkmode') )
+          i.fa-solid.fa-circle-half-stroke

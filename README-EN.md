@@ -1,8 +1,8 @@
 # Hexo Theme Meow
 
-Language: [简体中文](README.md) | English
+<b>Language: [简体中文](README.md) | English</b>
 
-**Meow** is a cute and bright Hexo theme. It optimizes the adaptability of original novel and fanfiction. It is also suitable for tutorial sharing, daily recording, and other purposes.
+**Meow** is a cute and bright Hexo theme. It optimizes the adaptability of original novel and fanfiction.
 
 ![Meow](https://chanwj.github.io/images/theme-preview.png)
 
@@ -52,12 +52,28 @@ npm install hexo-renderer-pug --save
 - Generate excerpt for each article
 - Free to decide whether to generate toc for every article
 - Floating toolbar
-- Configurable reward module
-- Integrate multiple function switches, customize them as needed
+- Configurable reward module & credits module
+- Darkmode
+- Support for comment
+- Support for post encryption
+- Support for APlayer
+- Built-in 404 page
+- Integrate multiple function switches, highly customizable configuration
+
+<br/>
+
+## 📋 Changelog
+
+Get the specific update content of each version, including new features, fixes and improvements.
+
+- **[Changelog](Changelog.md)**
+
+<br/>
 
 ## ⏳️ TO DO
 
-- [ ] Install more toolbar functions（e.g. dark mode）
-- [ ] Add function: copy codes with one click
-- [ ] Add support for photos gallery
+- [ ] More toolbar functions
+- [ ] Function: Copy codes with one click
+- [ ] Support for photos gallery
+- [ ] Function: Top posts.
 - [ ] ...

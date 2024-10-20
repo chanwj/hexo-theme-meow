@@ -1,6 +1,10 @@
 //- post page's content 文章内容
 | !{ partial('_partial/article', {post: page}) }
 
+//- Comment zone 评论区
+if theme.comment.post_enable && page.comments
+  | !{ partial('_partial/comment') }
+
 //- TOC module TOC导航栏
 if theme.toc.enable
   | !{ partial('_partial/post/toc', {post: page}) }

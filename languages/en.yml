@@ -9,18 +9,20 @@ menu:
   home: Home
   toc: TOC
   settings: Settings
+  comment: Comment
+  darkmode: Darkmode
 
 # site information
 # only affects on page display and does not affect webpage meta
 blog_info:
   title: MEOW
   subtitle: A Cute and Bright Hexo Theme
-  description: 'Preview of Meow: a cute and bright theme for Hexo blog. It optimizes the adaptability of original novel and fanfiction. It is also suitable for tutorial sharing, daily recording, and other purposes.'
+  description: 'Preview of Meow: a cute and bright theme for Hexo blog. It optimizes the adaptability of original novel and fanfiction.'
 
 # posts related item
 article:
   read_more: Read More
-  word_count: About %d words
+  word_count: About %s words
   copyright: Copyright
   copyright_desc: BY-NC-ND 4.0
   # description of reward for posts, Markdown available
@@ -32,7 +34,7 @@ article:
 navigation:
   back_to_top: Back To Top
   back_to_home: Back To Home
-  menu_toggle: Toggle Menu
+  menu_toggle: Open Menu
 
 # pagination item
 pagination:
@@ -105,4 +107,8 @@ about:
     title: Rewards
     # description of reward for the author or the site, Markdown available
     description: If this theme is helpful to you, welcome to scan the QR Code to reward the author. Your encouragement and support are very important for my continuous creation. Thank you!&#128151;
+  credits:
+    title: Credits
+    # to express gratitude, Markdown available
+    description: 'Thanks so much for the strong support from these friends! &#128149;<br/><span style="font-size: 16px; color: grey">(p.s. bold = important contributions, underlined = gave reward)</span>'
 

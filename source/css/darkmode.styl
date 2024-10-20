@@ -1,0 +1,212 @@
+@import '_style/_default/global-settings'
+
+body.dm-dark
+  background-color: black
+  color: rgb(224, 224, 224)
+
+  .main-content
+    background: background-dark-light
+  
+  a
+    color: orange-low-saturation
+
+    &:hover
+      color: orange-middle
+  
+  h1,h2,h3,h4,h5,h6
+    color: orange-low-saturation
+  
+  hr
+    border-image: linear-gradient(to right, rgba(141, 141, 141, 0.1), rgba(141, 141, 141, 0.35), rgba(141, 141, 141, 0.1)) 1
+  
+  details
+    summary
+      background-color: background-dark-lighter
+
+    &[open]
+      background-color: background-dark-lighter
+
+      summary
+        background-color: background-dark-light
+
+  .blog-title
+    color: orange-low-saturation
+  
+  .blog-desc
+    color: rgb(224, 224, 224)
+  
+  .index-post-item
+    border-image: linear-gradient(to right, rgba(141, 141, 141, 0.1), rgba(141, 141, 141, 0.35), rgba(141, 141, 141, 0.1)) 1
+
+    h1
+      a
+        color: orange-low-saturation
+
+        &:hover
+          color: orange-middle
+    
+    .read-more
+      background-color: orange-dark
+
+      &:hover
+        background-color: orange-low-saturation
+
+  .pagination
+    a
+      color: text-grey
+  
+  .footer-content
+    color: text-grey-light
+  
+  .copyright-info a
+    color: text-grey-light
+  
+    &:hover
+      color: white
+      background-color: text-grey-light
+  
+  #register_link
+    color: text-grey-light
+  
+  #tool-bar-main, #tool-bar-more
+    background-color: text-black-light
+    border-color: background-dark-lighter
+
+    div:hover
+      color: orange-middle
+  
+  header
+    background-color: background-dark
+
+  .nav-info #nav-title
+    color: orange-low-saturation
+
+    &:hover
+      color: orange-middle
+  
+  .top-menu-expanded
+    .top-menu-item
+      color: orange-low-saturation
+
+      &:hover
+        color: orange-middle
+  
+  #top-menu-hidden .menu-hidden-content
+    background-color: background-dark-light
+
+    .menu-hidden-item
+      background-color: background-dark
+      border-color: background-dark-lighter
+
+  .search-container
+    background-color: background-dark
+  
+  .search-head
+    color: orange-low-saturation
+  
+  #search-result em
+    color: orange-low-saturation
+  
+  .article-item a, .post-copyright a, .post-prev a, .post-next a
+    color: text-grey-light
+  
+  .categories-item
+    color: rgb(224, 224, 224)
+
+    &:hover
+      color: white
+  
+  .page-not-found a
+    color: white
+  
+  .about-container h1
+    border-image: linear-gradient(to right, rgba(141, 141, 141, 0.1), rgba(141, 141, 141, 0.35), rgba(141, 141, 141, 0.1)) 1
+
+  .about-keywords-tag
+    background-color: background-dark-lighter
+    box-shadow: none
+  
+  .contact-item
+    a
+      color: rgb(224, 224, 224)
+    
+    &:hover
+      background-color: orange-low-saturation
+  
+  .links-item
+    color: rgb(224, 224, 224)
+    border-color: text-black-light
+
+    .links-item-title
+      background-color: background-dark-lighter
+  
+  .about-credits-list
+    background-color: background-dark-lighter
+  
+  figure.highlight
+    background-color: background-dark-lighter
+
+    figcaption
+      color: rgb(224, 224, 224)
+      background-color: rgba(135, 135, 135, 0.5)
+    
+    ::-webkit-scrollbar-thumb
+      background-color: background-dark-lighter
+    
+    @-moz-document url-prefix()
+      scrollbar-color: background-dark-lighter transparent
+  
+  code
+    background-color: background-dark-lighter
+    color: rgb(224, 224, 224)
+  
+  blockquote
+    color: text-black
+  
+  blockquote.light
+    color: rgb(224, 224, 224)
+
+  thead
+    background-color: background-dark-lighter
+    color: rgb(224, 224, 224)
+  
+  .reward-container
+    background-color: background-dark
+    border-color: background-dark-lighter
+  
+  *::-webkit-scrollbar-thumb
+    background-color: background-dark-lighter
+
+  *::-webkit-scrollbar-track
+    background-color: background-dark-light
+
+  // scrollbar for firefox
+  @-moz-document url-prefix()
+    *
+      scrollbar-color: background-dark-lighter code-light
+      scrollbar-width: thin
+  
+  #post-toc
+    background-color: background-dark-light
+
+    .toc-title
+      color: text-grey-light
+    
+    a
+      color: text-grey-light
+    
+    @media screen and (max-width: 1499px)
+      .toc-aside
+        background-color: rgba(78, 74, 85, 0.9)
+  
+  .fiction-meta
+    background-color: background-dark-lighter
+  
+  .fiction-meta-item:hover
+    background-color: background-dark
+  
+  .fiction-meta-key
+    color: rgb(224, 224, 224)
+  
+  .fiction-before-content, .fiction-notes-after
+    border-image: linear-gradient(to right, rgba(141, 141, 141, 0.1), rgba(141, 141, 141, 0.35), rgba(141, 141, 141, 0.1)) 1

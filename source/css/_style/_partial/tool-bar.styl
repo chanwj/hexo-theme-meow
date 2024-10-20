@@ -3,20 +3,22 @@
   font-size: 20px
   line-height: 20px
   position: fixed
-  right 5px
+  right: 5px
   bottom: 5px
-  padding: 10px 8px 8px 8px
+  animation: showup 1s
+
+#tool-bar-main
+  float: right
+  padding: 8px
   background-color: code-light
   border: 0.5px solid rgba(204, 204, 204, 0.4)
   border-radius: 10px
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.125)
-  animation: showup 1s
-  // display: none
 
   div
     width: 20px
     height: 20px
-    margin-top: 8px
+    margin-top: 6px
 
     &:first-child
       margin-top: 0
@@ -36,3 +38,24 @@
 
     &:hover
       animation: spin 1.5s ease-in-out infinite
+
+#tool-bar-more
+  float: right
+  margin-right: 2px
+  padding: 8px
+  background-color: code-light
+  border: 0.5px solid rgba(204, 204, 204, 0.4)
+  border-radius: 10px
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.125)
+
+  div
+    width: 20px
+    height: 20px
+    margin-top: 6px
+
+    &:first-child
+      margin-top: 0
+    
+    &:hover
+      color: orange-fresh
+      cursor: pointer

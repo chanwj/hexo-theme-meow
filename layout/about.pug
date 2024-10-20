@@ -105,3 +105,19 @@
           .about-reward-item
             img.about-reward-img(src= url_for(theme.reward.QR_code[reward_item]), title= reward_item, alt= reward_item)
             span= reward_item
+
+  if theme.credits.enable
+    .about-credits
+      h1
+        i.fa-solid.fa-paw
+        | #{ __('about.credits.title') }
+      
+      .about-credits-desc
+        | !{ markdown(__('about.credits.description')) }
+      
+      .about-credits-list
+        | !{ markdown(theme.credits.credits_list) }
+
+//- Comment zone 评论区
+if theme.comment.about_enable
+  | !{ partial('_partial/comment') }

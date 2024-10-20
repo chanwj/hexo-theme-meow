@@ -4,7 +4,15 @@
       span= post.title
 
     .article-item-preview
-      span= strip_html(truncate(post.content, {length: 130}))
+      - let content = ""
+      if post.excerpt
+        - content= strip_html(post.excerpt)
+      else if post.summary
+        - content= strip_html(markdown(post.summary))
+      else
+        - content= strip_html(post.content)
+      
+      span= truncate(content, {length: 75})
     
     .article-item-hover
       span= date(post.date)

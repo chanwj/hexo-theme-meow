@@ -1,9 +1,36 @@
 html
-  background-color: yellow-light
-  // background-image: linear-gradient(to bottom right,#ffa751,#ffe259)
+  // scrollbar for chrome
+  *::-webkit-scrollbar
+    width: 10px
+
+  *::-webkit-scrollbar-thumb
+    background-color: border-grey
+    border-radius: 30px
+
+  *::-webkit-scrollbar-thumb:hover
+    background-color: yellow-normal
+
+  *::-webkit-scrollbar-thumb:active
+    background-color: orange-middle
+
+  *::-webkit-scrollbar-track
+    background-color: code-light
+
+  // scrollbar for firefox
+  @-moz-document url-prefix()
+    *
+      scrollbar-color: orange-normal code-light
+      scrollbar-width: thin
+  
   scroll-behavior: smooth
 
 body
+  if hexo-config('background.type') == 1
+    background-image: url($root-path + site-background-image)
+  else if hexo-config('background.type') == 3
+    background-image: site-background-gradient
+  else
+    background-color: site-background-color
   margin: 0
   padding: 0
   font-size: default-font-size
@@ -27,3 +54,7 @@ body
       border-radius: 20px
       margin: 0 auto
       padding: 20px 0 40px
+
+@media screen and (max-width: 768px)
+  body
+    font-size: default-font-size-smaller

@@ -1,3 +1,29 @@
+//- send needful configuration values to script 向script传入需要的配置值
+script.
+  const GLOBAL_CONFIG = {
+    comment: { theme: '#{theme.comment.data_theme}'}
+  }
+
+//- darkmode 深色模式
+if theme.darkmode.enable
+  | !{ js('js/third-party/darkmode') }
+
+  script.
+    var options = {
+      dark: '#{url_for("/css/darkmode.css")}',
+      startAt: '#{theme.darkmode.start_at}',
+      endAt: '#{theme.darkmode.end_at}',
+      checkSystemScheme: '#{theme.darkmode.check_system_scheme}',
+      saveOnToggle: '#{theme.darkmode.save_on_toggle}'
+    };
+    var darkMode = new DarkMode(options);
+    // change comment theme synchronously 同步修改评论区主题
+    if (darkMode.getMode() == "dark" && (#{theme.comment.post_enable} || #{theme.comment.about_enable})) {
+      if (document.getElementById('comment')) {
+        document.getElementById('comment').getElementsByTagName('script')[0].setAttribute('data-theme', 'noborder_dark');
+      }
+    }
+
 | !{ js('js/theme/tool-bar') }
 | !{ js('js/theme/menu') }
 
@@ -11,9 +37,11 @@ if theme.search.enable
   | !{ js('js/theme/search') }
   
   script.
-    var search_path = '#{config.search.path}';
-    if (search_path.length == 0) {
-      search_path = "search.xml";
-    }
-    var path = '#{config.root}' + search_path;
-    searchFunc(path, 'search-input', 'search-result');
+    searchFunc('#{url_for(config.search.path)}', 'search-input', 'search-result');
+
+//- APlayer 音乐播放器
+if (theme.aplayer.enable && theme.toc.enable)
+  | !{ js('js/theme/toc') }
+  //- Since APlayer conflicts with TOC function, it is necessary to decode URLs from TOC 因为APlayer与TOC功能冲突，需要额外对TOC链接进行解码才能正常跳转
+  script.
+    decodeToc();

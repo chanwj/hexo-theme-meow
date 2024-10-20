@@ -20,7 +20,7 @@ article.index-post-item
       | !{ markdown(post.summary) }
     else
       //- generate excerpt automatically if no excerpt 如果没有可用的摘要则自动生成摘要
-      | !{ truncate(post.content, {length: 200}) }
+      | !{ truncate(post.content, {length: 250}) }
     
   //- read more button "阅读全文"按钮
   .read-more

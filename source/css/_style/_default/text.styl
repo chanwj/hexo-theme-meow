@@ -5,7 +5,7 @@ a:hover
   color: orange-fresh
 
 p
-  line-height: 1.5em
+  line-height: 1.6em
   text-align: justify
   vertical-align: baseline
 
@@ -41,23 +41,35 @@ hr
   border-image: linear-gradient(to right, rgba(31, 18, 53, 0.1), rgba(31, 18, 53, 0.35), rgba(31, 18, 53, 0.1)) 1
 
 blockquote
-  margin: 16px 0
-  padding: 6px 10px 6px 8px
+  margin: 15px 0
+  padding: 6px 12px
   background-color: quote-background
   // border-radius: 10px
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1)
   border-left: 10px solid yellow-light
+  line-height: 2em
 
-  p
-    margin: 1em 5px
-    line-height: 2em
-
-blockquote.ql
+blockquote.light
   background-color: transparent
   box-shadow: none
   border-left-color: shadow-grey
   color: text-grey
-  line-height: 2em
+
+blockquote.pink
+  background-color: pink-light
+  border-left-color: pink-normal
+
+blockquote.red
+  background-color: red-fresh
+  border-left-color: red-dark
+
+blockquote.blue
+  background-color: blue-light
+  border-left-color: blue-normal
+
+blockquote.green
+  background-color: green-light
+  border-left-color: green-fresh
 
 ul
   padding-left: 1em
@@ -67,14 +79,19 @@ ol
   padding-left: 1em
   line-height: 1.8em
 
-input[type='checkbox']:disabled{
+input[type='checkbox']:disabled
   width: 15px
   height: 15px
-}
 
 table
   margin: 1.5em 0
   border-collapse: collapse;
+  width: 100%
+
+  ul, ol
+    padding-left: 25px
+    line-height: normal
+    margin: 0
 
 th, td
   vertical-align: middle;
@@ -84,4 +101,28 @@ th, td
 thead
   background-color: text-black-light
   color: white
+
+.table-center
+  width: 100%
+  overflow-x: auto
+
+details
+  margin: 10px auto
+
+  summary
+    border-radius: 10px
+    background-color: code-light
+    padding: 10px 20px
+    font-weight: bold
+
+    &:hover
+      color: orange-middle
   
+  &[open]
+    padding: 10px 20px
+    background-color: code-light
+    border-radius: 10px
+
+    summary
+      padding: 0
+      text-decoration: underline
