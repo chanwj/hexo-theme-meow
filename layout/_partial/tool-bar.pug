@@ -25,3 +25,10 @@
       if theme.darkmode.enable
         #darkmode-switch( onclick= "darkmodeSwitch()", title= __('menu.darkmode') )
           i.fa-solid.fa-circle-half-stroke
+      
+      //- increase or decrease font size of post 增大或减小文章字体
+      if is_post() && theme.tool_bar.setting_font_size
+        #font-size-increase( onclick= "fontSizeIncrease()", title= __('menu.font_size_increase') )
+          i.fa-solid.fa-plus
+        #font-size-decrease( onclick= "fontSizeDecrease()", title= __('menu.font_size_decrease') )
+          i.fa-solid.fa-minus

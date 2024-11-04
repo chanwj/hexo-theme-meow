@@ -6,9 +6,9 @@ footer
       i.fa-regular.fa-copyright.fa-xs
       - let current_year = date(Date.now(), "YYYY");
       if current_year != theme.since_year
-        span= theme.since_year + ' - ' + current_year
+        span= theme.since_year + ' - ' + current_year + ' '
       else
-        span= theme.since_year
+        span= theme.since_year + ' '
       a(href= url_for('/about'))= config.author
       i.fa-solid.fa-cat.fa-sm
       span= 'Powered by '

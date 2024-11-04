@@ -24,11 +24,24 @@ if theme.darkmode.enable
       }
     }
 
+//- get current font size in local storage 在本地存储中获取文章当前字体大小
+if is_post() && theme.tool_bar.setting_font_size
+  script.
+    if (localStorage.getItem('font-size')) {
+      document.querySelector('.post-content').style.fontSize = localStorage.getItem('font-size') + 'px';
+    }
+
 | !{ js('js/theme/tool-bar') }
 | !{ js('js/theme/menu') }
 
+//- clipboard 剪贴板
+| !{ js('js/third-party/clipboard.min') }
+| !{ js('js/theme/copy') }
+script.
+  copyCode();
+
 //- reward function 奖赏功能
-if theme.reward.enable
+if theme.reward.enable && is_post()
   | !{ js('js/theme/reward') }
 
 //- search function 搜索功能
@@ -40,7 +53,7 @@ if theme.search.enable
     searchFunc('#{url_for(config.search.path)}', 'search-input', 'search-result');
 
 //- APlayer 音乐播放器
-if (theme.aplayer.enable && theme.toc.enable)
+if page.music && theme.toc.enable && (page.toc == undefined || page.toc)
   | !{ js('js/theme/toc') }
   //- Since APlayer conflicts with TOC function, it is necessary to decode URLs from TOC 因为APlayer与TOC功能冲突，需要额外对TOC链接进行解码才能正常跳转
   script.

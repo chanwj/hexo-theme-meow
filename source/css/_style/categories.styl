@@ -13,26 +13,49 @@
     margin-right 5px
 
   &:hover
-    // color: orange-fresh
     background: rgba(255, 182, 79, 0.6)
 
 .categories-item-count
   margin-left: 5px
-//   vertical-align: super
-//   font-size: superscript-font-size
 
 .categories-list-container-helpers
   margin: 18px auto
   font-size: article-title5-font-size
-  color: orange-low-saturation
 
-  a
-    color: orange-low-saturation
+.category-list
+  list-style: none
+  line-height: 2em
+  padding-left: 0
 
-    &:hover
-      color: orange-fresh
-      text-decoration: underline
+.category-list-item::before
+    content: "\2013"
+    margin-right: 5px
+
+.category-list-link
+  display: inline-block
+  width: calc(100% - 50px - 20px)
+  padding-left: 5px
+  border-radius: 10px
+
+  &:hover
+    background: rgba(255, 223, 106, 0.6)
+    transition: background 0.5s ease-out
+    -moz-transition: background 0.5s ease-out
+    -webkit-transition: background 0.5s ease-out
+    -o-transition: background 0.5s ease-out
 
 .category-list-count
-  vertical-align: super
-  font-size: superscript-font-size
+  color: text-grey-light
+  background-color: code-light
+  width: 40px
+  border-radius: 20px
+  text-align: center
+  font-size: default-font-size-smaller
+  line-height: 1em
+  margin: 6px 0
+  padding: 2px 2px
+  float: right
+
+.category-list-child
+  list-style: none
+  padding-left: 2em

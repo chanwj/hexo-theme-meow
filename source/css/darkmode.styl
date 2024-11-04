@@ -1,8 +1,13 @@
 @import '_style/_default/global-settings'
 
 body.dm-dark
-  background-color: black
-  color: rgb(224, 224, 224)
+  background: black
+  background-image: none
+  color: darkmode-text
+  transition: background 0.5s ease-out
+  -moz-transition: background 0.5s ease-out
+  -webkit-transition: background 0.5s ease-out
+  -o-transition: background 0.5s ease-out
 
   .main-content
     background: background-dark-light
@@ -33,7 +38,7 @@ body.dm-dark
     color: orange-low-saturation
   
   .blog-desc
-    color: rgb(224, 224, 224)
+    color: darkmode-text
   
   .index-post-item
     border-image: linear-gradient(to right, rgba(141, 141, 141, 0.1), rgba(141, 141, 141, 0.35), rgba(141, 141, 141, 0.1)) 1
@@ -111,10 +116,19 @@ body.dm-dark
     color: text-grey-light
   
   .categories-item
-    color: rgb(224, 224, 224)
+    color: darkmode-text
 
     &:hover
       color: white
+  
+  .category-list a
+    color: darkmode-text
+
+    &:hover
+      color: white
+  
+  .category-list-count
+    background-color: background-dark-lighter
   
   .page-not-found a
     color: white
@@ -128,13 +142,13 @@ body.dm-dark
   
   .contact-item
     a
-      color: rgb(224, 224, 224)
+      color: darkmode-text
     
     &:hover
       background-color: orange-low-saturation
   
   .links-item
-    color: rgb(224, 224, 224)
+    color: darkmode-text
     border-color: text-black-light
 
     .links-item-title
@@ -147,7 +161,7 @@ body.dm-dark
     background-color: background-dark-lighter
 
     figcaption
-      color: rgb(224, 224, 224)
+      color: darkmode-text
       background-color: rgba(135, 135, 135, 0.5)
     
     ::-webkit-scrollbar-thumb
@@ -158,17 +172,20 @@ body.dm-dark
   
   code
     background-color: background-dark-lighter
-    color: rgb(224, 224, 224)
+    color: darkmode-text
+  
+  #copyCodeBtn:hover
+    color: darkmode-text
   
   blockquote
     color: text-black
   
   blockquote.light
-    color: rgb(224, 224, 224)
+    color: darkmode-text
 
   thead
     background-color: background-dark-lighter
-    color: rgb(224, 224, 224)
+    color: darkmode-text
   
   .reward-container
     background-color: background-dark
@@ -206,7 +223,19 @@ body.dm-dark
     background-color: background-dark
   
   .fiction-meta-key
-    color: rgb(224, 224, 224)
+    color: darkmode-text
   
   .fiction-before-content, .fiction-notes-after
     border-image: linear-gradient(to right, rgba(141, 141, 141, 0.1), rgba(141, 141, 141, 0.35), rgba(141, 141, 141, 0.1)) 1
+
+  .linkcard-item
+    &:hover
+      background-color: background-dark-lighter
+
+    a
+      color: darkmode-text
+
+      &:hover
+        color: darkmode-text
+  .linkcard-item-icon
+    color: darkmode-text

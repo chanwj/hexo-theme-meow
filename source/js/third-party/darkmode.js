@@ -201,16 +201,16 @@
 
       // If custom styles existed – process it
       if (enabledMode == 'dark') {
-        if (ifToggle)
-          Body.style.setProperty('animation', 'swtich-to-darkmode 0.5s ease-out forwards')
+        // if (ifToggle)
+          // Body.style.setProperty('animation', 'swtich-to-darkmode 0.5s ease-out forwards')
         var darkStyles = document.getElementById('dm-dark')
         if (!darkStyles)
           includeStyles('dm-dark', this.options[enabledMode])
         else if (!!darkStyles) darkStyles.removeAttribute('disabled')
         Body.classList.add('dm-dark')
       } else {
-        if (ifToggle)
-          Body.style.setProperty('animation', 'swtich-to-lightmode 0.5s ease-out forwards')
+        // if (ifToggle)
+          // Body.style.setProperty('animation', 'swtich-to-lightmode 0.5s ease-out forwards')
         var darkStyles = document.getElementById('dm-dark')
         if (!!darkStyles) darkStyles.setAttribute('disabled', true)
         Body.classList.remove('dm-dark')

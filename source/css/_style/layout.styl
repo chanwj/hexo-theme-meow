@@ -26,16 +26,21 @@ html
 
 body
   if hexo-config('background.type') == 1
-    background-image: url($root-path + site-background-image)
+    background: url($root-path + site-background-image)
   else if hexo-config('background.type') == 3
-    background-image: site-background-gradient
+    background: site-background-gradient
   else
-    background-color: site-background-color
+    background: site-background-color
+  transition: background 0.5s ease-out
+  -moz-transition: background 0.5s ease-out
+  -webkit-transition: background 0.5s ease-out
+  -o-transition: background 0.5s ease-out
   margin: 0
   padding: 0
   font-size: default-font-size
   font-family: default-font-family
   color: text-black
+  position: relative
 
   if(! hexo-config('selectable'))
     -webkit-user-select: none /* Safari */

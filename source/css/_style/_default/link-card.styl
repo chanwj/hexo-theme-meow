@@ -1,0 +1,71 @@
+.linkcard
+  margin: 15px 0
+  display: flex
+  flex-flow: row wrap
+  align-items: center
+
+.linkcard-item
+  width: 30%
+  padding: 10px
+  height: 60px
+  overflow: hidden
+  border: 1px border-grey dotted
+  border-radius: 8px
+  margin: 8px calc((10% - 6px) / 6 - 10px)
+
+  &:hover
+    background-color: code-light
+
+    .linkcard-item-desc
+      span
+        animation: scroll-text-horizontal 3s linear infinite
+
+  a
+    display: block
+    height: 100%
+    width: 100%
+    text-decoration: none
+    color: text-black
+    overflow: hidden
+
+    &:hover
+      color: text-black
+
+      .linkcard-item-icon
+        animation: fade 1.2s infinite
+      
+      .linkcard-item-title
+        text-decoration: underline
+
+.linkcard-item-icon
+  float: left
+  margin: 0 10px
+  width: 50px
+  font-size: 45px
+  line-height: 1em
+  color: text-black-light
+
+  i
+    margin: 7.5px auto
+  
+  img
+    width: 50px
+
+.linkcard-item-title
+  font-weight: bold
+  height: 25px
+  overflow: hidden
+
+.linkcard-item-desc
+  font-size: default-font-size-smaller
+  margin-top: 5px
+  overflow: hidden
+  height: 30px
+
+  span
+    display: inline-block
+    white-space: nowrap
+
+@media screen and (max-width: 768px)
+  .linkcard-item
+    width: 100%

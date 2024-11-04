@@ -11,6 +11,8 @@ menu:
   settings: 设置
   comment: 评论
   darkmode: 深色模式
+  font_size_increase: 放大字体
+  font_size_decrease: 缩小字体
 
 # 网站信息
 # 此处的配置仅影响页内展示，不影响网页meta
@@ -29,6 +31,7 @@ article:
   reward: 如果您喜欢这篇文章，欢迎赞赏支持作者，谢谢&#128151;
   previous_post: 上一篇文章
   next_post: 下一篇文章
+  top: '&#x1F4CC;**置顶**' # 支持Markdown语法
 
 # 导航相关
 navigation:
@@ -97,7 +100,7 @@ about:
     
     - 本站全方位地展示了这款主题的应用效果，并且发布了相关的安装配置指南，可供大家参考使用。'
     # 补充说明/备注，支持Markdown语法
-    supplement: '&#127775;<u>这是作者投入许多时间与精力制作而成的作品，如果您需要使用本主题，请保留页脚部分的主题版权信息，非常感谢！</u>'
+    supplement: '&#127775;<u>这是作者投入许多时间与精力制作而成的作品，如果您需要使用本主题，**请保留页脚部分的主题版权信息**，尊重作者与创作，这样也可以帮助更多有需要的人了解本主题，非常感谢！</u>'
   about_author:
     title: 关于作者
     description: 一只既写小说又敲代码的橘猫，是个糕手。

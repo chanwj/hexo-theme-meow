@@ -1,9 +1,14 @@
 article.index-post-item
   //- 文章标题
-  h1
-    a(href= url_for(post.path))
-      i.fa-solid.fa-paw
-      | #{ post.title }
+  .post-title-index
+    h1
+      a(href= url_for(post.path))
+        i.fa-solid.fa-paw
+        | #{ post.title }
+    
+    if post.sticky
+      .post-top
+        | !{ markdown(__('article.top'))}
 
   .post-head-info
     //- post's date info 文章日期相关信息
@@ -13,7 +18,7 @@ article.index-post-item
     | !{ partial('_partial/post/post-categories') }
 
   //- post's excerpt 文章摘要
-  .post-excerpt(excerpt-title-simplify= theme.excerpt_title_simplify.toString())
+  .post-excerpt(excerpt-simplify= theme.excerpt_simplify.toString())
     if post.excerpt
       | !{ post.excerpt }
     else if post.summary

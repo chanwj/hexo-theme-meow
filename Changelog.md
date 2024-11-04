@@ -2,6 +2,47 @@
 
 *Chinese Version & English Version*
 
+## 🐱v2.1.0
+Released at `2024-11-04`.
+
+### 🆕新增功能
+- 新增链接卡片标签，可用于链接外部页面、站内文章或文件下载，详见[链接卡片](https://chanwj.github.io/Meow-Theme-Guide/#链接卡片)介绍
+- 新增悬浮工具栏功能：可以放大/缩小文章正文字体
+- 新增功能：一键复制代码（使用clipboard.js）
+
+### ✅️问题修复
+- 修复切换深色模式时背景图片/渐变色不变的问题
+- 修复切回浅色模式时背景颜色会变成默认黄色的问题
+
+### ♾️优化项目
+- 优化分类页面显示效果，可以更清晰地看到分类的层级结构，并且可以配置是否显示文章数量、显示几层分类
+- 优化对APlayer的使用：改为在需要使用APlayer的页面Front-matter中配置开关，现在可以在“关于页”内引入音乐播放器了
+- 置顶的文章会在首页显示相应的置顶标签，可在语言文件中配置标签显示值
+- 优化资源引入，提升页面加载速度
+- 优化了一些代码结构与页面展示效果，增加了一些动态特效
+
+### 🆕New Features
+- Added tag for link card, support to link external page, site post or file to be downloaded. Read more in [Link Card](https://chanwj.github.io/en/Meow-Theme-Guide/#Link-Card).
+- Added function to toolbar: increase/decrease font size of post.
+- Added function: copy codes with one click (with clipboard.js).
+
+### ✅️Fixes
+- Fixed the issue of background image/gradient color remaining unchanged when switching to darkmode.
+- Fixed the issue of background color changing to yellow by default when switching back to lightmode.
+
+### ♾️Improvements
+- Improved the display effect of categories page, the hierarchies are more clear now. Configurable: show posts count, depth of categories to display.
+- Improved the usage of APlayer: change to configuring switches in Front-matter of each page. You can also import music player in 'About' page now.
+- Top posts will show top-tag on the homepage, the display value of top-tag can be configured in language files.
+- Optimized the introductions of resources and improve page loading speed.
+- Optimized some code structures and page display styles, added some dynamic effects.
+
+<br/>
+
+---
+
+<br/>
+
 ## 🐱v2.0.0
 Released at `2024-10-20`.
 
@@ -24,7 +65,7 @@ Released at `2024-10-20`.
 - 新增对`APlayer`音乐播放器的支持，详情可见[音乐播放器](https://chanwj.github.io/Meow-Theme-Guide/#音乐播放器)介绍
 - 新增TOC配置项`max_items`(`Hexo v7.3.0`更新内容)
 
-### ✅️优化项目
+### ♾️优化项目
 - 在`<head>`中新增Open Graph信息以优化SEO，并且优化meta description的内容：文章页面为文章简介/摘要，其它页面为网站简介
 - 简化小说模板中的完结状态配置项为Y/N：Y=完结，N=连载中，置空=不显示完结状态
   - 兼容v1.0.0中的完结状态选项，因此以前发布的文章无须进行修改
@@ -60,7 +101,7 @@ Released at `2024-10-20`.
 - Add support for `APlayer`, read more in [Music Player](https://chanwj.github.io/en/Meow-Theme-Guide/#Music-Player).
 - Add TOC configuration: `max_items` (updated by `Hexo v7.3.0`).
 
-### ✅️Improvements
+### ♾️Improvements
 - Add Open Graph message in `<head>` to improve SEO. Improve meta description: summary/excerpt(posts), site description(other pages).
 - Simplify the configuration of status in fiction scaffold to Y/N: Y=complete, N=incomplete, stay blank=hide status.
   - Compatible with status options of v1.0.0. Therefore, those articles published previously do not need to be modified.

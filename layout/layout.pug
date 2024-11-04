@@ -27,4 +27,4 @@ html(lang= config.language)
     | !{ partial('_partial/footer', null, {cache: false}) }
 
     //- link other resources at the end of the page 在页面最后引入其它资源
-    | !{ partial('_partial/other-resources', null, {cache: true}) }
+    | !{ partial('_partial/other-resources', null, {cache: false}) }

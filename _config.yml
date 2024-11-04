@@ -3,7 +3,7 @@
 # Docs: https://chanwj.github.io
 
 # theme version 主题所使用的版本
-version: v2.0.0
+version: v2.1.0
 
 # site icon 网站图标
 blog_pic: img/site-icon.png
@@ -64,8 +64,8 @@ copyright:
   license: CC BY-NC-ND 4.0
   link: https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh-hans
 
-# simplify titles style in post excerpt, set false to make titles show in the original way 简化摘要中的标题样式，false则按文章中的样式来显示
-excerpt_title_simplify: true
+# simplify style in post excerpt, set false to make excerpt show in the original way 简化摘要中的样式，false则按文章中的样式来显示
+excerpt_simplify: true
 
 # tags page config 标签页面设置
 # tag cloud & tag list: just choose one to display 标签云与标签列表只需要选择其一显示
@@ -76,10 +76,8 @@ tags:
 
 # categories page config 分类页面设置
 categories:
-  # show_count unavailable now 分类总数配置暂不可用
-  # show_count: true # show posts total count of each category 显示每个分类的文章总数
-  # depth config unavailable now, defalut: display all 层级配置暂不可用，目前默认显示全部
-  # depth: 0 # decide the depth of categories to display: 0-all, 1-only first layer 显示分类层级：0-显示全部层级，1-只显示第一层……
+  show_count: true # show posts total count of each category 显示每个分类的文章总数
+  depth: 0 # decide the depth of categories to display: 0-all, 1-only first layer... 显示分类层级：0-显示全部层级，1-只显示第一层……
 
 # page view counting(with busuanzi) 访问量统计（使用不蒜子）
 page_view:
@@ -172,6 +170,7 @@ font:
 # toolbar configuration 悬浮工具栏配置
 tool_bar:
   more_tools: true # display more function button available (e.g. darkmode) 展示更多可用的功能按钮（比如深色模式）
+  setting_font_size: true # increase or decrease font size of post 增大或减小文章字体
 
 # darkmode 深色模式
 darkmode:
@@ -180,7 +179,3 @@ darkmode:
   end_at: 06:00 # time to end dark theme 自动切换深色模式的结束时间
   check_system_scheme: false # check if system indicates light or dark color themes 检查系统是否指定模式
   save_on_toggle: true # save current mode in local storage 在本地保存现有模式
-
-# aplayer 音乐播放器
-aplayer:
-  enable: true

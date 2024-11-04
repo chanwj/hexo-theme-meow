@@ -11,6 +11,8 @@ menu:
   settings: Settings
   comment: Comment
   darkmode: Darkmode
+  font_size_increase: Increase Font Size
+  font_size_decrease: Decrease Font Size
 
 # site information
 # only affects on page display and does not affect webpage meta
@@ -29,6 +31,7 @@ article:
   reward: If you like this article, welcome to pay me a coffee, thanks&#128151;
   previous_post: Previous Article
   next_post: Next Article
+  top: '&#x1F4CC;**Pinned**' # Markdown available
 
 # navigation item
 navigation:
@@ -97,7 +100,7 @@ about:
     
     - This website provides preview for this theme. It also provides guides for theme installation and configuration. I hope it will be helpful to you.'
     # Additional notes, Markdown available
-    supplement: '&#127775;<u>It cost a lot of time and efforts for me to make this work. If you need to use this theme, please keep the copyright information of the theme in the footer. Thank you very much!</u>'
+    supplement: '&#127775;<u>It cost a lot of time and efforts for me to make this work. If you need to use this theme, **please keep the copyright information of this theme in the footer**, show respect to the author and creation, which can also help more people in need to know this theme. Thank you very much!</u>'
   about_author:
     title: About The Author
     description: A ginger cat focuses on writing and coding.

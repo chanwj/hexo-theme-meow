@@ -5,6 +5,11 @@ figure.highlight
   border-radius: 10px
   box-shadow: 1.5px 1.5px 2px rgba(0, 0, 0, 0.125)
   font-size: code-font-size
+  position: relative
+
+  &:hover
+    #copyCodeBtn
+      visibility: visible
 
   figcaption
     font-size: article-title6-font-size
@@ -68,11 +73,27 @@ code
   // border: 0.5px solid rgba(0, 0, 0, 0.1)
   padding: 0 8px
   margin: 0 2px
-  font-size: default-font-size
   font-family: default-font-family
   color: green-normal // text-black-light
   line-height: 1.8em
 
-@media screen and (max-width: 768px)
+details
   code
-    font-size: default-font-size-smaller
+    background-color: code-dark
+
+#copyCodeBtn
+  position: absolute
+  top: 6px
+  right: 5px
+  padding: 5px
+  z-index: 3
+  border: none
+  font-size: article-title5-font-size
+  color: text-grey-light
+  background-color: transparent
+  cursor: pointer
+  visibility: hidden
+
+  &:hover
+    color: text-black-light
+    animation: fade 1.2s ease-in-out infinite

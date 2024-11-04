@@ -34,6 +34,6 @@ if theme.page_view.enable
   | !{ js({src:'//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js', async: true}) }
 
 //- aplayer 音乐播放器
-if theme.aplayer.enable
+if page.music
   | !{ css('css/third-party/APlayer.min') }
   | !{ js('js/third-party/APlayer.min') }

@@ -1,13 +1,13 @@
 /* 
- * Tag for blockquote in different styles 不同风格的引用块标签
+ * [Tag] blockquote in different styles [标签]不同风格的引用块
  *
- * Usage用法:
+ * @Usage 用法
  * {% quote [style] %}
  * content
  * {% endquote %}
  * 
- * [style]: light | pink | red | blue | green
- * Optional 可选项
+ * @Parameter 参数
+ * style[Optional 可选项]: light | pink | red | blue | green
  */
 
 'use strict'
@@ -17,4 +17,4 @@ const quote = (args, content) => {
   return '<blockquote' + className + '>' + content + '</blockquote>';
 }
 
-hexo.extend.tag.register('quote', quote, { ends: true })
+hexo.extend.tag.register('quote', quote, { ends: true });
