@@ -86,7 +86,7 @@ Get the specific update content of each version, including new features, fixes a
 
 At the same time, *Meow* permits secondary creative modifications (Fork), provided that you **prominently indicate the original work (i.e., `hexo-theme-meow`) and the original author (i.e., chanwj/小橘猫) in your work, and retain the copyright and license notices from the original work**.
 
-To create this theme, the author invested a lot of time and efforts, this process was not easy. Essentially, it is a labor of love. If you need to use this theme, <u>**please retain the copyright information in the footer to show respect for the author and her creation**</u>, which can also help more people in need to know this theme. Thank you very much!
+If you need to use this theme, <u>**please retain the copyright information in the footer to show respect for the author and her creation**</u>, which can also help more people in need to know this theme. Thank you very much!
 
 Although *Meow* is an open source project, it does NOT mean that plagiarism by removing copyright information of the original work is permissible or acceptable. (If you want, welcome to introduce your website/secondary creation to the author. You can also apply to add a friend link to the preview site.)
 
