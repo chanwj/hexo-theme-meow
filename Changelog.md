@@ -2,6 +2,27 @@
 
 *Chinese Version & English Version*
 
+## 🐱v2.1.1
+Released at `2025-01-26`.
+
+### ✅️问题修复
+- 修复首页错误地显示相对时间的问题，现在会直接显示文章的发布日期
+
+### ♾️优化项目
+- 优化TOC的位置，使其吸附在主体部分右边
+
+### ✅️Fixes
+- Fixed the issue of displaying relative time at Index page by mistake, it displays posts publish time now.
+
+### ♾️Improvements
+- Improved the position of TOC to make it attached to the right side of the main container.
+
+<br/>
+
+---
+
+<br/>
+
 ## 🐱v2.1.0
 Released at `2024-11-04`.
 
