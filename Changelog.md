@@ -2,6 +2,25 @@
 
 *Chinese Version & English Version*
 
+## 🐱v2.1.2
+Released at `2025-01-27`.
+
+### ♾️优化项目
+- 优化悬浮工具栏的位置，使其吸附在主体部分右边
+- 优化归档页面的文章卡片大小及布局，现在可以显示更多的摘要内容
+- 优化首页元素的外间距，使布局更紧凑美观
+
+### ♾️Improvements
+- Improved the position of toolbar to make it attached to the right side of the main container.
+- Improved the size and layout of article cards in the Archives page, it can display more excerpt content now.
+- Improved the margin of elements in Index page to make the layout tighter and more beautiful.
+
+<br/>
+
+---
+
+<br/>
+
 ## 🐱v2.1.1
 Released at `2025-01-26`.
 

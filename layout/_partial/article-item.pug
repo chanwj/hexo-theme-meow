@@ -12,7 +12,7 @@
       else
         - content= strip_html(post.content)
       
-      span= truncate(content, {length: 75})
+      span= truncate(content, {length: 80})
     
     .article-item-hover
       span= date(post.date)
