@@ -2,6 +2,33 @@
 
 *Chinese Version & English Version*
 
+---
+
+<br/>
+
+## 🐱v2.1.3
+Released at `2025-03-11`.
+
+### 🆕新增功能
+- 新增配置选项：网站背景是否跟随页面滚动
+
+### ♾️优化项目
+- 优化背景设置：背景图片自动居中
+- 优化博客简介字体样式
+
+### 🆕New Features
+- Added configuration: background scrollable.
+
+### ♾️Improvements
+- Improved background setting: background image will be centered automatically.
+- Improved the font style of blog description.
+
+<br/>
+
+---
+
+<br/>
+
 ## 🐱v2.1.2
 Released at `2025-01-27`.
 
