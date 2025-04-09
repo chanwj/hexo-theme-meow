@@ -2,6 +2,22 @@
 
 *Chinese Version & English Version*
 
+## 🐱v2.1.4
+Released at `2025-04-09`.
+
+### ♾️优化项目
+- 优化关于页联系方式：
+  - 增加QQ选项：点击选项可以自动复制账号到剪贴板
+  - 优化Wechat选项：填写“微信”也可以被识别；点击选项可以自动复制账号到剪贴板
+  - 去除公众号选项
+
+### ♾️Improvements
+- Improved contact module in About page:
+  - Added QQ: Automatically copy account name to clipboard when click the option.
+  - Improved Wechat: Automatically copy account name to clipboard when click the option.
+
+<br/>
+
 ---
 
 <br/>

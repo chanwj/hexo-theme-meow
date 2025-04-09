@@ -63,17 +63,19 @@
                 i.fa-brands.fa-weibo.fa-xl
               when 'Wechat'
                 i.fa-brands.fa-weixin.fa-xl
-              when '公众号'
+              when '微信'
                 i.fa-brands.fa-weixin.fa-xl
               when 'Mastodon'
                 i.fa-brands.fa-mastodon.fa-xl
+              when 'QQ'
+                i.fa-brands.fa-qq.fa-xl
               default
                 i.fa-solid.fa-paw.fa-xl
           
             if contact_item === 'Email' || contact_item === '邮箱'
               a(href= 'mailto:'+theme.contact_info[contact_item])= contact_item
-            else if contact_item === 'Wechat' || contact_item === '公众号'
-              span= theme.contact_info[contact_item]
+            else if contact_item === 'QQ' || contact_item === 'Wechat' || contact_item === '微信'
+              span(onclick="copyText("+theme.contact_info[contact_item]+")")= contact_item
             else
               a(href= theme.contact_info[contact_item])= contact_item
 

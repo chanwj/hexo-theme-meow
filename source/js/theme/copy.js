@@ -18,3 +18,20 @@ document.addEventListener('DOMContentLoaded', function () {
     figure.appendChild(copyCodeBtn);
   })
 })
+
+function copyText(text) {
+  'use strict';
+  if (navigator.clipboard) {
+    navigator.clipboard.writeText(text);
+  } else {
+    const textarea = document.createElement('textarea');
+    textarea.value = text;
+    textarea.style.position = 'fixed';
+    document.body.appendChild(textarea);
+    textarea.select();
+    document.execCommand('copy');
+    document.body.removeChild(textarea);
+  }
+
+  alert('Copied successfully.');
+}
