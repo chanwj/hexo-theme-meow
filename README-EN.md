@@ -19,7 +19,7 @@
 Execute the following command in the root directory of the blog.
 
 ``` bash
-git clone -b master https://github.com/chanwj/hexo-theme-meow.git themes/meow
+git clone -b v2.0 https://github.com/chanwj/hexo-theme-meow.git themes/meow
 ```
 
 Modify the `_config. yml` file in the root directory. Set theme variable to `meow`.

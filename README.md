@@ -19,7 +19,7 @@
 在博客根目录下执行以下指令，获取最新版主题。
 
 ``` bash
-git clone -b master https://github.com/chanwj/hexo-theme-meow.git themes/meow
+git clone -b v2.0 https://github.com/chanwj/hexo-theme-meow.git themes/meow
 ```
 
 修改博客根目录下的`_config.yml`配置文件，将主题更换为`meow`。
