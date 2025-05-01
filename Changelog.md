@@ -2,6 +2,21 @@
 
 *Chinese Version & English Version*
 
+## 🐱v2.1.5
+Released at `2025-05-01`.
+
+### ✅️问题修复
+- 修复首页文章自动生成摘要时可能会导致html标签不闭合的问题，并且新增主题配置项“摘要长度”
+
+### ✅️Fixes
+- Fixed the issue of auto generating post excerpt at homepage, which could probably make html tags not closed. Also added a new theme configuration 'excerpt length'.
+
+<br/>
+
+---
+
+<br/>
+
 ## 🐱v2.1.4
 Released at `2025-04-09`.
 

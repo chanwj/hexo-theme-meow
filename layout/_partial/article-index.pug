@@ -18,15 +18,15 @@ article.index-post-item
     | !{ partial('_partial/post/post-categories') }
 
   //- post's excerpt 文章摘要
-  .post-excerpt(excerpt-simplify= theme.excerpt_simplify.toString())
+  .post-excerpt
     if post.excerpt
       | !{ post.excerpt }
     else if post.summary
       | !{ markdown(post.summary) }
     else
       //- generate excerpt automatically if no excerpt 如果没有可用的摘要则自动生成摘要
-      | !{ truncate(post.content, {length: 250}) }
-    
+      | !{ truncate(strip_html(post.content), {length: theme.excerpt_length}) }
+
   //- read more button "阅读全文"按钮
   .read-more
     i.fa-solid.fa-paw.fa-xs

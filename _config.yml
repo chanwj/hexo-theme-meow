@@ -3,7 +3,7 @@
 # Docs: https://chanwj.github.io
 
 # theme version 主题所使用的版本
-version: v2.1.4
+version: v2.1.5
 
 # site icon 网站图标
 blog_pic: img/site-icon.png
@@ -65,8 +65,8 @@ copyright:
   license: CC BY-NC-ND 4.0
   link: https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh-hans
 
-# simplify style in post excerpt, set false to make excerpt show in the original way 简化摘要中的样式，false则按文章中的样式来显示
-excerpt_simplify: true
+# the length of post auto excerpt 文章自动摘要的字符长度
+excerpt_length: 200
 
 # tags page config 标签页面设置
 # tag cloud & tag list: just choose one to display 标签云与标签列表只需要选择其一显示
