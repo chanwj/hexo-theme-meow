@@ -1,0 +1,39 @@
+# Nav Bar
+menu:
+  home: Home
+  articles: Articles
+  archives: Archives
+  categories: Categories
+  tags: Tags
+  about: About
+  site: Site
+  author: Author
+  essay: Essay
+  links: Links
+  albums: Albums
+  bookmarks: Bookmarks
+  friends: Friends
+  comments: Comment
+  search: Search
+  toggle: Toggle Menu
+
+# Tool Bar
+tool:
+  toc: Table Of Content
+  setting: Settings
+
+# Social Info
+social:
+  email: EMail
+  github: Github
+  qq: QQ
+  wechat: Wechat
+  ao3: Archive of Our Own
+  bilibili: Bilibili
+  facebook: Facebook
+  instagram: Instagram
+  tiktok: TikTok
+  weibo: Weibo
+  x: X
+  mastodon: Mastodon
+  xiaohongshu: Red Note

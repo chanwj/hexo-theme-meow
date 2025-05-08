@@ -1,0 +1,15 @@
+#home-banner
+  #home-banner-info
+    if theme.banner.title.enable
+      #home-banner-title
+        = theme.banner.title.text || config.title || "MEOW"
+
+    if theme.banner.subtitle.enable && theme.banner.subtitle.text.length > 0
+      #home-banner-subtitle
+        if theme.banner.subtitle.effect
+          span#site-subtitle
+        else
+          != theme.banner.subtitle.text[0]
+
+  #home-banner-scrolldown
+    != getSvg('down', {id:"scroll-to-main"})

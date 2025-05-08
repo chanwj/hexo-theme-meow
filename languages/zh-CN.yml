@@ -1,0 +1,39 @@
+# 顶部导航栏
+menu:
+  home: 主页
+  articles: 文章
+  archives: 归档
+  categories: 分类
+  tags: 标签
+  about: 关于
+  site: 本站
+  author: 作者
+  essay: 说说
+  links: 链接
+  albums: 相册集
+  bookmarks: 书签页
+  friends: 友情链接
+  comments: 留言
+  search: 搜索
+  toggle: 打开菜单
+
+# 工具栏
+tool:
+  toc: 目录
+  setting: 设置
+
+# 社交信息
+social:
+  email: 电子邮箱
+  github: Github
+  qq: QQ
+  wechat: 微信
+  ao3: Archive of Our Own
+  bilibili: Bilibili
+  facebook: Facebook
+  instagram: Instagram
+  tiktok: TikTok
+  weibo: 微博
+  x: X
+  mastodon: Mastodon
+  xiaohongshu: 小红书

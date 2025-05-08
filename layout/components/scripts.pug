@@ -1,0 +1,6 @@
+.scripts
+  != js({src: 'js/main', type: 'module'})
+
+  if is_home() && theme.banner.enable && theme.banner.subtitle.enable && theme.banner.subtitle.effect && theme.banner.subtitle.text.length > 0
+    != importJS('typed.js','2.1.0','dist/typed.umd.js')
+    != partial('pages/homepage/subtitle-typewriter', {}, {cache: true})

@@ -1,0 +1,151 @@
+# ----------------------------------------------------------------------------------------
+#                             THEME MEOW CONFIGURATION
+#                               Author: 小橘猫chanwj
+#                  GITHUB: https://github.com/chanwj/hexo-theme-meow
+#                  DOCUMENTATION: https://chanwj.github.io/meow/docs
+#                  PREVIEW STATION：https://chanwj.github.io/meow
+# ----------------------------------------------------------------------------------------
+
+# Theme Version (Automatically Updated By Theme)
+version: v3.0.0 # Please DON'T modify it by yourself
+
+# Website Info
+info:
+  # Site Favicon
+  favicon: assets/images/Hexo-Theme-MEOW.ico
+  # Site Logo
+  logo: assets/images/Hexo-Theme-MEOW.png
+  # Author Avatar
+  avatar: https://q1.qlogo.cn/g?b=qq&nk=763608788&s=640
+  # The root directory of your website, default: /
+  # If your site is in a subdirectory(e.g. username.github.io/subdirectory), set root to /subdirectory/
+  # root: /meow/
+
+# Theme Color & Mode
+color:
+  # Light Mode
+  light:
+    theme_color: '#FFB347'
+    # Dark Mode
+  dark:
+    theme_color: '#FFE4E1'
+  # Light/Dark Mode Configuration
+  mode:
+    default: light
+    switch_enable: true
+
+# Icon Configuration
+icon:
+  # Icon Style Type
+  type: uc
+
+# Font Customization
+font:
+  custom: true # Whether to use custom font
+  default_font_link: assets/fonts/vivoSans-Regular/result.css # Url of default font
+  default_font_family: "'vivo Sans', 'PingFang SC', 'Microsoft YaHei', Sans-serif, Serif" # Define default fonts
+  title_font_link: https://registry.npmmirror.com/@chinese-fonts/mkzyt/2.0.1/files/dist/猫啃珠圆体/result.css # Url of title font
+  title_font_family: "'MaokenZhuyuanTi', 'vivo Sans', 'PingFang SC', 'Microsoft YaHei', Sans-serif, Serif" # Define title fonts
+  code_font_link: # Url of code font
+  code_font_family: # Define code fonts
+
+# Layout Configuration
+layout:
+  # main_max_width: 1400px
+
+# Navigation Bar
+menu:
+  articles || uc-article:
+    archives: /archives || uc-archive
+    categories: /categories || uc-category
+    tags: /tags || uc-tag
+  about || uc-about:
+    site: /aboutsite || uc-site
+    author: /aboutme || uc-face
+    essay: /essay || uc-sun
+  links || uc-link:
+    albums: /albums || uc-picture
+    bookmarks: /bookmarks || uc-bookmark
+    friends: /friends || uc-friend
+  comments: /comments || uc-note
+  # articles || uc-article:
+  #   archives: /archives || uc-archive
+  #   categories: /categories || uc-category
+  #   tags: /tags || uc-tag
+
+# Search Function
+search:
+  enable: true # Whether to enable search function
+
+# Banner Configuration
+banner:
+  # Whether to enable Banner
+  enable: true
+  # Background image of banner under light/dark mode
+  image:
+    light: assets/images/wallhaven-5yl597.webp
+    dark: assets/images/wallhaven-e7zogk.webp
+    is_fixed: true # Whether banner image is fixed or scrollable, true or false
+    position: center top # horizontal(left/center/right) vertical(top/center/bottom)
+    repeat: no-repeat # repeat/repeat-x/repeat-y/no-repeat
+  # Banner title
+  title:
+    enable: true # Whether to show title
+    text: 「 MEOW 」 # Title text
+  # Banner subtitle
+  subtitle:
+    enable: true # Whether to show subtitle
+    # Subtitle text (Data type: Array)
+    text:
+      - "简洁可爱的响应式Hexo主题🐱"
+      - "超级适合用来发布小说、图片、同人等作品♥️"
+      - "A cute and responsive theme for Hexo"
+      - "🐈喵呜～"
+    effect: true # Typewriter effect, true or false. If false, only show the first text.
+    type_speed: 100 # Typing speed (ms)
+    back_speed: 150 # Backing speed (ms)
+    start_delay: 500 # Start delay (ms)
+    back_delay: 1500 # Backing delay (ms)
+    loop: true # Whether to loop, true or false
+    smart_backspace: true # Whether to enable smart backspace, true or false
+    fade_out: true # Whether to enable fade out effect, true or false
+    shuffle: false # Whether to shuffle the text list
+  title_color: # Title color under light/dark mode
+    light: '#fff'
+    dark: '#f3f3f2'
+
+# Sidebar At Homepage
+sidebar:
+  enable: true # Whether to show sidebar
+  position: left # Sidebar position, left or right
+  show_on_small_screen: true # Whether to show sidebar at the bottom of homepage on small screen
+  # Information card
+  info:
+    enable: true # Whether to show information card
+    type: author # Which type of information to show, site or author
+    status: 🐱 # Status next to the avatar, false or emoji
+    link: /aboutme # Url for image clicking
+    desc: 喵呜～ # Describe yourself or say something
+    statistic: true # Whether to show the total number of articles, categories and tags
+    social:
+      enable: true # Whether to show social profiles
+      list: # Social type: social icon || social link
+        email: brand-mail || contact@jumao.simplelogin.com
+        github: brand-github || https://github.com/chanwj
+        qq: brand-qq || https://qm.qq.com/q/NLqvCFlBeA
+        wechat: brand-wechat || wechatname
+  announcement: true # Whether to show announcement card
+  # Links card
+  links:
+    enable: true # Whether to show additional links
+  categories: true # Whether to show categories card
+  tags: true # Whether to show tags card
+
+# CDN Configuration
+cdn:
+  # Whether to enable CDN
+  enable: true
+  # CDN provider
+  provider: npmmirror # npmmirror, cdnjs, jsdelivr, unpkg, custom
+  # Custom CDN url, should be formatted. Example: https://cdn.jsdelivr.net/npm/${jsname}@${version}/${path}
+  custom:

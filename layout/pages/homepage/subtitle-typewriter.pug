@@ -1,0 +1,14 @@
+- const { text, type_speed, back_speed, start_delay, back_delay, loop, smart_backspace, fade_out, shuffle } = theme.banner.subtitle
+
+script.
+  var typed = new Typed('#site-subtitle', {
+    strings: !{JSON.stringify(text)},
+    typeSpeed: !{type_speed},
+    backSpeed: !{back_speed},
+    startDelay: !{start_delay},
+    backDelay: !{back_delay},
+    loop: !{loop},
+    smartBackspace: !{smart_backspace},
+    fadeOut: !{fade_out},
+    shuffle: !{shuffle}
+  });

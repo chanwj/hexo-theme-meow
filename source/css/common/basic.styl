@@ -1,0 +1,47 @@
+*
+  box-sizing: border-box
+  scroll-behavior: smooth
+  ::-webkit-scrollbar
+    width: .65rem
+
+  ::-webkit-scrollbar-thumb
+    background-color: var(--background-color-grey)
+    border-radius: 10px
+
+  ::-webkit-scrollbar-thumb:hover
+    background-color: var(--theme-color-light-1)
+
+  ::-webkit-scrollbar-thumb:active
+    background-color: var(--theme-color-light-1)
+
+  ::-webkit-scrollbar-track
+    background-color: var(--background-color-grey-transparent)
+
+  @-moz-document url-prefix()
+    scrollbar-color: var(--background-color-grey) var(--background-color-grey-transparent)
+    scrollbar-width: thin
+  
+  ::selection
+    background: var(--theme-color)
+    color: var(--font-color-invert)
+
+body
+  width: 100%
+  height: max-content
+  min-height: 100vh
+  margin: 0
+  background: var(--background-color)
+  color: var(--font-color)
+  font-size: 16px
+  font-family: var(--meow-font-default)
+
+body[bg-style='home']
+  background: var(--banner-background)
+  background-size: hexo-config('banner.image.is_fixed') ? cover : contain
+  background-position: unquote(hexo-config('banner.image.position'))
+  background-repeat: unquote(hexo-config('banner.image.repeat'))
+  background-attachment: hexo-config('banner.image.is_fixed') ? fixed : scroll
+
+main
+  width: 100%
+  height: max-content

@@ -1,0 +1,77 @@
+meta(charset='utf-8')
+meta(name="viewport" content="width=device-width, initial-scale=1.0")
+meta(name="author" content=config.author || "MEOW Team")
+//- meta(name="description" content=getPageDescription())
+meta(name="copyright" content=config.author || "MEOW Team") 
+meta(name="theme-color" content=theme.color.light.primary || "#FFCC33")
+meta(name ="format-detection" content="telephone=no")
+
+- var page_keywords = ""
+if page.tags && page.tags.length > 0
+  - page_keywords = page.tags.data.map(function(tag) {return tag.name;}).join(',')
+else
+  - page_keywords = config.keywords || "Hexo Theme MEOW"
+meta(name="keywords" content=page_keywords)
+
+- var page_title = ""
+if is_home()
+  - page_title = (config.title || "MEOW THEME") + ' - ' + (config.subtitle || "A Cute Hexo Theme")
+else
+  if is_archive()
+    - page_title = __('menu.archives')
+  else if is_category()
+    - page_title = __('menu.categories') + ": " + page.category
+  else if is_tag()
+    - page_title = __('menu.tags') + ": " + page.tag
+  else
+    - page_title = page.title || config.title
+  - page_title = page_title + " | " + (config.title || "MEOW THEME")
+
+meta(name="mobile-web-app-capable" content="yes")
+meta(name="apple-mobile-web-app-capable" content="yes")
+meta(name="apple-touch-fullscreen" content="yes")
+meta(name="application-name" content=page_title)
+meta(name="apple-mobile-web-app-title" content=page_title)
+meta(name="apple-mobile-web-app-status-bar-style" content=theme.color.light.primary || "#FFCC33")
+
+- var canonical = config.url
+if config.url.slice(-1) != "/"
+  - canonical += "/"
+link(rel="canonical" href=canonical + page.canonical_path.replace('index.html', ''))
+
+!= open_graph({title: page_title, description: getPageDescription(), image: page.cover || page.photo || theme.info.logo, author: config.author || "MEOW Team", twitter_card: "summary_large_image"})
+
+meta(name="robots" content="index,follow")
+meta(name="googlebot" content="index,follow")
+meta(name="revisit-after" content="1 days")
+
+title= page_title
+
+if theme.info.favicon
+  != favicon_tag(theme.info.favicon)
+
+-
+  const cdn_list = {
+    npmmirror: '//registry.npmmirror.com',
+    jsdelivr: '//cdn.jsdelivr.net',
+    cdnjs: '//cdnjs.cloudflare.com',
+    unpkg: '//unpkg.com',
+    custom: theme.cdn.custom && theme.cdn.custom.match(/^((https?:)?(\/\/[^/]+)|([^/]+))(\/|$)/)[1]
+  }
+if theme.cdn.enable
+  link(rel="preconnect" href=cdn_list[theme.cdn.provider])
+if theme.font.custom
+  if theme.font.default_font_link
+    - let default_font_link = theme.font.default_font_link.match(/^((https?:)?(\/\/[^/]+)|([^/]+))(\/|$)/)[1]
+    link(rel="preconnect" href=default_font_link)
+  if theme.font.title_font_link
+    - let title_font_link = theme.font.title_font_link.match(/^((https?:)?(\/\/[^/]+)|([^/]+))(\/|$)/)[1]
+    link(rel="preconnect" href=title_font_link)
+  if theme.font.code_font_link
+    - let code_font_link = theme.font.code_font_link.match(/^((https?:)?(\/\/[^/]+)|([^/]+))(\/|$)/)[1]
+    link(rel="preconnect" href=code_font_link)
+
+!= css('css/style')
+
+//- TODO prefetch
+//- <link rel="prefetch" href="https://chanwj.github.io/meow/">

@@ -1,0 +1,164 @@
+header
+  position: fixed
+  top: 0
+  left: 0
+  z-index: $z-index-9
+  width: 100%
+  height: $meow-navbar-height
+  // background-color: var(--background-color)
+  background-color: var(--nav-background-color)
+  backdrop-filter: blur(8px)
+  box-shadow: var(--meow-box-shadow)
+  transition: background .45s ease-in-out
+
+#navbar
+  width: 100%
+  max-width: var(--meow-main-width)
+  height: 100%
+  margin: 0 auto
+  display: flex
+  justify-content: space-between
+  align-items: center
+  text-align: center
+  user-select: none
+  a
+    text-decoration: none
+
+#nav-info
+  margin: 0 1rem
+  cursor: pointer
+  display: flex
+  align-items: center
+  gap: 0.1rem
+
+#site-icon img
+  height: 2rem
+  &:hover
+    animation fade 1s ease infinite
+
+#site-name
+  padding: .05rem .4rem
+  border-radius: 10px
+  transition: all .6s ease
+  display: flex
+  justify-content: center
+  align-items: center
+  div
+    font-size: 1.8rem
+    font-family: var(--meow-font-title)
+    font-weight: bold
+    color: var(--font-color-navbar)
+  .icon
+    position: absolute
+    height: 1.5em
+    opacity: 0
+  &:hover
+    background-color: var(--theme-color)
+    div
+      opacity: 0
+    .icon
+      opacity: 1
+
+#nav-menu
+  font-size: 1.3em
+  display: flex
+  align-items: center
+
+.menu_item
+  padding: .2rem 1rem
+  border-radius: 10px
+  position: relative
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: center
+  gap: .8rem
+  transition: all .5s ease
+  &:after
+    position: absolute
+    top: 1rem
+    left: 0
+    width: 100%
+    height: 1.5rem
+    content: ''
+  a
+    color: var(--font-color-navbar)
+    display: flex
+    align-items: center
+    gap: .3rem
+  .icon
+    height: 1.25rem
+  &:hover
+    background-color: var(--theme-color)
+    >a
+      color: var(--link-hover-font-color)
+      .icon
+        animation fade 1s ease infinite
+    .sub_menu_item
+      opacity: 1
+      max-height: 12rem
+
+.sub_menu_item
+  position: absolute
+  opacity: 0
+  max-height: 0
+  width: max-content
+  top: 2rem
+  margin: .3rem 0 0
+  border-radius: 12px
+  border: 1px solid var(--theme-color)
+  box-shadow: var(--meow-box-shadow)
+  background-color: var(--background-color)
+  padding: .3rem .3rem
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+  gap: .1rem
+  overflow: hidden
+  text-align center
+  list-style none
+  transition: all .3s ease
+  li
+    gap: .3rem
+    padding: .2rem 1.1rem
+    border-radius: 8px
+    &:hover
+      background-color: var(--theme-color)
+      a
+        color: var(--link-hover-font-color)
+
+#nav-function
+  margin: 0 1rem
+  font-size: 1.3em
+  display: flex
+  align-items: center
+  gap: .8rem
+  div
+    cursor: pointer
+    a
+      display: flex
+      align-items: center
+      gap: .3rem
+      color: var(--font-color-navbar)
+  .icon
+    height: 1.25rem
+
+#search-btn
+  span
+    background-color: var(--background-color-grey-transparent)
+    border-radius: 10px
+    padding: .2rem 1.3rem
+  &:hover
+    >a
+      color: var(--link-hover-font-color)
+    span
+      background-color: var(--theme-color-transparent)
+    .icon
+      animation fade 1s ease infinite
+
+#menu-btn
+    display: none
+    &:hover img
+      transform: rotate(360deg)
+      transition: transform .8s ease

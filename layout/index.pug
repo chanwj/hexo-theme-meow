@@ -1,0 +1,9 @@
+if theme.banner.enable
+  != partial('pages/homepage/home-banner')
+
+#home-container
+  #home-content
+    if theme.sidebar.enable
+      != partial('pages/homepage/sidebar')
+
+    #home-main

@@ -1,0 +1,17 @@
+doctype html
+
+html(lang= config.language)
+  head
+    != partial('components/head')
+
+  body(bg-style=is_home() && theme.banner.enable && theme.banner.image.is_fixed ? 'home' : 'none')
+    header
+      != partial('components/header')
+
+    main
+      != body
+
+    footer
+      != partial('components/footer')
+
+    != partial('components/scripts')
