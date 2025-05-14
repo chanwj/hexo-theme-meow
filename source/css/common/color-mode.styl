@@ -14,14 +14,21 @@ $dark-banner-background = url-for(hexo-config('banner.image.dark'))
 switch-mode(mode) {
   --theme-color: mode == 'light' ? $theme-color : $dark-theme-color
   --theme-color-light-1: mode == 'light' ? $theme-color-light-1 : $dark-theme-color-light-1
-  --theme-color-transparent: mode == 'light' ? $theme-color-transparent : $dark-theme-color-transparent
+  --theme-color-light-2: mode == 'light' ? $theme-color-light-2 : $dark-theme-color-light-2
+  --theme-color-transparent-1: mode == 'light' ? $theme-color-transparent-1 : $dark-theme-color-transparent-1
   --background-color: mode == 'light' ? $background-color : $dark-background-color
-  --background-color-transparent: mode == 'light' ? $background-color-transparent : $dark-background-color-transparent
+  --background-color-transparent-1: mode == 'light' ? $background-color-transparent-1 : $dark-background-color-transparent-1
+  --background-color-transparent-2: mode == 'light' ? $background-color-transparent-2 : $dark-background-color-transparent-2
   --background-color-grey: mode == 'light' ? $background-color-grey : $dark-background-color-grey
+  --background-color-grey-light-1: mode == 'light' ? $background-color-grey-light-1 : $dark-background-color-grey-light-1
   --background-color-grey-transparent: mode == 'light' ? $background-color-grey-transparent : $dark-background-color-grey-transparent
+  --background-color-body: mode == 'light' ? $background-color-body : $dark-background-color-body
   --font-color: mode == 'light' ? $font-color : $dark-font-color
   --font-color-invert: mode == 'light' ? $font-color-invert : $dark-font-color-invert
-  --font-color-navbar: mode == 'light' ? $font-color-light-2 : $dark-font-color
+  --font-color-navbar: mode == 'light' ? $font-color-navbar : $dark-font-color
+  --font-color-light-1: mode == 'light' ? $font-color-light-1 : $dark-font-color-light-1
+  --font-color-light-2: mode == 'light' ? $font-color-light-2 : $dark-font-color-light-2
+  --font-color-light-3: mode == 'light' ? $font-color-light-3 : $dark-font-color-light-3
   --link-hover-font-color: mode == 'light' ? $link-hover-font-color : $dark-link-hover-font-color
   --banner-background: mode == 'light' ? url($banner-background) : url($dark-banner-background)
   --banner-font-color: mode == 'light' ? unquote(hexo-config('banner.title_color.light')) : unquote(hexo-config('banner.title_color.dark'))

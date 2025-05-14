@@ -1,7 +1,7 @@
 /*
-* hexo theme meow
-* theme helper (js/css handler)
-*/
+ * hexo theme meow
+ * theme helper (js/css handler)
+ */
 
 "use strict";
 

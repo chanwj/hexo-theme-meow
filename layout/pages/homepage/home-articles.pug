@@ -1,0 +1,46 @@
+#home-main
+  - for (post of page.posts.toArray())
+    .home-article
+      //- TODO 置顶样式
+      //- if post.sticky
+      //-   i
+
+      - let article_cover = post.cover || page.photo
+      if article_cover
+        .home-article-cover
+          a(href=url_for(post.path))
+            img(src=url_for(article_cover))
+
+      .home-article-content
+        .home-article-title
+          a(href=url_for(post.path))= post.title
+
+        if post.excerpt != 'false'
+          .home-article-excerpt
+            if post.excerpt
+              != strip_html(post.excerpt)
+            else
+              - let excerpt_length = theme.article.excerpt_length || 200
+              != truncate(strip_html(post.content), {length: excerpt_length})
+
+        .home-article-info-container
+          .home-article-info
+            .home-article-date
+              != getSvg('ta-pubdate')
+              span= date(post.date)
+
+            .home-article-categories
+              != getSvg('ta-category')
+              each cat in post.categories.toArray()
+                a(href=url_for(cat.path))= cat.name
+            
+            .home-article-tags
+              != getSvg('ta-tag')
+              each tag in post.tags.toArray()
+                a(href=url_for(tag.path))= tag.name
+            
+          .home-article-func
+            a.read-more-btn(href=url_for(post.path))= __('read_more') + " >>"
+
+  .home-paginator
+    != partial('components/paginator')

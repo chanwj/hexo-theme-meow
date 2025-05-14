@@ -1,3 +1,8 @@
+/* 
+ * hexo theme meow
+ * scroll scripts
+ */
+
 const initScroll = () => {
   const debounce = (func, delay) => {
     let timer;
@@ -21,7 +26,7 @@ const initScroll = () => {
 
   const scrollToMain = () => {
     const scrollFn = () => {
-      window.scrollTo(0, document.getElementById('home-container').offsetTop - 60);
+      window.scrollTo(0, document.getElementById('home-container').offsetTop - 59);
     }
 
     const scroll_down = document.getElementById('scroll-to-main');

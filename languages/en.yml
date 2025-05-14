@@ -1,26 +1,42 @@
 # Nav Bar
-menu:
-  home: Home
-  articles: Articles
-  archives: Archives
-  categories: Categories
-  tags: Tags
-  about: About
-  site: Site
-  author: Author
-  essay: Essay
-  links: Links
-  albums: Albums
-  bookmarks: Bookmarks
-  friends: Friends
-  comments: Comment
-  search: Search
-  toggle: Toggle Menu
+home: Home
+articles: Articles
+archives: Archives
+categories: Categories
+tags: Tags
+about: About
+site: Site
+author: Author
+essay: Essay
+links: Links
+albums: Albums
+bookmarks: Bookmarks
+friends: Friends
+comments: Comment
+search: Search
+toggle: Toggle Menu
 
-# Tool Bar
-tool:
-  toc: Table Of Content
-  setting: Settings
+# Toolbar
+toc: Table Of Content
+setting: Settings
+
+# Article
+read_more: Read More
+
+# Sidebar
+announcement: Announcement
+
+# Footer
+footer:
+  runtime: "Blog Runtime: . Years . Months . Days"
+  framework: "Powered by %s"
+  site_statistic: "%s posts and %s words in total"
+
+# Page View Counting
+page_view:
+  site_pv: TOTAL PAGE VIEWS
+  site_uv: TOTAL VISITORS
+  page_pv: Hits
 
 # Social Info
 social:
@@ -36,4 +52,5 @@ social:
   weibo: Weibo
   x: X
   mastodon: Mastodon
+  steam: Steam
   xiaohongshu: Red Note

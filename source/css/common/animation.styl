@@ -21,3 +21,55 @@
     -webkit-transform: translateY(3px)
   }
 }
+
+@keyframes beat {
+  0%, 100% {
+    transform: scale(1)
+    -webkit-transform: scale(1)
+  }
+  50% {
+    transform: scale(1.05)
+    -webkit-transform: scale(1.05)
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0)
+    -webkit-transform: rotate(0)
+  }
+  100% {
+    transform: rotate(360deg)
+    -webkit-transform: rotate(360deg)
+  }
+}
+
+@keyframes expand-width {
+  0% {
+    width: 10%
+  }
+  100% {
+    width: 100%
+    left: 0
+  }
+}
+
+@keyframes expand-width-to-right {
+  0% {
+    width: 0
+  }
+  100% {
+    width: 100%
+  }
+}
+
+@keyframes move-to-right {
+  0% {
+    transform: translateX(0)
+    -webkit-transform: translateX(0)
+  }
+  100% {
+    transform: translateX(2px)
+    -webkit-transform: translateX(2px)
+  }
+}

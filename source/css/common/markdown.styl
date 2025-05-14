@@ -1,0 +1,17 @@
+.markdown
+  a
+    color: var(--theme-color)
+    position: relative
+    padding: 0 .2rem
+    &:after
+      content: ''
+      position: absolute
+      left: 0
+      bottom: -1px
+      display: block
+      height: 2px
+      width: 0
+      background-color: var(--theme-color-light-2)
+      transition: width .5s ease
+    &:hover:after
+      width: 100%

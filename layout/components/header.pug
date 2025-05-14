@@ -1,10 +1,10 @@
 #navbar
   #nav-info
-    a#site-icon(href=url_for('/') title=__('menu.home'))
+    a#site-icon(href=url_for('/') title=__('home'))
       img(src=url_for(theme.info.logo))
 
-    a#site-name(href=url_for('/') title=__('menu.home'))
-      div= config.title
+    a#site-name(href=url_for('/') title=__('home'))
+      div= config.title || "MEOW"
       != getSvg('home')
 
   #nav-menu
@@ -15,28 +15,28 @@
             a(href=url_for(trim(value.split('||')[0])))
               if value.split('||')[1]
                 != getSvg(trim(value.split('||')[1]))
-              span= __('menu.' + title)
+              span= __( title)
         else
           .menu_item
             a(href='javascript:void(0);')
               if title.split('||')[1]
                 != getSvg(trim(title.split('||')[1]))
-              span= __('menu.' + trim(title.split('||')[0]))
+              span= __(trim(title.split('||')[0]))
             ul.sub_menu_item
               each submenu, subtitle in value
                 li
                   a(href=url_for(trim(submenu.split('||')[0])))
                     if submenu.split('||')[1]
                       != getSvg(trim(submenu.split('||')[1]))
-                    span= __('menu.' + subtitle)
+                    span= __(subtitle)
 
   #nav-function
     if theme.search.enable
       #search-btn
-        a(href='javascript:void(0);' title=__('menu.search') accesskey='s')
+        a(href='javascript:void(0);' title=__('search') accesskey='s')
           != getSvg('search')
-          span= __('menu.search')
+          span= __('search')
 
     #menu-btn
-      a(href='javascript:void(0);' title=__('menu.toggle'))
+      a(href='javascript:void(0);' title=__('toggle'))
         != getSvg('menu')

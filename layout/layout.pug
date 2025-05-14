@@ -4,7 +4,7 @@ html(lang= config.language)
   head
     != partial('components/head')
 
-  body(bg-style=is_home() && theme.banner.enable && theme.banner.image.is_fixed ? 'home' : 'none')
+  body(bg-style=is_home() && theme.banner.enable && theme.banner.image.is_fixed ? 'fixed' : 'none')
     header
       != partial('components/header')
 

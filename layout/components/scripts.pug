@@ -4,3 +4,7 @@
   if is_home() && theme.banner.enable && theme.banner.subtitle.enable && theme.banner.subtitle.effect && theme.banner.subtitle.text.length > 0
     != importJS('typed.js','2.1.0','dist/typed.umd.js')
     != partial('pages/homepage/subtitle-typewriter', {}, {cache: true})
+
+  if theme.page_view.enable
+    - let pv_url = theme.page_view.url || 'https://cn.vercount.one/js'
+    script(src=pv_url defer=true)

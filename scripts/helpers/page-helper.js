@@ -1,7 +1,7 @@
 /*
-* hexo theme meow
-* page data helper
-*/
+ * hexo theme meow
+ * page data helper
+ */
 
 "use strict";
 

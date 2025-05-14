@@ -1,26 +1,42 @@
 # 顶部导航栏
-menu:
-  home: 主页
-  articles: 文章
-  archives: 归档
-  categories: 分类
-  tags: 标签
-  about: 关于
-  site: 本站
-  author: 作者
-  essay: 说说
-  links: 链接
-  albums: 相册集
-  bookmarks: 书签页
-  friends: 友情链接
-  comments: 留言
-  search: 搜索
-  toggle: 打开菜单
+home: 主页
+articles: 文章
+archives: 归档
+categories: 分类
+tags: 标签
+about: 关于
+site: 本站
+author: 作者
+essay: 说说
+links: 链接
+albums: 相册集
+bookmarks: 书签页
+friends: 友情链接
+comments: 留言
+search: 搜索
+toggle: 打开菜单
 
 # 工具栏
-tool:
-  toc: 目录
-  setting: 设置
+toc: 目录
+setting: 设置
+
+# 文章相关
+read_more: 阅读全文
+
+# 侧边栏
+announcement: 公告
+
+#页脚
+footer:
+  runtime: 已稳定运行.年.月.天
+  framework: 本站由 %s 强力驱动
+  site_statistic: 共撰写%s篇文章，全站共%s字
+
+# 访问量统计
+page_view:
+  site_pv: 总访问量
+  site_uv: 访客人数
+  page_pv: 阅读次数
 
 # 社交信息
 social:
@@ -36,4 +52,5 @@ social:
   weibo: 微博
   x: X
   mastodon: Mastodon
+  steam: Steam
   xiaohongshu: 小红书

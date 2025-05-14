@@ -20,6 +20,7 @@ info:
   # The root directory of your website, default: /
   # If your site is in a subdirectory(e.g. username.github.io/subdirectory), set root to /subdirectory/
   # root: /meow/
+  start_date: 2024-04-02 22:16:20 # Format should be as same as date_format and time_format of root config
 
 # Theme Color & Mode
 color:
@@ -85,7 +86,7 @@ banner:
   image:
     light: assets/images/wallhaven-5yl597.webp
     dark: assets/images/wallhaven-e7zogk.webp
-    is_fixed: true # Whether banner image is fixed or scrollable, true or false
+    is_fixed: true # Whether the image is fixed as background or scrollable with banner, true or false
     position: center top # horizontal(left/center/right) vertical(top/center/bottom)
     repeat: no-repeat # repeat/repeat-x/repeat-y/no-repeat
   # Banner title
@@ -123,23 +124,66 @@ sidebar:
   info:
     enable: true # Whether to show information card
     type: author # Which type of information to show, site or author
-    status: 🐱 # Status next to the avatar, false or emoji
+    status: # Status next to the avatar
+      emoji: 🐱 # false or emoji
+      desc: 元气满满～ # Describe the status
     link: /aboutme # Url for image clicking
-    desc: 喵呜～ # Describe yourself or say something
+    desc: 一只既敲代码又写小说的橘猫 # Describe yourself or say something
     statistic: true # Whether to show the total number of articles, categories and tags
-    social:
-      enable: true # Whether to show social profiles
+    social: # Social profiles
+      enable: true # Whether to show social module
       list: # Social type: social icon || social link
         email: brand-mail || contact@jumao.simplelogin.com
         github: brand-github || https://github.com/chanwj
         qq: brand-qq || https://qm.qq.com/q/NLqvCFlBeA
-        wechat: brand-wechat || wechatname
-  announcement: true # Whether to show announcement card
+        steam: brand-steam || https://steamcommunity.com/id/midnightexpress/
+        xiaohongshu: custom-xiaohongshu || https://www.xiaohongshu.com/user/profile/5711d9b884edcd2b70217559
+  # Show announcement card, false or announcement text, markdown available
+  announcement: Hi～这里是Hexo主题<font style="color:#FFB347">**Meow**</font>的专属网站，提供主题文档以及各种demo，希望能够帮助到您💗<br><br>如果您在使用本主题的过程中遇到问题，请到[Github Issues](https://github.com/chanwj/hexo-theme-meow/issues)进行反馈。
   # Links card
   links:
     enable: true # Whether to show additional links
-  categories: true # Whether to show categories card
+    title: 快速直达 # The title of links card
+    list: # List of links. link name: url
+      📦 Meow项目仓库: https://github.com/chanwj/hexo-theme-meow
+      📋 Meow主题指南: /posts/meow-guide
+  # Categories card
+  categories:
+    enable: true # Whether to show categories card
+    depth: 0 # Levels of categories to be displayed. 0 displays all categories and child categories; 1 displays only top level categories. Better be less than 3.
   tags: true # Whether to show tags card
+
+# Homepage Customization
+home:
+  cover_position: top # top or left
+
+# Articles Customization
+article:
+  excerpt_length: 200
+
+# Markdown Style
+markdown:
+  # link_icon: true # Whether to show link icon
+
+# Page View Counting
+page_view:
+  enable: true # Whether to show page view statistic
+  url: https://cn.vercount.one/js # Counter API url
+  site_pv: true # Site's page view
+  site_uv: true # Site unique visitor
+  page_pv: true # Page view
+
+# Footer Customization
+footer:
+  icon: 💗 # Emoji or false
+  author_link: /aboutme # Url for the link of author
+  runtime: true # Whether to show website running time
+  statistic: true # Whether to show site statistics(total articles & total wordcount)
+  # Site register info(e.g. ICP)
+  register_info:
+    enable: false # Whether to show register info
+    record_info: 京ICP备………………号 # E.g. ICP record number
+    query_url: https://beian.miit.gov.cn/ # E.g. ICP record url
 
 # CDN Configuration
 cdn:

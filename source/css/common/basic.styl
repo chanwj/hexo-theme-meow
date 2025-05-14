@@ -1,6 +1,7 @@
 *
   box-sizing: border-box
   scroll-behavior: smooth
+
   ::-webkit-scrollbar
     width: .65rem
 
@@ -30,18 +31,23 @@ body
   height: max-content
   min-height: 100vh
   margin: 0
-  background: var(--background-color)
+  background: var(--background-color-body)
   color: var(--font-color)
-  font-size: 16px
+  font-size: $font-size-default
   font-family: var(--meow-font-default)
+  line-height: $meow-line-height
 
-body[bg-style='home']
+body[bg-style='fixed']
   background: var(--banner-background)
-  background-size: hexo-config('banner.image.is_fixed') ? cover : contain
+  background-size: cover
   background-position: unquote(hexo-config('banner.image.position'))
   background-repeat: unquote(hexo-config('banner.image.repeat'))
-  background-attachment: hexo-config('banner.image.is_fixed') ? fixed : scroll
+  background-attachment: fixed
 
 main
   width: 100%
   height: max-content
+
+a
+  text-decoration: none
+  color: var(--theme-color)

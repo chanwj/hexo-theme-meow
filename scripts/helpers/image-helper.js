@@ -1,7 +1,7 @@
 /*
-* hexo theme meow
-* image helper (image plugin, svg handler)
-*/
+ * hexo theme meow
+ * image helper (image plugin, svg handler)
+ */
 
 "use strict";
 

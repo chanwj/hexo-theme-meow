@@ -1,0 +1,51 @@
+.footer
+  #footer-copyright
+    - let start_date = date(new Date(theme.info.start_date), "YYYY")
+    - let cr_year = "© " + start_date
+    if date(Date.now(), "YYYY") !== start_date
+      - cr_year = cr_year + " - " + date(Date.now(), "YYYY")
+
+    if theme.footer.icon
+      - cr_year = cr_year + " <span>" + theme.footer.icon + "</span> "
+    
+    | !{cr_year}
+    a(href=url_for(theme.footer.author_link))= config.author || "MEOW Team"
+  
+  #footer-info
+    //- Please keep the copyright information of this theme in the footer to support Meow and the author. Thank you very much!
+    //- 请保留footer中的Meow主题版权信息，尊重创作与支持作者，谢谢！
+    #footer-framework
+      | !{_p('footer.framework', '<a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/chanwj/hexo-theme-meow" title='+theme.version+' target="_blank">Meow</a>')}
+
+    if theme.footer.runtime
+      #footer-runtime
+        span#runtime(data-startdate=new Date(theme.info.start_date))= __('footer.runtime')
+      
+  if theme.footer.statistic
+    #footer-statistic
+      -
+        let total_wordcount = "?";
+        try {
+          total_wordcount = totalcount(site);
+        } catch (e) {
+          console.error("Failed to get wordcount!");
+        }
+      span= _p('footer.site_statistic', site.posts.length, total_wordcount)
+
+  if theme.page_view.enable
+    #footer-pageview
+      if theme.page_view.site_pv
+        #busuanzi_container_site_pv
+          span= __('page_view.site_pv')
+          span#vercount_value_site_pv
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 6l0 -3" /><path d="M16.25 7.75l2.15 -2.15" /><path d="M18 12l3 0" /><path d="M16.25 16.25l2.15 2.15" /><path d="M12 18l0 3" /><path d="M7.75 16.25l-2.15 2.15" /><path d="M6 12l-3 0" /><path d="M7.75 7.75l-2.15 -2.15" /></svg>
+      
+      if theme.page_view.site_uv
+        #busuanzi_container_site_uv
+          span= __('page_view.site_uv')
+          span#vercount_value_site_uv
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 6l0 -3" /><path d="M16.25 7.75l2.15 -2.15" /><path d="M18 12l3 0" /><path d="M16.25 16.25l2.15 2.15" /><path d="M12 18l0 3" /><path d="M7.75 16.25l-2.15 2.15" /><path d="M6 12l-3 0" /><path d="M7.75 7.75l-2.15 -2.15" /></svg>
+  
+  if theme.footer.register_info.enable
+    #footer-register
+      a(href= theme.footer.register_info.query_url target="_blank")= theme.footer.register_info.record_info

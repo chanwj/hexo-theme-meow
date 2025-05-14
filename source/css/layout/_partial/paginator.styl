@@ -1,0 +1,30 @@
+.paginator
+  display: flex
+  align-items: center
+  justify-content: center
+  gap: .8rem
+  font-size: 1.25rem
+  text-align: center
+  line-height: 2rem
+  user-select: none
+  *:not(.space)
+    display: block
+    width: 2rem
+    height: 2rem
+    background-color: var(--background-color-transparent-1)
+    backdrop-filter: blur(3px)
+    border-radius: .5rem
+    box-shadow: var(--meow-card-shadow)
+    transition: all .2s ease
+  span
+    color: var(--font-color-light-2)
+  a
+    color: var(--font-color)
+    &:hover
+      color: var(--link-hover-font-color)
+      background-color: var(--theme-color)
+  .current
+    color: var(--link-hover-font-color)
+    background-color: var(--theme-color)
+  .space
+    color: var(--link-hover-font-color)

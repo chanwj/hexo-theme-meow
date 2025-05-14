@@ -1,0 +1,212 @@
+#home-sidebar
+  flex: 1
+  height: max-content
+  display: flex
+  flex-direction: column
+  align-items: center
+  gap: .8rem
+  margin: hexo-config('sidebar.position') == 'left' ? 0 1.2rem 0 0 : 0 0 0 1.2rem
+  flex-shrink: 0
+  user-select: none
+
+.sidebar-card
+  width: 100%
+  height: max-content
+  background-color: var(--background-color-transparent-1)
+  backdrop-filter: blur(4px)
+  box-shadow: var(--meow-card-shadow)
+  border-radius: 1rem
+  padding: 1.8rem 1.5rem
+  overflow: hidden
+
+#sidebar-info
+  display: flex
+  flex-direction: column
+  align-items: center
+  gap: .7rem
+
+#sidebar-info-img
+  position: relative
+  img
+    width: 6.5rem
+    border-radius: 1.1rem
+    object-fit: contain
+    box-shadow: var(--meow-box-shadow)
+  &:hover
+    img
+      animation: beat .9s ease-in-out infinite
+    .status
+      animation: bounce .9s ease-in-out infinite
+
+.status
+  position: absolute
+  z-index $z-index-7
+  bottom: 2px
+  right: -5px
+  font-size: 1.2rem
+  background-color: #fff
+  border: 2px solid #fff
+  border-radius: 50%
+
+#sidebar-info-name
+  position: relative
+  text-align: center
+  font-size: 1.4rem
+  font-weight: bold
+  letter-spacing: .5px
+  margin-bottom: .5rem
+  &:after
+    position: absolute
+    bottom: -.4rem
+    left: 50%
+    height: .25rem
+    background-color: var(--theme-color-light-1)
+    content: ''
+    border-radius: 3px
+    animation: expand-width 1s ease-in-out infinite alternate
+
+#sidebar-info-desc
+  text-align: center
+  font-size: 1.05rem
+  color: var(--font-color-light-1)
+
+.site-statistic
+  width: 100%
+  padding: 0 1rem
+  margin-top: 0.3rem
+  display: flex
+  align-items: center
+  justify-content: space-evenly
+  a
+    color: var(--font-color)
+    text-decoration: none
+    display: flex
+    flex-direction: column
+    align-items: center
+    gap: .2rem
+    width: 30%
+    border-right: 1px dotted lightgrey
+    &:last-child
+      border-right: none
+    &:hover
+      color: var(--theme-color)
+
+.site-statistic-title
+  font-size: 1rem
+
+.site-statistic-num
+  font-size: 1.2rem
+
+.social
+  width: max-content
+  padding: 0 1rem
+  margin-top: .4rem
+  a
+    display: inline-flex
+    align-items: center
+    padding: .4rem
+    border-radius: .4rem
+  .icon
+    height: 1.5rem
+  a:hover
+    background-color: var(--theme-color-transparent-1)
+
+.sidebar-card-headline
+  display: flex
+  justify-content: flex-start
+  align-items: center
+  gap: .5rem
+  span
+    font-size: 1.25rem
+
+#sidebar-announcement .icon
+  animation: beat .8s ease infinite
+
+#sidebar-announcement div:not(.sidebar-card-headline)
+  text-align: justify
+
+.sidebar-categories-list
+  width: 100%
+  padding: 0
+  display: flex
+  flex-direction: column
+  gap: .25rem
+  li
+    width: 100%
+    list-style: none
+    line-height: 1.8rem
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+    ul
+      display: block
+      width: 100%
+      margin-top: .25rem
+      border-left: 1px dotted lightgrey
+
+.sidebar-categories-list-link
+  color: var(--font-color)
+  width: calc(100% - 1.5rem)
+  max-width: calc(100% - 1.5rem)
+  border-radius: 5px 0 0 5px
+  white-space: nowrap
+  overflow: hidden
+  text-overflow: ellipsis
+  transition: all .3s ease
+  &:hover
+    background-color: var(--theme-color-light-2)
+    color: var(--link-hover-font-color)
+    padding-left: .2rem
+    +span
+      background-color: var(--theme-color-light-2)
+      color: var(--link-hover-font-color)
+      padding-right: .2rem
+
+.sidebar-categories-list-count
+  width: 1.5rem
+  font-size: .8rem
+  text-align: center
+  color: var(--font-color-light-1)
+  border-radius: 0 5px 5px 0
+  transition: all .3s ease
+
+.sidebar-categories-list-child
+  padding-left: 2ch
+
+#sidebar-tags-content
+  width: 100%
+  height: max-content
+  max-height: 23rem
+  margin-top: .8rem
+  display: flex
+  flex-wrap: wrap
+  gap: .85rem
+  overflow-x: hidden
+  overflow-y: auto
+  scrollbar-width: none
+
+.sidebar-tags-link
+  color: var(--font-color)
+  &:hover
+    color: var(--theme-color)
+
+.sidebar-tags-count
+  color: var(--font-color-light-1)
+  font-size: .8rem
+  vertical-align: super
+
+#sidebar-links-content
+  width: 100%
+  margin-top: 1rem
+  display: flex
+  flex-direction: column
+  gap: .3rem
+  a
+    color: var(--font-color)
+    border-radius: 8px
+    line-height: 2rem
+    transition: all .3s ease
+    &:hover
+      color: var(--link-hover-font-color)
+      background-color: var(--theme-color-light-2)
+      padding-left: .6rem

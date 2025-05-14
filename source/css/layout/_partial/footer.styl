@@ -1,0 +1,61 @@
+footer
+  width: 100%
+  height: auto
+  min-height: 6rem
+  background-color: var(--background-color-transparent-1)
+  backdrop-filter: blur(1px)
+  border-top: 1px solid var(--background-color-transparent-1)
+  user-select: none
+
+.footer
+  width: 100%
+  max-width: var(--meow-main-width)
+  margin: 0 auto
+  padding: 1.5rem 1rem
+  color: var(--font-color-light-1)
+  text-align: center
+  line-height: 1.8rem
+  position: relative
+  a
+    color: var(--font-color-light-1)
+    position: relative
+    padding: 0 .2rem
+    &:after
+      content: ''
+      position: absolute
+      left: 0
+      bottom: -1px
+      display: block
+      height: 2px
+      width: 0
+      background-color: var(--theme-color-light-2)
+      transition: width .5s ease
+    &:hover
+      color: var(--theme-color)
+      &:after
+        width: 100%
+
+#footer-info
+  position: absolute
+  left: 1rem
+  top: 1.5rem
+  text-align: left
+
+#footer-pageview
+  position: absolute
+  right: 1rem
+  top: 1.5rem
+  text-align: right
+  display: flex
+  flex-direction: column
+  div
+    display: flex !important
+    align-items: center
+    justify-content: flex-end
+    gap: .5rem
+    flex-wrap: nowrap
+  span:nth-child(2)
+    display: flex
+    align-items: center
+    svg
+      height: 1rem
