@@ -1,10 +1,7 @@
-<div id="meow-lang" align="right">
-<style>
-#meow-lang span{padding:3px 8px;margin:0 1px;background:#FDB957;color:#fff;border-radius:6px;}
-.meow-lang-normal{background:gray !important}
-</style>
-<a href="README.md"><span class="meow-lang-normal">简体中文</span></a>
-<a href="README-EN.md"><span>English</span></a>
+<div id="meow-lang" align="center">
+
+<b>Language: [简体中文](README.md) | English</b>
+
 </div>
 
 # Hexo Theme Meow
