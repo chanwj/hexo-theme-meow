@@ -8,24 +8,35 @@ if hexo-config('font.custom')
 
 $meow-font-default = 'vivo Sans', 'PingFang SC', 'Microsoft YaHei', Sans-serif, Serif
 $meow-font-title = 'MaokenZhuyuanTi', 'vivo Sans', 'PingFang SC', 'Microsoft YaHei', Sans-serif, Serif
+$meow-font-code = 'SF Mono', 'vivo Sans', 'PingFang SC', 'Microsoft YaHei', Courier, Consolas, Sans-serif
 
 @require './color-mode'
 
 :root {
-	--meow-box-shadow: 1px 1px 1px 1px #2a2a2a0d
-  --meow-card-shadow: 0px 3px 8px 6px #2a2a2a0d
   --meow-text-shadow-title: 2px 2px 1.5px rgba(0, 0, 0, .25)
   --meow-text-shadow: 2px 2px 1px rgba(0, 0, 0, .125)
+  --meow-text-shadow-light: 1.2px 1.2px  1px rgba(0, 0, 0, .125)
   --meow-main-width: 1400px
-  --meow-font-default : hexo-config('font.default_font_family') ? unquote(hexo-config('font.default_font_family')) : $meow-font-default
-  --meow-font-title : hexo-config('font.title_font_family') ? unquote(hexo-config('font.title_font_family')) : $meow-font-title
+  --meow-page-width: 1100px
+  --meow-navbar-height: 60px
+  --meow-font-default: hexo-config('font.default_font_family') ? unquote(hexo-config('font.default_font_family')) : $meow-font-default
+  --meow-font-title: hexo-config('font.title_font_family') ? unquote(hexo-config('font.title_font_family')) : $meow-font-title
+  --meow-font-code: hexo-config('font.code_font_family') ? unquote(hexo-config('font.code_font_family')) : $meow-font-code
 }
 
-$meow-navbar-height = 60px
-
 $font-size-default = 16px
-// $font-size-title-1 = 2rem
+$font-size-default-smallscreen = 14px
+$font-size-title-1 = 2em
+$font-size-title-2 = 1.5em
+$font-size-title-3 = 1.35em
+$font-size-title-4 = 1.2em
+$font-size-title-5 = 1.1em
+$font-size-title-6 = 1em
+$font-size-code = .9em
+$font-size-page-title = 2.2rem
+$font-size-post-title = 1.85rem
 $meow-line-height = 1.5rem
+$meow-line-height-post = 1.58
 
 $z-index-1 = 10
 $z-index-2 = 20
@@ -36,3 +47,12 @@ $z-index-6 = 60
 $z-index-7 = 70
 $z-index-8 = 80
 $z-index-9 = 90
+$z-index-10 = 100
+
+$media-max-width-tablet = 900px // tablet 768px
+
+meow-smallscreen() {
+  @media (max-width $media-max-width-tablet) {
+    {block}
+  }
+}

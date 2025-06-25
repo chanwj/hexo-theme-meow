@@ -1,0 +1,16 @@
+.meow-animation {
+  transition-property: opacity, transform;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.77, 0, 0.175, 1);
+  transform: translateY(0);
+  opacity: 1;
+}
+
+html.is-animating .meow-animation {
+  opacity: 0;
+  transform: translateY(-1em);
+}
+
+html.is-leaving .meow-animation {
+  transform: translateY(1em);
+}

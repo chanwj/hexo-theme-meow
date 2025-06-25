@@ -1,0 +1,40 @@
+- const { server_url, lang, emoji, reaction, option } = theme.comment.waline
+- const { lazyload } = theme.comment
+
+script.
+  (() => {
+    let initFn = window.walineFn || null
+
+    const initWaline = (Fn) => {
+      const waline = Fn(Object.assign({
+        el: '#waline',
+        serverURL: '!{server_url}',
+        lang: '!{lang}',
+        dark: 'body[data-mode="dark"]',
+        emoji: !{JSON.stringify(emoji)},
+        reaction: !{JSON.stringify(reaction)},
+      }, !{JSON.stringify(option)}))
+    }
+
+    const loadWaline = async () => {
+      if (initFn) initWaline(initFn)
+      else {
+        let jsPath = ''
+        if (!{theme.cdn.enable}) {
+          jsPath = '!{getCDNPath('@waline/client', '3.5.7', 'dist/waline.js')}'
+        } else {
+          jsPath = '!{url_for('dist/waline.js')}'
+        }
+        const { init } = await import(jsPath)
+        initFn = init || Waline.init
+        initWaline(initFn)
+        window.walineFn = initFn
+      }
+    }
+
+    if (!{lazyload}) {
+      meow.lazyloadFn(document.getElementById('waline'), loadWaline)
+    } else {
+      loadWaline()
+    }
+  })()

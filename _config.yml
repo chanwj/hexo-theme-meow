@@ -1,9 +1,9 @@
 # ----------------------------------------------------------------------------------------
-#                             THEME MEOW CONFIGURATION
+#                             MEOW THEME CONFIGURATION
 #                               Author: 小橘猫chanwj
 #                  GITHUB: https://github.com/chanwj/hexo-theme-meow
-#                  DOCUMENTATION: https://chanwj.github.io/meow/docs
-#                  PREVIEW STATION：https://chanwj.github.io/meow
+#                  DOCUMENTATION: https://meow.jumaoo.top/categories/Docs文档
+#                  PREVIEW STATION：https://meow.jumaoo.top
 # ----------------------------------------------------------------------------------------
 
 # Theme Version (Automatically Updated By Theme)
@@ -16,10 +16,8 @@ info:
   # Site Logo
   logo: assets/images/Hexo-Theme-MEOW.png
   # Author Avatar
-  avatar: https://q1.qlogo.cn/g?b=qq&nk=763608788&s=640
-  # The root directory of your website, default: /
-  # If your site is in a subdirectory(e.g. username.github.io/subdirectory), set root to /subdirectory/
-  # root: /meow/
+  avatar: 
+  # Datetime of when this website was built
   start_date: 2024-04-02 22:16:20 # Format should be as same as date_format and time_format of root config
 
 # Theme Color & Mode
@@ -27,93 +25,88 @@ color:
   # Light Mode
   light:
     theme_color: '#FFB347'
-    # Dark Mode
+  # Dark Mode
   dark:
-    theme_color: '#FFE4E1'
+    theme_color: '#88C0ED'
   # Light/Dark Mode Configuration
   mode:
-    default: light
-    switch_enable: true
+    default: light # Default color mode, light or dark
 
-# Icon Configuration
-icon:
-  # Icon Style Type
-  type: uc
+# Global Configuration
+global:
+  # Icon Configuration
+  icon:
+    type: uc # Icon Style Type, uc or ta or other custom collection
+  selectable: true # Whether users can select text
+  # Change page title when page onblur, false or onblur title text
+  onblur_title: "Please Come Back～✧(´▽`ʃ♡ƪ)"
+  mouse_click_style: false # Whether to display colorful heart when clicking
 
 # Font Customization
 font:
   custom: true # Whether to use custom font
   default_font_link: assets/fonts/vivoSans-Regular/result.css # Url of default font
   default_font_family: "'vivo Sans', 'PingFang SC', 'Microsoft YaHei', Sans-serif, Serif" # Define default fonts
-  title_font_link: https://registry.npmmirror.com/@chinese-fonts/mkzyt/2.0.1/files/dist/猫啃珠圆体/result.css # Url of title font
-  title_font_family: "'MaokenZhuyuanTi', 'vivo Sans', 'PingFang SC', 'Microsoft YaHei', Sans-serif, Serif" # Define title fonts
-  code_font_link: # Url of code font
-  code_font_family: # Define code fonts
-
-# Layout Configuration
-layout:
-  # main_max_width: 1400px
+  title_font_link: # Url of title font
+  title_font_family: "'vivo Sans', 'PingFang SC', 'Microsoft YaHei', Sans-serif, Serif" # Define title fonts
+  code_font_link: assets/fonts/SFMonoRegular/result.css # Url of code font
+  code_font_family: "'SF Mono', 'vivo Sans', 'PingFang SC', 'Microsoft YaHei', Courier, Consolas, Sans-serif" # Define code fonts
 
 # Navigation Bar
 menu:
-  articles || uc-article:
-    archives: /archives || uc-archive
-    categories: /categories || uc-category
-    tags: /tags || uc-tag
-  about || uc-about:
-    site: /aboutsite || uc-site
-    author: /aboutme || uc-face
-    essay: /essay || uc-sun
-  links || uc-link:
-    albums: /albums || uc-picture
-    bookmarks: /bookmarks || uc-bookmark
-    friends: /friends || uc-friend
-  comments: /comments || uc-note
   # articles || uc-article:
   #   archives: /archives || uc-archive
   #   categories: /categories || uc-category
   #   tags: /tags || uc-tag
+  # about: /about || uc-about
 
 # Search Function
 search:
-  enable: true # Whether to enable search function
+  enable: false # Whether to enable search function
+  type: local # Search system type, support: local
+  # Local Search
+  local:
+    # Show top n results per article, show all results by setting to -1
+    top_n_per_article: 1
+    # Preload the search data when the page loads
+    preload: false
 
 # Banner Configuration
 banner:
-  # Whether to enable Banner
-  enable: true
   # Background image of banner under light/dark mode
   image:
     light: assets/images/wallhaven-5yl597.webp
     dark: assets/images/wallhaven-e7zogk.webp
-    is_fixed: true # Whether the image is fixed as background or scrollable with banner, true or false
+    is_fixed: true # Whether the image is fixed as background or scrollable with banner at homepage, true or false
     position: center top # horizontal(left/center/right) vertical(top/center/bottom)
     repeat: no-repeat # repeat/repeat-x/repeat-y/no-repeat
+  # Banner avatar (not at homepage)
+  avatar:
+    type: site # site(logo) or author(avatar) or false
+    shape: 1 # Shape of avatar. 1(normal) or 2(circle)
+    border: false # Whether to add border to avatar
   # Banner title
   title:
     enable: true # Whether to show title
     text: 「 MEOW 」 # Title text
-  # Banner subtitle
+  # Banner subtitle at homepage
   subtitle:
-    enable: true # Whether to show subtitle
+    enable: false # Whether to show subtitle
     # Subtitle text (Data type: Array)
     text:
-      - "简洁可爱的响应式Hexo主题🐱"
-      - "超级适合用来发布小说、图片、同人等作品♥️"
-      - "A cute and responsive theme for Hexo"
-      - "🐈喵呜～"
-    effect: true # Typewriter effect, true or false. If false, only show the first text.
+      # - "A cute and responsive theme for Hexo"
+    effect: false # Typewriter effect, true or false(only show the first text).
     type_speed: 100 # Typing speed (ms)
     back_speed: 150 # Backing speed (ms)
     start_delay: 500 # Start delay (ms)
     back_delay: 1500 # Backing delay (ms)
-    loop: true # Whether to loop, true or false
-    smart_backspace: true # Whether to enable smart backspace, true or false
-    fade_out: true # Whether to enable fade out effect, true or false
+    loop: true # Whether to loop
+    smart_backspace: true # Whether to enable smart backspace
+    fade_out: true # Whether to enable fade out effect
     shuffle: false # Whether to shuffle the text list
   title_color: # Title color under light/dark mode
     light: '#fff'
-    dark: '#f3f3f2'
+    dark: '#e0e0e0'
 
 # Sidebar At Homepage
 sidebar:
@@ -123,52 +116,124 @@ sidebar:
   # Information card
   info:
     enable: true # Whether to show information card
-    type: author # Which type of information to show, site or author
+    type: author # Which type of avatar to show, site or author
     status: # Status next to the avatar
       emoji: 🐱 # false or emoji
-      desc: 元气满满～ # Describe the status
-    link: /aboutme # Url for image clicking
-    desc: 一只既敲代码又写小说的橘猫 # Describe yourself or say something
+      desc: # Describe the status
+    link: # Url for image clicking
+    desc: # Describe yourself or say something
     statistic: true # Whether to show the total number of articles, categories and tags
     social: # Social profiles
-      enable: true # Whether to show social module
-      list: # Social type: social icon || social link
-        email: brand-mail || contact@jumao.simplelogin.com
-        github: brand-github || https://github.com/chanwj
-        qq: brand-qq || https://qm.qq.com/q/NLqvCFlBeA
-        steam: brand-steam || https://steamcommunity.com/id/midnightexpress/
-        xiaohongshu: custom-xiaohongshu || https://www.xiaohongshu.com/user/profile/5711d9b884edcd2b70217559
+      enable: false # Whether to show social module
+      list: # Social name: social icon || social link
+        # email: brand-mail || contact@jumao.simplelogin.com
+        # github: brand-github || https://github.com/chanwj
   # Show announcement card, false or announcement text, markdown available
-  announcement: Hi～这里是Hexo主题<font style="color:#FFB347">**Meow**</font>的专属网站，提供主题文档以及各种demo，希望能够帮助到您💗<br><br>如果您在使用本主题的过程中遇到问题，请到[Github Issues](https://github.com/chanwj/hexo-theme-meow/issues)进行反馈。
+  announcement: 
   # Links card
   links:
     enable: true # Whether to show additional links
-    title: 快速直达 # The title of links card
+    title: Links # The title of links card
     list: # List of links. link name: url
-      📦 Meow项目仓库: https://github.com/chanwj/hexo-theme-meow
-      📋 Meow主题指南: /posts/meow-guide
+      # 📦 Meow's Repository: https://github.com/chanwj/hexo-theme-meow
   # Categories card
   categories:
     enable: true # Whether to show categories card
     depth: 0 # Levels of categories to be displayed. 0 displays all categories and child categories; 1 displays only top level categories. Better be less than 3.
   tags: true # Whether to show tags card
 
+# Floating Toolbar
+toolbar:
+  enable: true # Whether to show toolbar
+  setting_enable: true # Whether to show setting button(color mode/font size/share)
+  color_mode: true # Whether users can switch light/dark mode
+  font_size_setting: true # Whether users can resize post font
+  share: true # Whether to display share page button
+
 # Homepage Customization
 home:
-  cover_position: top # top or left
+  cover_position: top # Position of post cover, top or left
 
-# Articles Customization
-article:
-  excerpt_length: 200
+# Archive Customization
+archive:
+  icon: assets/images/Hexo-Theme-MEOW.png # Show icon when no cover, icon link or stay blank
+  thumbnail: true # Whether to show cover or photo
+
+# Category Customization
+category:
+  depth: 0 # Levels of categories to be displayed. 0 displays all categories and child categories; 1 displays only top level categories.
+  icon: assets/images/Hexo-Theme-MEOW.png # Show icon at the right bottom corner
+  show_count: false # Whether to show posts count of each category
+
+# Tags Customization
+tag:
+  style: 1 # 1: normal, 2: tagcloud
+  show_count: true # Whether to show posts count of each tag
+  color: true # Whether to apply font color to tags (tagcloud function)
+  start_color: '#D3D3D3' # The lightest color of tags (tagcloud function)
+  end_color: '#FFB347' # The darkest color of tags (tagcloud function)
+
+# Posts Customization
+post:
+  excerpt_length: 200 # Max length of auto excerpt
+  wordcount: false # Whether to show post wordcount
+  # Reading time
+  min2read:
+    enable: false # Whether to show estimated reading time
+    cn: 350 # Reading speed of Chinese
+    en: 200 # Reading speed of English
+  view: false # Whether to display post view data
+  font_size: 17px # Font size of posts with unit
+  font_size_small: 15px # Font size of posts with unit on small screen
+  indent: false # Whether to indent the first line of paragraph in post by 2em
+  # Post TOC module
+  toc:
+    enable: true # Whether to generate post TOC
+    show: true # Whether to open post TOC automatically
+    number: false # Whether to display TOC list number
+    max_depth: 3 # Maximum heading depth of generated TOC
+    max_items: Infinity # Maximum number of items in generated toc, Infinity or number
+  # Post reward module
+  reward:
+    enable: true # Whether to show post reward module
+    outer_text: # Text under reward button
+    inner_text: # Text in reward module
+    # Credits list
+    reward_list:
+      enable: true # Whether to show credits list link
+      link: # Credits list link url
+  # Post copyright module
+  copyright:
+    enable: true # Whether to show post copyright module
+    type: 1 # Type of copyright. 1(license) or 2(custom)
+    license: CC BY-NC-SA 4.0 # License type, usually use Creativecommons License
+    license_link: https://creativecommons.org/licenses/by-nc-sa/4.0/ # Url of cc license
+    license_desc: 'Attribution-NonCommercial-ShareAlike' # Description of cc license, display when hover
+    custom_text: Only for reading, do NOT redistribute, remix, transform and build upon the material. # Description of custom copyright announcement
+  tail_tags: true # Whether to show post's tags at the end of post content
+
+# Image Configuration
+image:
+  image_caption: false # Whether to display image caption(alt text) in posts and pages
+  loding_image: assets/images/Meow-Loading.webp # Display loading image when target image is not loaded
+
+# Code Block
+code:
+  func: true # Whether to add function(copy&fold) to code block
+  max_height: 22em # Max height of codeblock, false or height with unit
+  # Color scheme for code highlighting
+  theme:
+    light: solar-flare-light # Light mode theme: solar-flare-light, panda-syntax-light
+    dark: tomorrow-night # Dark mode theme: tomorrow-night, panda-syntax-dark
 
 # Markdown Style
 markdown:
-  # link_icon: true # Whether to show link icon
+  hr_icon: 🐈 # Icon display on horizontal rule, emoji or false
 
 # Page View Counting
 page_view:
-  enable: true # Whether to show page view statistic
-  url: https://cn.vercount.one/js # Counter API url
+  enable: false # Whether to show page view statistic
+  url: https://events.vercount.one/js # Counter API url
   site_pv: true # Site's page view
   site_uv: true # Site unique visitor
   page_pv: true # Page view
@@ -176,20 +241,82 @@ page_view:
 # Footer Customization
 footer:
   icon: 💗 # Emoji or false
-  author_link: /aboutme # Url for the link of author
+  author_link: # Url for the link of author
   runtime: true # Whether to show website running time
-  statistic: true # Whether to show site statistics(total articles & total wordcount)
+  statistic: false # Whether to show site statistics(total articles & total wordcount)
   # Site register info(e.g. ICP)
   register_info:
     enable: false # Whether to show register info
     record_info: 京ICP备………………号 # E.g. ICP record number
     query_url: https://beian.miit.gov.cn/ # E.g. ICP record url
 
+# Reward Customization
+reward:
+  # QRcode list, false or QRcode title: QRcode image url
+  qrcode: false
+  # Text link list, false or Link title: link url
+  link: false
+
+# Share Customization
+share:
+  notify: false # Whether to enable notification when copy text(Ctrl+C) or pressing F12
+
+# Essay Page
+essay:
+  desc: # Additional message of essay
+  avatar_shape: 2 # Shape of avatar. 1(normal) or 2(circle)
+  max_num: 30 # Max number of essays to display
+
+# Friend Link Page
+friends:
+  desc: # Additional message of friends page
+
+# Fiction Module
+fiction:
+  # Customize the display values of fiction attributes
+  attribute:
+    card_title: Fiction Information # Fiction Information
+    addition_title: Notice # Notice
+    type: Type # Type
+    fandom: Fandom # Fandom
+    relationship: Relationship # Relationship
+    character: Character # Character
+    rating: Rating # Rating
+    warning: Warning # Warning
+    status: Status # Status
+  # Customize the display values of fiction rating
+  rating:
+    0: General Audiences # General Audiences
+    1: Teen And Up Audiences # Teen And Up Audiences
+    2: Mature # Mature
+    3: Explicit # Explicit
+  # Customize the display values of fiction statis
+  status:
+    Y: COMPLETE # COMPLETE
+    N: TO BE CONTINUED... # TO BE CONTINUED...
+
+# Comment Module
+comment:
+  enable: false # Whether to enable comment module
+  display: true # Whether to show comment module at posts automatically
+  type: waline # Comment system, type: waline
+  lazyload: true # Whether to load comment system when comment module enters the browser's viewport
+  # Waline Config, https://waline.js.org/
+  waline:
+    server_url: # Waline server URL, see more at https://waline.js.org/guide/deploy/
+    lang: en-US # Language, e.g. zh-CN, en-US. https://waline.js.org/guide/features/i18n.html
+    emoji: # https://waline.js.org/guide/features/emoji.html
+    reaction: # https://waline.js.org/guide/features/reaction.html
+    option: # Custom other Waline options, https://waline.js.org/reference/client/props.html
+
 # CDN Configuration
 cdn:
   # Whether to enable CDN
-  enable: true
+  enable: false
   # CDN provider
-  provider: npmmirror # npmmirror, cdnjs, jsdelivr, unpkg, custom
-  # Custom CDN url, should be formatted. Example: https://cdn.jsdelivr.net/npm/${jsname}@${version}/${path}
+  provider: jsdelivr # jsdelivr, unpkg, npmmirror, custom
+  # Custom CDN url, should be formatted. Example: https://cdn.jsdelivr.net/npm/${name}@${version}/${path}
   custom:
+
+# Whether to enable in-built 404 page
+error_page: true

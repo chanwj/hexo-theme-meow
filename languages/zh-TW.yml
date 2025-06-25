@@ -1,0 +1,94 @@
+# 頂部導航欄
+home: 主頁
+articles: 文章
+archives: 歸檔
+categories: 分類
+tags: 標籤
+about: 關於
+site: 本站
+author: 作者
+essay: 動態
+links: 連結
+albums: 相冊集
+bookmarks: 書簽頁
+friends: 友情連結
+comments: 留言
+search: 搜索
+toggle: 打開菜單
+
+# 工具欄
+toc: 目錄
+setting: 設置
+go_to_top: 返回頂部
+dark_mode: 深色模式
+font_size_plus: 放大字體
+font_size_minus: 縮小字體
+copy: 複製
+share: 分享
+
+# 搜索相關
+search_fn:
+  tips: 請輸入關鍵字進行站內搜索……
+
+# 文章
+read_more: 閱讀全文
+posts_count: "(%s篇文章)"
+sticky: 置頂
+pubdate: 發表於%s
+update: 更新於%s
+wordcount: "總字數: %s字"
+readtime: "閱讀時長: %s分鐘"
+post_author: "作者: %s"
+prev_post: 上一篇
+next_post: 下一篇
+
+# 側邊欄
+announcement: 公告
+
+#頁腳
+footer:
+  runtime: 🌻已穩定運行.年.月.天
+  framework: 🚀本站由 %s 強力驅動
+  site_statistic: 共撰寫%s篇文章，全站共%s字
+
+# 訪問量統計
+page_view:
+  site_pv: 🔥總訪問量
+  site_uv: 🐈訪客人數
+  page_pv: 訪問量
+
+# 社交資訊
+social:
+  email: 電子郵箱
+  github: GitHub
+  qq: QQ
+  wechat: 微信
+  ao3: Archive of Our Own
+  bilibili: Bilibili
+  facebook: Facebook
+  instagram: Instagram
+  tiktok: TikTok
+  weibo: 微博
+  x: X
+  mastodon: Mastodon
+  steam: Steam
+  xiaohongshu: 小紅書
+
+# 說說
+essay_max_num: "- 只展示最近%s條說說 -"
+
+# 讚賞欄目
+reward: 讚賞作者
+reward_list: 致謝名單
+
+# 版權相關
+copyright:
+  info: "本作品由 %s 於 %s 發佈"
+  link: "作品位址："
+  text: "除特別聲明外，本站作品均採用 %s 授權合約，轉載請注明來自 %s"
+  share_text: "🐱內容分享自Meow"
+  notify_info: 複製成功～轉載請標注本文地址
+  F12_info: 開發者模式已打開，請遵循本站版權協議
+
+# 其他項
+error_page_text: 頁面失蹤了_(:з」∠)_

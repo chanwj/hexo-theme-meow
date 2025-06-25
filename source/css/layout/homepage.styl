@@ -10,13 +10,15 @@
   margin: 0 auto
   display: flex
   flex-direction: hexo-config('sidebar.position') == 'left' ? row : row-reverse
+  gap: 1.3rem
 
 #home-main
-  flex: 3.2
+  flex: 3
+  max-width: 75%
   height: max-content
   display: flex
   flex-direction: column
-  gap: 1.2rem
+  gap: 1.3rem
 
 .home-article
   background-color: var(--background-color-transparent-1)
@@ -31,7 +33,7 @@
 .home-article-cover
   position: relative
   width: 100%
-  height: 10rem
+  height: 9.5rem
   border-radius: 1rem 1rem 0 0
   overflow: hidden
   img
@@ -43,31 +45,37 @@
     transform: translateY(-50%)
 
 .home-article-content
-  padding: 1.7rem 2.2rem
-
-if hexo-config('home.cover_position') == 'left'
-  .home-article
-    display: flex
-    align-items: center
-  .home-article-cover
-    flex: 2
-    height: 100%
-    border-radius: 0
-    img
-      position: static
-      display: block
-      transform: none
-  .home-article-content
-    flex: 3
+  padding: 1.4rem 2.2rem
 
 .home-article-title
-  margin: .3rem 0 .9rem
+  margin: .2rem 0 .6rem
+  display: flex
+  flex-wrap: nowrap
+  align-items: flex-start
+  gap: .5rem
+  overflow: hidden
+  line-height: 2rem
   a
-    font-size: 1.55rem
+    font-size: 1.5rem
     font-weight: bold
     color: var(--font-color)
     &:hover
       color: var(--theme-color)
+
+.home-article-encrypt
+  display: flex
+  align-items: center
+  height: 2rem
+  .icon
+    height: 1.35rem
+
+.home-article-sticky
+  background-color: var(--theme-color)
+  padding: 0 .5rem
+  border-radius: .5rem
+  color: var(--link-hover-font-color)
+  height: 2rem
+  white-space: nowrap
 
 .home-article-excerpt
   text-align: justify
@@ -79,16 +87,15 @@ if hexo-config('home.cover_position') == 'left'
   align-items: center
   justify-content: space-between
   font-size: .95rem
+  gap: .5rem
 
 .home-article-info
-  max-width: 80%
+  max-width: 70%
   display: flex
   align-items: center
   flex-wrap: nowrap
   gap: .8rem
   overflow: hidden
-  overflow-x: auto
-  scrollbar-width: none
   a, span, &
    color: var(--font-color-light-1)
   a:hover
@@ -103,11 +110,16 @@ if hexo-config('home.cover_position') == 'left'
     align-items: center
     gap: .3rem
 
+body[data-mode="dark"] .home-article-info .icon
+  filter: invert(100%)
+
 .home-article-date span
   white-space: nowrap
 
-.home-article-categories
-  a:not(:last-child):after
+.home-article-categories a
+  white-space: nowrap
+  text-overflow: ellipsis
+  &:not(:last-child):after
     content: ', '
 
 .home-article-tags a
@@ -118,5 +130,72 @@ if hexo-config('home.cover_position') == 'left'
 
 .read-more-btn
   color: var(--font-color-light-1)
+  white-space: nowrap
   &:hover
     color: var(--theme-color)
+
+if hexo-config('home.cover_position') == 'left'
+  .home-article-cover
+    position: absolute
+    top: 0
+    bottom: 0
+    left: 0
+    width: 33%
+    height: 100%
+    border-radius: 0
+    img
+      position: static
+      transform: none
+  .home-article-content[cover='']
+      margin-left: 33%
+  .home-article-info
+    max-width: 65%
+
++meow-smallscreen()
+  #home-content
+    flex-direction: column
+    if hexo-config('sidebar.show_on_small_screen')
+      flex-direction: column-reverse
+  
+  #home-main
+    max-width: 100%
+    flex: 1
+  
+  .home-article-title
+    line-height: 1.5rem
+    a
+      font-size: 1.2em
+  
+  .home-article-encrypt
+    height: 1.5rem
+    .icon
+      height: 1.2em
+
+  .home-article-sticky
+    height: 1.5rem
+  
+  .home-article-excerpt
+    font-size: 1em
+    margin: .35rem 0
+  
+  .home-article-categories, .home-article-tags
+    visibility: hidden
+
+  .home-article-info-container
+    font-size: .9em
+  
+  .home-article-cover
+    height: 9rem
+  
+  .home-article-content
+    padding: .5rem 1.8rem
+    margin: .5rem 0
+  
+  if hexo-config('home.cover_position') == 'left'
+    .home-article
+      display: block
+    .home-article-cover
+      height: 9rem
+      img
+        position: absolute
+        transform: translateY(-50%)

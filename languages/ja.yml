@@ -1,0 +1,94 @@
+# トップナビゲーションバー
+home: ホーム
+articles: 記事
+archives: アーカイブ
+categories: カテゴリー
+tags: タグ
+about: 当サイトについて
+site: 当サイト
+author: 著者
+essay: 最新情報
+links: リンク
+albums: アルバム
+bookmarks: ブックマーク
+friends: 友情リンク
+comments: コメント
+search: 検索
+toggle: メニューを開く
+
+# ツールバー
+toc: 目次
+setting: 設定
+go_to_top: トップに戻る
+dark_mode: ダークモード
+font_size_plus: フォントサイズを大きくする
+font_size_minus: フォントサイズを小さくする
+copy: コピー
+share: 共有
+
+# 検索関連
+search_fn:
+  tips: キーワードを入力してサイト内検索...
+
+# 記事
+read_more: 全文を読む
+posts_count: "(%s件の記事)"
+sticky: トップに表示
+pubdate: 投稿日：%s
+update: 更新日：%s
+wordcount: "総文字数: %s文字"
+readtime: "閲覧時間: %s分"
+post_author: "著者: %s"
+prev_post: 前の記事
+next_post: 次の記事
+
+# サイドバー
+announcement: お知らせ
+
+# フッター
+footer:
+  runtime: 🌻安定稼働中.年.月.日
+  framework: 🚀当サイトは %s で動作しています
+  site_statistic: 当サイト合計%s件の記事、全文字数%s
+
+# アクセス数統計
+page_view:
+  site_pv: 🔥総アクセス数
+  site_uv: 🐈訪問者数
+  page_pv: アクセス数
+
+# ソーシャル情報
+social:
+  email: メールアドレス
+  github: GitHub
+  qq: QQ
+  wechat: WeChat
+  ao3: Archive of Our Own
+  bilibili: Bilibili
+  facebook: Facebook
+  instagram: Instagram
+  tiktok: TikTok
+  weibo: Weibo
+  x: X
+  mastodon: Mastodon
+  steam: Steam
+  xiaohongshu: Red Note
+
+# つぶやき
+essay_max_num: "- 最近の%s件のつぶやきを表示 -"
+
+# サポートコーナー
+reward: 著者を応援する
+reward_list: 特別感謝リスト
+
+# 著作権関連 
+copyright:
+  info: "本作品は %s によって %s に発表されました"
+  link: "作品のリンク："
+  text: "特に明記がない限り、このサイトの作品は %s ライセンスの下で公開されています。転載時には %s をご記載ください"
+  share_text: "🐱このコンテンツはMeowから共有しています"
+  notify_info: コピーが成功しました～転載時には本文のURLをご記載ください
+  F12_info: 開発者モードが開かれています。著作権規約を遵守してください
+
+# その他の項目
+error_page_text: ページが見つかりません_(:з」∠)_

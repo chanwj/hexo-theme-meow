@@ -1,0 +1,58 @@
+.tabs
+  position: relative
+  margin: 2rem 0 2.5rem
+  overflow: hidden
+  .tabs-nav
+    width: max-content
+    display: flex
+    flex-wrap: wrap
+    align-items: center
+    justify-content: center
+    gap: .3rem
+    margin: 0 auto 1rem
+    padding: 0
+    border: 1px solid var(--background-color-grey)
+    border-radius: .8rem
+    background: var(--background-color-grey-transparent)
+    box-shadow: var(--meow-box-shadow)
+    .tab
+      padding: .7rem .8rem
+      transition: all .3s ease
+      border-radius: .8rem
+      font-size: 1em
+      &.active
+        background: var(--background-color)
+        border: 1px solid var(--background-color-grey)
+        color: var(--theme-color)
+        cursor: default
+      &:not(.active)
+        &:hover
+          color: var(--theme-color)
+    &.no-default
+      & ~ .tabs-content
+        display: none
+  .tabs-content
+    border: 1px solid var(--card-border-color)
+    border-radius: .8rem
+  .tabs-item-content
+    position: relative
+    display: none
+    padding: .3rem 1.2rem
+    animation: show-up .3s ease-in
+    &.active
+      display: block
+  .tabs-to-top
+    width: 100%
+    padding-right: 1.5rem
+    text-align: right
+    button
+      filter: invert(80%)
+      svg
+        height: 1.5rem
+        animation: bounce .8s ease infinite
+      &:hover
+        filter: invert(0)
+
++meow-smallscreen()
+  .tabs .tabs-item-content
+    padding: .3em .8em

@@ -1,0 +1,29 @@
+#friends-container
+  if theme.friends.desc
+    .page-desc= theme.friends.desc
+
+  #friends-content
+    //- - const friendsData = site.data.friends.friends
+    //- if friendsData
+    //-   each friendsClass in friendsData
+    //-     .friends-class
+    //-       .friends-class-title= friendsClass.class.name
+
+    //-       if friendsClass.class.desc
+    //-         .friends-class-desc= friendsClass.class.desc
+          
+    //-       if friendsClass.list
+    //-         .friends-class-list
+              //- each friend in friendsClass.list
+              //-   .friends-item
+              //-     a(href=friend.url target="_blank" rel="nofollow")
+              //-       .friends-item-avatar
+              //-         img(src=url_for(friend.avatar) no-view="")
+              //-       .friends-item-info
+              //-         .friends-item-name= friend.name
+              //-         .friends-item-desc= friend.desc
+        
+        hr
+  
+.page-body.markdown
+  != page.content

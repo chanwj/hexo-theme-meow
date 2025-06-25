@@ -1,12 +1,12 @@
 /*
-* hexo theme meow
-* stylus renderer filter
-*/
+ * hexo theme meow
+ * stylus renderer filter
+ */
 
 "use strict";
 
 /* 
-* By hexo-theme-redefine
+ * transplant from hexo-theme-redefine
 */
 hexo.extend.filter.register('stylus:renderer', function (style) {
   style.define('url-for', function (data) {

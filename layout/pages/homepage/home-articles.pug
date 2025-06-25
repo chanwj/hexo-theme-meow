@@ -1,18 +1,21 @@
 #home-main
   - for (post of page.posts.toArray())
     .home-article
-      //- TODO 置顶样式
-      //- if post.sticky
-      //-   i
-
-      - let article_cover = post.cover || page.photo
+      - let article_cover = post.cover || post.photo
       if article_cover
         .home-article-cover
           a(href=url_for(post.path))
             img(src=url_for(article_cover))
 
-      .home-article-content
+      .home-article-content(cover=article_cover ? '' : 'nocover')
         .home-article-title
+          if post.encrypt
+            .home-article-encrypt
+              != getSvg('lock')
+
+          if post.sticky
+            .home-article-sticky= __('sticky')
+          
           a(href=url_for(post.path))= post.title
 
         if post.excerpt != 'false'
@@ -20,8 +23,8 @@
             if post.excerpt
               != strip_html(post.excerpt)
             else
-              - let excerpt_length = theme.article.excerpt_length || 200
-              != truncate(strip_html(post.content), {length: excerpt_length})
+              - let excerpt_length = theme.post.excerpt_length || 200
+              != truncate(strip_html(post.content).replace(/\s{2,}/g, " "), {length: excerpt_length})
 
         .home-article-info-container
           .home-article-info

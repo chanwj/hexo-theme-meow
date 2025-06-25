@@ -7,7 +7,7 @@ tags: 标签
 about: 关于
 site: 本站
 author: 作者
-essay: 说说
+essay: 动态
 links: 链接
 albums: 相册集
 bookmarks: 书签页
@@ -19,29 +19,48 @@ toggle: 打开菜单
 # 工具栏
 toc: 目录
 setting: 设置
+go_to_top: 返回顶部
+dark_mode: 深色模式
+font_size_plus: 放大字体
+font_size_minus: 缩小字体
+copy: 复制
+share: 分享
 
-# 文章相关
+# 搜索相关
+search_fn:
+  tips: 请输入关键词进行站内搜索……
+
+# 文章
 read_more: 阅读全文
+posts_count: "(%s篇文章)"
+sticky: 置顶
+pubdate: 发表于%s
+update: 更新于%s
+wordcount: "总字数: %s字"
+readtime: "阅读时长: %s分钟"
+post_author: "作者: %s"
+prev_post: 上一篇
+next_post: 下一篇
 
 # 侧边栏
 announcement: 公告
 
 #页脚
 footer:
-  runtime: 已稳定运行.年.月.天
-  framework: 本站由 %s 强力驱动
+  runtime: 🌻已稳定运行.年.月.天
+  framework: 🚀本站由 %s 强力驱动
   site_statistic: 共撰写%s篇文章，全站共%s字
 
 # 访问量统计
 page_view:
-  site_pv: 总访问量
-  site_uv: 访客人数
-  page_pv: 阅读次数
+  site_pv: 🔥总访问量
+  site_uv: 🐈访客人数
+  page_pv: 访问量
 
 # 社交信息
 social:
   email: 电子邮箱
-  github: Github
+  github: GitHub
   qq: QQ
   wechat: 微信
   ao3: Archive of Our Own
@@ -54,3 +73,22 @@ social:
   mastodon: Mastodon
   steam: Steam
   xiaohongshu: 小红书
+
+# 说说
+essay_max_num: "- 只展示最近%s条说说 -"
+
+# 赞赏栏目
+reward: 赞赏作者
+reward_list: 致谢名单
+
+# 版权相关
+copyright:
+  info: "本作品由 %s 于 %s 发布"
+  link: "作品地址："
+  text: "除特别声明外，本站作品均采用 %s 许可协议，转载请注明来自 %s"
+  share_text: "🐱内容分享自Meow"
+  notify_info: 复制成功～转载请标注本文地址
+  F12_info: 开发者模式已打开，请遵循本站版权协议
+
+# 其他项
+error_page_text: 页面失踪了_(:з」∠)_

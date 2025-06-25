@@ -1,0 +1,60 @@
+#toolbar
+  position: fixed
+  bottom: 1.5rem
+  right: calc((100% - 95%)/2 - 1.5rem)
+  z-index: $z-index-7
+  opacity: 1
+  transition: opacity .3s ease
+  &[hide]
+    opacity: 0
+    pointer-events: none
+  +meow-smallscreen()
+    right: .48rem
+  @media (min-width 1475px)
+    right: calc((100vw - var(--meow-main-width))/2 - 3.2rem)
+
+.toolbar-container
+  display: flex
+  flex-direction: column
+  align-items: center
+  gap: .3rem
+
+.toolbar-item
+  width: 2.2rem
+  height: 2.2rem
+  border-radius: .5rem
+  background: var(--background-color-transparent-1)
+  box-shadow: var(--meow-card-shadow)
+  transition: background .2s ease
+  button
+    width: 100%
+    height: 100%
+    display: flex
+    justify-content: center
+    align-items: center
+  .icon
+    height: 1.55rem
+    transition: all .2s ease
+  &:hover
+    background: var(--theme-color)
+    .icon
+      filter: invert(100%) !important
+    #tool-gototop
+      animation: bounce 1.2s ease-in-out infinite
+
+body[data-mode="dark"] .toolbar-item .icon
+  filter: invert(70%)
+
+#toolbar-setting-container
+  margin-bottom: .3rem
+  display: flex
+  flex-direction: column
+  align-items: center
+  gap: .3rem
+  opacity: 1
+  transform: translateY(0)
+  transition: opacity .3s ease, transform .3s ease
+  &[hide]
+    opacity: 0
+    transform: translateY(100%)
+    pointer-events: none

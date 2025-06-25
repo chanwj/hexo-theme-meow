@@ -1,0 +1,80 @@
+details
+  margin: 2rem 0
+  border-radius: .8rem
+  box-shadow: var(--meow-box-shadow)
+  transition: all .4s ease
+  summary
+    background: var(--background-color-grey-light-2)
+    border-radius: .8rem
+    padding: 1rem 1.2rem
+    cursor: pointer
+    transition: all .3s ease
+    color: var(--link-hover-font-color)
+  &[open]
+    box-shadow: none
+    summary
+      border-radius: .8rem .8rem 0 0
+  &:hover summary
+    color: var(--link-hover-font-color)
+
+.fold
+  .fold-content
+    padding: .8rem 1.2rem
+    border-radius: 0 0 .8rem .8rem
+    animation: show-ease .4s ease
+    border: 1px solid var(--background-color-grey)
+  &.light
+    summary
+      color: var(--font-color) !important
+    &[open], &:hover
+      summary
+        background: var(--background-color-grey-light-1)
+        color: var(--font-color)
+      .fold-content
+        border-color: var(--background-color-grey-light-1)
+  &.pink
+    summary
+      background: $color-pink-light-2
+    &[open], &:hover
+      .fold-content
+        border-color: $color-pink
+      summary
+        background: $color-pink
+  &.purple
+    summary
+      background: $color-purple-light-2
+    &[open], &:hover
+      .fold-content
+        border-color: $color-purple
+      summary
+        background: $color-purple
+  &.yellow
+    summary
+      background: $color-yellow-light-2
+      color: var(--font-color) !important
+    &[open], &:hover
+      .fold-content
+        border-color: $color-yellow
+      summary
+        background: $color-yellow
+  &.blue
+    summary
+      background: $color-blue-light-2
+    &[open], &:hover
+      .fold-content
+        border: 1px solid $color-blue
+      summary
+        background: $color-blue
+  &.green
+    summary
+      background: $color-green-light-2
+    &[open], &:hover
+      .fold-content
+        border-color: $color-green
+      summary
+        background: $color-green
+
+body[data-mode="dark"] details
+  filter: brightness(90%)
+  summary
+    color: $dark-background-color-grey

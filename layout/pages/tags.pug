@@ -1,0 +1,5 @@
+.tag-container(tag-style=theme.tag.style == 1 ? "normal" : "cloud")
+  if theme.tag.style == 1
+    != list_tags(site.tags, {class:'tags', show_count:theme.tag.show_count})
+  else
+    != tag_cloud(site.tags, {class:'tags', show_count:theme.tag.show_count, count_class:'tags-count', min_font:18, max_font:24, color: theme.tag.color, start_color:theme.tag.start_color?theme.tag.start_color:'lightgrey', end_color:theme.tag.end_color?theme.tag.end_color:theme.color.light.theme_color})

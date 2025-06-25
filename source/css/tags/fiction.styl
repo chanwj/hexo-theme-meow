@@ -1,0 +1,143 @@
+.fiction-meta
+  margin: 2rem 0
+  border-radius: 1rem
+  box-shadow: var(--meow-card-shadow)
+  display: flex
+  align-items: stretch
+  overflow: hidden
+  background: var(--background-color-grey-light-2)
+
+body[data-mode="dark"] .fiction-meta
+  background: transparent
+
+.fmeta-info
+  flex: 4
+  background: var(--background-color)
+  border-radius: 1rem 0 0 1rem
+  border: 1px solid var(--background-color-grey)
+  &[clip]
+    clip-path: polygon(0% 0%, 98% 0%, 100% 5%, 100% 95%, 98% 100%, 0% 100%)
+  >div:nth-child(2)
+    display: flex
+    align-items: stretch
+    gap: 1.5rem
+    margin: 1rem 1.5rem 1.3rem
+
+.fmeta-item-attr
+  color: var(--theme-color)
+
+.fmeta-info-title
+  text-align: center
+  font-weight: bold
+  font-size: 1.2em
+  margin-bottom: 1.3rem
+  padding: .35rem 1.3rem
+  background: var(--theme-color-light-3)
+  color: var(--link-hover-font-color)
+  text-shadow: var(--meow-text-shadow-light)
+
+.fmeta-base
+  flex: 1
+  padding: 0 .5rem
+
+.fmeta-element
+  flex: 2
+  padding: 0 .5rem
+  position: relative
+  &:before
+    content: ''
+    position: absolute
+    top: 5%
+    left: -1.5rem
+    width: 3px
+    height: 90%
+    background: var(--background-color-grey-light-1)
+
+.fmeta-item
+  &:not(:last-child)
+    margin-bottom .5rem
+  >div:nth-child(2)
+    color: var(--font-color-light-1)
+    text-align: justify
+  >div:first-child
+    white-space: nowrap
+
+.fmeta-addition
+  flex: 1
+  background: var(--background-color)
+  border-radius: 0 1rem 1rem 0
+  text-align: center
+  border: 1px solid var(--background-color-grey)
+  border-left: 3.5px dotted var(--background-color-grey)
+  clip-path: polygon(8% 0%, 100% 0%, 100% 100%, 8% 100%, 0 95%, 0% 5%)
+  .fmeta-item
+    &:not(:last-child)
+      margin-bottom 1rem
+    >div:nth-child(2)
+      text-align: center !important
+  >div:nth-child(2)
+    margin-bottom: 1.3rem
+    padding: 0 1.3rem
+
+.fmeta-addition-title
+  font-weight: bold
+  font-size: 1.2em
+  margin-bottom: 1.3rem
+  padding: .35rem 1.3rem
+  background: var(--theme-color-light-3)
+  color: var(--link-hover-font-color)
+  text-shadow: var(--meow-text-shadow-light)
+
+.fmeta-rating
+  &:not([frating="0"])
+    font-weight: bold
+  &[frating="2"]
+    color: $color-pink !important
+  &[frating="3"]
+    color: red !important
+.fmeta-warning
+  text-decoration: underline dotted var(--font-color-light-2)
+
++meow-smallscreen()
+  .fiction-meta
+    flex-direction: column
+    border: 1px solid var(--background-color-grey)
+  
+  .fmeta-info
+    flex: 1
+    border-radius: 0
+    border: none
+    &[clip]
+      clip-path: none
+    >div:nth-child(2)
+      flex-direction: column
+      gap: .5rem
+      margin: 0
+      padding: 1em 1em
+  
+  .fmeta-info-title
+    margin: 0
+  
+  .fmeta-element
+    &:before
+      display: none
+  
+  .fmeta-addition
+    border: none
+    clip-path: none
+    >div:nth-child(2)
+      text-align: start
+      margin: 0
+      padding: 1em 1em
+    .fmeta-item
+      &:not(:last-child)
+        margin-bottom: .5rem
+      >div:nth-child(2)
+        text-align: start !important
+      display: flex
+      align-items: flex-start
+      gap: 1.2em
+  
+  .fmeta-addition-title
+    border-radius: 1rem 1rem 0 0
+    margin: 0

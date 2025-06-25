@@ -1,0 +1,144 @@
+.post-reward
+  width: 100%
+  margin: 2rem 0
+  position: relative
+  user-select: none
+  &:hover
+    .post-reward-content
+      display: flex
+      flex-direction: column
+      align-items: center
+      gap: .5rem
+      animation: show-ease .3s ease
+    .post-reward-btn span
+      opacity: 1
+  &:after
+    position: absolute
+    bottom: 5rem
+    left: 0
+    width: 100%
+    height: 1.5rem
+    content: ''
+
+.post-reward-btn
+  display: flex
+  flex-direction: column
+  justify-content: center
+  gap: .25rem
+  text-align: center
+  cursor: pointer
+  .icon
+    height: 3.5rem
+    animation: beat .5s ease infinite
+  span
+    opacity: 0
+    color: var(--font-color-light-1)
+    transition: opacity .3s ease
+
+.post-reward-content
+  display: none
+  width: max-content
+  max-width: 22rem
+  position: absolute
+  bottom: 6rem
+  left: 50%
+  transform: translateX(-50%)
+  z-index: $z-index-9
+  background: var(--background-color-grey-light-2)
+  border: 1px solid var(--background-color-grey)
+  box-shadow: 1px 1px 0px 0px #2a2a2a0d
+  border-radius: .8rem
+  padding: 1.1rem 1rem
+  img
+    width: 9.5rem
+    border-radius: .5rem
+
+.post-reward-text
+  font-weight: bold
+  font-size: 1.1rem
+  position: relative
+  margin: 0 0 .7rem
+  &:after
+    position: absolute
+    bottom: -.4rem
+    left: 50%
+    height: .15rem
+    background-color: var(--theme-color-light-1)
+    content: ''
+    border-radius: 3px
+    animation: expand-width 1s ease-in-out infinite alternate
+
+.post-reward-qrcode
+  display: flex
+  align-items: center
+  justify-content: flex-start
+  flex-wrap: wrap
+  gap: .5rem
+  >div
+    display: flex
+    flex-direction: column
+    align-items: center
+    gap: .2rem
+
+.post-reward-link
+  display: flex
+  align-items: center
+  justify-content: flex-start
+  flex-wrap: wrap
+  gap: .5rem
+  div
+    width: 9.5rem
+    padding: .1rem .7rem
+    border-radius: .5rem
+    border: 1px dashed var(--font-color-light-3)
+    text-align: center
+    overflow: hidden
+    white-space: nowrap
+    text-overflow: ellipsis
+    transition: background .3s ease
+    &:hover
+      background: var(--theme-color)
+      a
+        color: var(--link-hover-font-color)
+  a
+    color: var(--font-color)
+    transition: color .3s ease
+
+.post-reward-list
+  margin: .5rem 0 0
+  width: 100%
+  padding: .5rem
+  border-radius: .5rem
+  background: var(--theme-color-light-3)
+  text-align: center
+  transition: background .3s ease
+  a
+    color: var(--link-hover-font-color)
+    font-size: 1.1rem
+  &:hover
+    background: var(--theme-color)
+
++meow-smallscreen()
+  .post-reward-btn
+    .icon
+      height: 3.2rem
+    span
+      opacity: .5
+
+  .post-reward-text
+    font-size: 1.15em
+  
+  .post-reward-content
+    max-width: 20rem
+    img
+      width: 8rem
+  
+  .post-reward-qrcode
+    justify-content: center
+    gap: .4rem
+  
+  .post-reward-list a
+    font-size: 1.1em
+  
+  .post-reward
+    margin: 1.5rem 0

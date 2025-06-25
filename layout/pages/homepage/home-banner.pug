@@ -1,4 +1,4 @@
-#home-banner(bg-style=theme.banner.enable && theme.banner.image.is_fixed ? 'fixed' : 'none')
+#home-banner(bg-style=theme.banner.image.is_fixed ? 'fixed' : 'none')
   #home-banner-info
     if theme.banner.title.enable
       #home-banner-title
@@ -12,4 +12,4 @@
           != theme.banner.subtitle.text[0]
 
   #home-banner-scrolldown
-    != getSvg('down', {id:"scroll-to-main"})
+    #scroll-to-main= "﹀"

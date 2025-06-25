@@ -3,7 +3,7 @@ meta(name="viewport" content="width=device-width, initial-scale=1.0")
 meta(name="author" content=config.author || "MEOW Team")
 //- meta(name="description" content=getPageDescription())
 meta(name="copyright" content=config.author || "MEOW Team") 
-meta(name="theme-color" content=theme.color.light.primary || "#FFCC33")
+meta(name="theme-color" content=theme.color.light.theme_color || theme.color.dark.theme_color || "#FFB347")
 meta(name ="format-detection" content="telephone=no")
 
 - var page_keywords = ""
@@ -18,11 +18,11 @@ if is_home()
   - page_title = (config.title || "MEOW THEME") + ' - ' + (config.subtitle || "A Cute Hexo Theme")
 else
   if is_archive()
-    - page_title = __('menu.archives')
-  else if is_category()
-    - page_title = __('menu.categories') + ": " + page.category
-  else if is_tag()
-    - page_title = __('menu.tags') + ": " + page.tag
+    - page_title = __('archives')
+  else if is_category() || page.type == "category"
+    - page_title = __('categories') + (page.type != "category" ? (": " + page.category) : "")
+  else if is_tag() || page.type == "tag"
+    - page_title = __('tags') + (page.type != "tag" ? (": " + page.tag) : "")
   else
     - page_title = page.title || config.title
   - page_title = page_title + " | " + (config.title || "MEOW THEME")
@@ -32,7 +32,7 @@ meta(name="apple-mobile-web-app-capable" content="yes")
 meta(name="apple-touch-fullscreen" content="yes")
 meta(name="application-name" content=page_title)
 meta(name="apple-mobile-web-app-title" content=page_title)
-meta(name="apple-mobile-web-app-status-bar-style" content=theme.color.light.primary || "#FFCC33")
+meta(name="apple-mobile-web-app-status-bar-style" content=theme.color.light.theme_color || "#FFCC33")
 
 - var canonical = config.url
 if config.url.slice(-1) != "/"
@@ -50,20 +50,20 @@ title= page_title
 if theme.info.favicon
   != favicon_tag(theme.info.favicon)
 
--
-  const cdn_list = {
-    npmmirror: '//registry.npmmirror.com',
-    jsdelivr: '//cdn.jsdelivr.net',
-    cdnjs: '//cdnjs.cloudflare.com',
-    unpkg: '//unpkg.com',
-    custom: theme.cdn.custom && theme.cdn.custom.match(/^((https?:)?(\/\/[^/]+)|([^/]+))(\/|$)/)[1]
-  }
 if theme.cdn.enable
+  -
+    const cdn_list = {
+      npmmirror: '//registry.npmmirror.com',
+      jsdelivr: '//cdn.jsdelivr.net',
+      cdnjs: '//cdnjs.cloudflare.com',
+      unpkg: '//unpkg.com',
+      custom: theme.cdn.custom && theme.cdn.custom.match(/^((https?:)?(\/\/[^/]+)|([^/]+))(\/|$)/)[1]
+    }
   link(rel="preconnect" href=cdn_list[theme.cdn.provider])
 if theme.font.custom
   if theme.font.default_font_link
     - let default_font_link = theme.font.default_font_link.match(/^((https?:)?(\/\/[^/]+)|([^/]+))(\/|$)/)[1]
-    link(rel="preconnect" href=default_font_link)
+    link(rel="preconnect" href=url_for(default_font_link))
   if theme.font.title_font_link
     - let title_font_link = theme.font.title_font_link.match(/^((https?:)?(\/\/[^/]+)|([^/]+))(\/|$)/)[1]
     link(rel="preconnect" href=title_font_link)
@@ -73,5 +73,24 @@ if theme.font.custom
 
 != css('css/style')
 
-//- TODO prefetch
-//- <link rel="prefetch" href="https://chanwj.github.io/meow/">
+case page.type
+  when "essay"
+    != css('css/layout/pages/essay')
+  when "friends"
+    != css('css/layout/pages/friends')
+  when "404"
+    != css('css/layout/pages/404')
+
+if theme.comment.enable && (page.comment || (is_post() && theme.comment.display && page.comment == undefined))
+  != importCSS('@waline/client','3.5.7','dist/waline.css')
+
+if theme.share.notify
+  if theme.cdn.enable
+    != css('https://cdn.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.css')
+  else
+    != css('css/third-party/dist/snackbar.min.css')
+
+link(rel="prefetch" href=url_for("/"))
+link(rel="prefetch" href=url_for("/archives"))
+link(rel="prefetch" href=url_for("/tags"))
+link(rel="prefetch" href=url_for("/essay"))

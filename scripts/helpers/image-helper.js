@@ -18,9 +18,9 @@ hexo.extend.helper.register('getSvg', function (svg_file, options = {}) {
       path = `/assets/images/svg/${prefix}/${svg_file}.svg`;
     }
   } else {
-    prefix = theme.icon.type;
+    prefix = theme.global.icon.type || "uc";
     path = `/assets/images/svg/${prefix}/${prefix}-${svg_file}.svg`;
   }
 
-  return this.image_tag(path, Object.assign({ class: 'icon' }, options));
+  return this.image_tag(path, Object.assign({ class: 'icon noview' }, options));
 })

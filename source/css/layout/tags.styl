@@ -1,0 +1,83 @@
+.tag-container
+  width: 90%
+  margin: 0 auto
+  user-select: none
+  &[tag-style="cloud"]
+    display: flex
+    align-items: center
+    justify-content: center
+    flex-wrap: wrap
+    gap: 1rem
+    a
+      white-space: nowrap
+      color: var(--font-color)
+      position: relative
+      padding: 0 .1rem
+      &:after
+        content: ''
+        position: absolute
+        left: 0
+        bottom: -3px
+        display: block
+        height: 2.5px
+        width: 0
+        background-color: hexo-config('tag.end_color')?unquote(hexo-config('tag.end_color')):var(--theme-color)
+        transition: width .5s ease
+      &:hover
+        font-weight: bold
+        &:after
+          width: 100%
+
+.tags-list
+  padding: 0
+  display: flex
+  align-items: center
+  justify-content: center
+  flex-wrap: wrap
+  gap: 1rem
+  li
+    list-style: none
+    padding: .35rem 1.2rem
+    border: 1px solid var(--card-border-color)
+    border-radius: .75rem
+    display: flex
+    align-items: center
+    justify-content: space-between
+    flex-wrap: nowrap
+    gap: 1rem
+    transition: all .5s ease
+    &:hover
+      background-color: var(--theme-color)
+      box-shadow: var(--meow-box-shadow)
+      a
+        color: var(--link-hover-font-color)
+      span
+        color: var(--link-hover-font-color)
+  a
+    color: var(--font-color)
+    font-size: 1.25rem
+    white-space: nowrap
+    &:before
+      content: '#'
+      margin-right: .1rem
+  span
+    color: var(--font-color-light-2)
+
+.tags-count
+  font-size: .9rem
+  vertical-align: super
+  margin-left: .1rem
+
++meow-smallscreen()
+  .tag-container
+    width: 100%
+    margin: 0
+
+  .tags-list
+    gap: .6rem
+    li
+      padding: .3rem 1rem
+    a
+      font-size: 1.1em
+    span
+      font-size: 1.1em

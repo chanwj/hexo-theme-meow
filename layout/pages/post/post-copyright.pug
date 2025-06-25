@@ -1,0 +1,17 @@
+.post-copyright
+  .post-copyright-info= _p('copyright.info', page.author || config.author, date(page.date, `${config.date_format} ${config.time_format}`))
+
+  .post-copyright-link
+    span
+      | #{__('copyright.link')}
+      a(href=page.permalink)= page.title
+    button.copy-text(type='button' data-text=full_url_for(page.path))= __('copy')
+
+  if theme.post.copyright.type == 1
+    - const license = "<a href='" + theme.post.copyright.license_link + "' title='" + theme.post.copyright.license_desc + "' target='_blank'>" + theme.post.copyright.license + "</a>"
+    - const source = "<a href='"+url_for('/') + "'>" + config.title + "</a>"
+    .post-copyright-detail!= _p('copyright.text', license, source)
+  else
+    .post-copyright-detail= theme.post.copyright.custom_text
+
+  img.post-copyright-icon.noview(src=url_for(theme.info.logo))

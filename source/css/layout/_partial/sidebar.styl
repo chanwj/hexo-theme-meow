@@ -1,11 +1,11 @@
 #home-sidebar
   flex: 1
+  max-width: 23.5%
   height: max-content
   display: flex
   flex-direction: column
   align-items: center
   gap: .8rem
-  margin: hexo-config('sidebar.position') == 'left' ? 0 1.2rem 0 0 : 0 0 0 1.2rem
   flex-shrink: 0
   user-select: none
 
@@ -111,6 +111,9 @@
   a:hover
     background-color: var(--theme-color-transparent-1)
 
+body[data-mode="dark"] .social .icon
+  filter: invert(70%)
+
 .sidebar-card-headline
   display: flex
   justify-content: flex-start
@@ -126,13 +129,11 @@
   text-align: justify
 
 .sidebar-categories-list
-  width: 100%
   padding: 0
   display: flex
   flex-direction: column
   gap: .25rem
   li
-    width: 100%
     list-style: none
     line-height: 1.8rem
     display: flex
@@ -142,7 +143,7 @@
       display: block
       width: 100%
       margin-top: .25rem
-      border-left: 1px dotted lightgrey
+      border-left: 1px dotted var(--font-color-light-2)
 
 .sidebar-categories-list-link
   color: var(--font-color)
@@ -180,7 +181,7 @@
   margin-top: .8rem
   display: flex
   flex-wrap: wrap
-  gap: .85rem
+  gap: .3rem .75rem
   overflow-x: hidden
   overflow-y: auto
   scrollbar-width: none
@@ -210,3 +211,29 @@
       color: var(--link-hover-font-color)
       background-color: var(--theme-color-light-2)
       padding-left: .6rem
+
++meow-smallscreen()
+  if !hexo-config('sidebar.show_on_small_screen')
+    #home-sidebar
+      display: none
+  
+  #home-sidebar
+    max-width: 100%
+  
+  #sidebar-info-name
+    font-size: 1.25em
+  
+  #sidebar-info-desc
+    font-size: 1.05em
+  
+  .site-statistic-title
+    font-size: 1em
+
+  .site-statistic-num
+    font-size: 1.1em
+  
+  .sidebar-card
+    font-size: 1.05em
+
+  .sidebar-card-headline span
+    font-size: 1.15em

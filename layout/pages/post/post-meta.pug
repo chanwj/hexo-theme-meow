@@ -1,0 +1,38 @@
+.post-meta
+  .post-info
+    .post-date
+      .post-pubdate
+        != getSvg('ta-pubdate')
+        span= _p('pubdate', date(page.date))
+      .post-update
+        != getSvg('ta-update')
+        span= _p('update', date(page.update))
+
+    .post-read
+      if theme.post.wordcount
+        .post-wordcount
+          != getSvg('ta-write')
+          span= _p('wordcount', wordcount(page.encrypt ? page.origin : page.content))
+
+      if theme.post.min2read.enable
+        .post-readtime
+          != getSvg('ta-time')
+          span= _p('readtime', min2read(page.encrypt ? page.origin : page.content, {cn: theme.post.min2read.cn || 300, en: theme.post.min2read.en || 160}))
+
+      if theme.page_view.enable && theme.page_view.page_pv && theme.post.view
+        .post-pageview
+          != getSvg('ta-fire')
+          span= __('page_view.page_pv') + ": "
+          span#vercount_value_page_pv
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 6l0 -3" /><path d="M16.25 7.75l2.15 -2.15" /><path d="M18 12l3 0" /><path d="M16.25 16.25l2.15 2.15" /><path d="M12 18l0 3" /><path d="M7.75 16.25l-2.15 2.15" /><path d="M6 12l-3 0" /><path d="M7.75 7.75l-2.15 -2.15" /></svg>
+
+  .post-attribute
+    .post-categories
+      != getSvg('ta-category')
+      span
+        != list_categories(page.categories, {class:'post-categories', show_count:false, style:false, separator:''})
+
+    .post-tags
+      != getSvg('ta-tag')
+      span
+        != list_tags(page.tags, {class:'post-tags', show_count:false, style:false, separator:''})

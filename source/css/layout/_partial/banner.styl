@@ -1,6 +1,7 @@
 #home-banner
   width: 100%
   height: 100vh
+  user-select: none
 
 #home-banner[bg-style='none']
   background: var(--banner-background)
@@ -35,9 +36,71 @@
   width: 100%
   text-align: center
   text-shadow: var(--meow-text-shadow)
-  .icon
-    height: 1.85rem
-    cursor: pointer
-    padding: .5rem 1rem 0
-    opacity: .75
-    animation bounce 1.2s ease infinite
+
+#scroll-to-main
+  font-size: 1.85rem
+  font-weight: bold
+  color: white
+  cursor: pointer
+  padding: .5rem 1rem 0
+  opacity: .75
+  animation bounce 1.2s ease infinite
+
+.banner
+  width: 100%
+  height: 50vh
+  background: var(--banner-background)
+  background-size: cover
+  background-position: center
+  background-repeat: unquote(hexo-config('banner.image.repeat'))
+  user-select: none
+  transition: background .35s ease-in
+
+.banner-info
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: center
+  gap: .7rem
+  padding-top: calc(var(--meow-navbar-height) + 3rem)
+
+.banner-avatar img
+  width: 7.5rem
+  border-radius: hexo-config('banner.avatar.shape') == 2 ? 50% : 0
+  object-fit: contain
+  box-sizing: content-box
+  border: hexo-config('banner.avatar.border') ? 3px solid var(--banner-font-color) : none
+  animation: show-scale .6s ease-out
+  transition: transform .1s ease-in
+  &:hover
+    transform: rotate(20deg)
+
+.banner-title
+  font-size: 2.1rem
+  font-weight: bold
+  text-align: center
+  line-height: 3rem
+  color: var(--banner-font-color)
+  font-family: var(--meow-font-title)
+  text-shadow: var(--meow-text-shadow-title)
+  animation: show-up .6s ease-out
+
++meow-smallscreen()
+  #home-banner-title
+    font-size: 2rem
+
+  #home-banner-subtitle
+    font-size: 1.2rem
+  
+  .banner
+    height: 35vh
+  
+  .banner-info
+    padding-top: calc(var(--meow-navbar-height) + 1rem)
+    gap: 0
+  
+  .banner-avatar img
+    width: 6.5rem
+  
+  .banner-title
+    font-size: 1.8rem

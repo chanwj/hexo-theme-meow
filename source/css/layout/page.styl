@@ -1,0 +1,97 @@
+.page-container
+  width: 100%
+  height: max-content
+  padding: 1.8rem 0
+
+.page-content
+  width: 95%
+  max-width: var(--meow-page-width)
+  height: max-content
+  min-height: 60vh
+  margin: 0 auto
+  padding: 2.2rem 2.5rem
+  background-color: var(--background-color-page)
+  backdrop-filter: blur(3px)
+  border-radius: 1rem
+  box-shadow: var(--meow-card-shadow)
+  animation: show-up .6s ease-out
+
+.page-title
+  line-height: 2.5rem
+  margin-bottom: 2.3rem
+  display: flex
+  align-items: center
+  justify-content: space-between
+
+.page-title-content
+  display: flex
+  align-items: stretch
+  gap: .5rem
+  span
+    font-size: $font-size-page-title
+    font-weight: bold
+  .icon
+    height: 2.4rem
+
+.pageview
+  font-size: $font-size-default
+  color: var(--font-color-light-2)
+  display: flex
+  flex-wrap: nowrap
+  align-items: center
+  gap: .15rem
+  .icon
+    height: 1rem
+    opacity: .5
+  span
+    white-space: nowrap
+
+body[data-mode="dark"] .pageview .icon
+  filter: invert(100%)
+
+.page-paginator
+  margin-top: 2.5rem
+
+.page-desc
+  font-size: 1.2rem
+  margin-bottom: 2rem
+  color: var(--font-color-light-2)
+  position: relative
+  padding-left: 2.5rem
+  &:before
+    content: '“'
+    font-size: 5rem
+    margin-right: .2rem
+    position: absolute
+    left: 0
+    top: 50%
+    opacity: .8
+
++meow-smallscreen()
+  .page-container
+    padding: 1.2rem 0
+  
+  .page-content
+    padding: 1.6rem 1rem
+  
+  .page-title
+    line-height: 1.8rem
+    margin-bottom: 1.65rem
+
+  .page-title-content
+    span
+      font-size: 1.5rem
+    .icon
+      height: 1.8rem
+  
+  .pageview
+    font-size: 1em
+    .icon
+      height: 1em
+  
+  .page-desc
+    font-size: 1.15em
+    padding-left: 1.8em
+    margin-bottom: 1.8em
+    &:before
+      font-size: 3.5rem

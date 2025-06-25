@@ -5,31 +5,52 @@
 
 "use strict";
 
-hexo.extend.helper.register("importJS", function (jsname, version, path, options = {}) {
-  const { module = false } = options;
+hexo.extend.helper.register("getCDNPath", function (name, version, path) {
   const { theme } = this;
+
+  if (!theme.cdn.enable) return path;
+
+  // const path_cdnjs = path.replace(/^[lib|dist]*\/|browser\//g, "");
+  const cdn_list = {
+    npmmirror: `https://registry.npmmirror.com/${name}/${version}/files/${path}`,
+    jsdelivr: `https://cdn.jsdelivr.net/npm/${name}@${version}/${path}`,
+    // cdnjs: `https://cdnjs.cloudflare.com/ajax/libs/${name}/${version}/${path_cdnjs}`,
+    unpkg: `https://unpkg.com/${name}@${version}/${path}`,
+    custom: theme.cdn.custom
+  };
+  const cdn_path = cdn_list[theme.cdn.provider] || cdn_list.jsdelivr;
+
+  if (theme.cdn.provider == "custom") {
+    cdn_path = cdn_path.replace("${name}", name).replace("${version}", version).replace("${path}", path);
+  }
+
+  return cdn_path;
+});
+
+hexo.extend.helper.register("importJS", function (jsname, version, path, options = {}) {
+  const { theme } = this;
+  const { module = false, async = false } = options;
 
   let scriptContent = "";
   if (theme.cdn.enable) {
-    const path_cdnjs = path.replace(/^[lib|dist]*\/|browser\//g, "");
-    const cdn_list = {
-      npmmirror: `https://registry.npmmirror.com/${jsname}/${version}/files/${path}`,
-      jsdelivr: `https://cdn.jsdelivr.net/npm/${jsname}@${version}/${path}`,
-      cdnjs: `https://cdnjs.cloudflare.com/ajax/libs/${jsname}/${version}/${path_cdnjs}`,
-      unpkg: `https://unpkg.com/${jsname}@${version}/${path}`,
-      custom: theme.cdn.custom
-    };
-    const cdn_path = cdn_list[theme.cdn.provider] || cdn_list.npmmirror;
-
-    if (theme.cdn.provider == "custom") {
-      const custom_path = cdn_path.replace("${jsname}", jsname).replace("${version}", version).replace("${path}", path);
-      scriptContent = this.js({ src: custom_path, type: module ? "module" : undefined });
-    } else {
-      scriptContent = this.js({ src: cdn_path, type: module ? "module" : undefined });
-    }
+    const cdn_path = this.getCDNPath(jsname, version, path);
+    scriptContent = this.js({ src: cdn_path, type: module ? "module" : undefined, async: async ? true : undefined });
   } else {
-    scriptContent = this.js({ src: path, type: module ? "module" : undefined });
+    scriptContent = this.js({ src: "js/plugins/" + path, type: module ? "module" : undefined, async: async ? true : undefined });
   }
 
   return scriptContent;
-})
+});
+
+hexo.extend.helper.register("importCSS", function (cssname, version, path) {
+  const { theme } = this;
+  let cssContent = "";
+  if (theme.cdn.enable) {
+    const cdn_path = this.getCDNPath(cssname, version, path);
+    cssContent = this.css(cdn_path);
+  } else {
+    cssContent = this.css("css/third-party/" + path);
+  }
+
+  return cssContent;
+});

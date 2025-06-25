@@ -1,0 +1,34 @@
+#essay-container
+  if theme.essay.desc
+    .page-desc= theme.essay.desc
+
+  #essay
+    ul
+      - const essayList = site.data.essay.essay_list
+      - const authorList = site.data.essay.essay_info.author
+      - const maxNum = theme.essay.max_num || 30
+      - for(let i = 0; i < essayList.length; i++)
+        if i < maxNum
+          li.essay-item
+            .essay-avatar
+              if essayList[i].from && authorList[essayList[i].from]
+                img.essay-avatar-img(src=authorList[essayList[i].from] no-view="")
+            .essay-main
+              .essay-content
+                .essay-text.markdown
+                  != markdown(essayList[i].content)
+                if essayList[i].image
+                  .essay-container-img
+                    each item, index in essayList[i].image
+                      a(href=url_for(item), target="_blank")
+                        img(src=url_for(item))
+              .essay-bottom
+                .essay-info
+                  time= full_date(moment(essayList[i].date).tz('utc'), 'LLL')
+                  if essayList[i].from
+                    span= "By " + essayList[i].from
+                //- .essay-reply(onclick="anzhiyu.commentText(" + `'${essayList[i].content}'` + ")")
+                //-     != getSvg('ta-comment')
+        else
+          - break
+  #essay-tips= _p('essay_max_num', maxNum)

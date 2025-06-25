@@ -1,42 +1,75 @@
-#navbar
-  #nav-info
-    a#site-icon(href=url_for('/') title=__('home'))
-      img(src=url_for(theme.info.logo))
+header
+  #navbar
+    #nav-info
+      a#site-icon(href=url_for('/') title=__('home'))
+        img(src=url_for(theme.info.logo))
 
-    a#site-name(href=url_for('/') title=__('home'))
-      div= config.title || "MEOW"
-      != getSvg('home')
+      a#site-name(href=url_for('/') title=__('home'))
+        div= config.title || "MEOW"
+        != getSvg('home')
 
-  #nav-menu
+    #nav-menu
+      if theme.menu
+        each value, title in theme.menu
+          if typeof value !== 'object'
+            .menu-item
+              a(href=url_for(trim(value.split('||')[0])))
+                if value.split('||')[1]
+                  != getSvg(trim(value.split('||')[1]))
+                span= __(title)
+          else
+            .menu-item
+              a(href='javascript:void(0);')
+                if title.split('||')[1]
+                  != getSvg(trim(title.split('||')[1]))
+                span= __(trim(title.split('||')[0]))
+              ul.sub-menu-item
+                each submenu, subtitle in value
+                  li
+                    a(href=url_for(trim(submenu.split('||')[0])))
+                      if submenu.split('||')[1]
+                        != getSvg(trim(submenu.split('||')[1]))
+                      span= __(subtitle)
+
+    #nav-function
+      if theme.search.enable
+        #search-btn
+          a(href='javascript:void(0);' title=__('search') accesskey='s')
+            != getSvg('search')
+            span= __('search')
+
+      #menu-btn
+        a(href='javascript:void(0);' title=__('toggle'))
+          != getSvg('menu')
+
+#menu-aside
+  #menu-aside-container
+    #menu-aside-info
+      a(href=url_for('/') title=__('home'))
+        img(src=url_for(theme.info.logo))
+
+      a(href=url_for('/') title=__('home'))= config.title || "MEOW"
+
     if theme.menu
       each value, title in theme.menu
         if typeof value !== 'object'
-          .menu_item
+          .menu-aside-item
             a(href=url_for(trim(value.split('||')[0])))
               if value.split('||')[1]
                 != getSvg(trim(value.split('||')[1]))
               span= __( title)
         else
-          .menu_item
+          .menu-aside-item
             a(href='javascript:void(0);')
               if title.split('||')[1]
                 != getSvg(trim(title.split('||')[1]))
               span= __(trim(title.split('||')[0]))
-            ul.sub_menu_item
+            ul.menu-aside-sub-item
               each submenu, subtitle in value
                 li
                   a(href=url_for(trim(submenu.split('||')[0])))
                     if submenu.split('||')[1]
                       != getSvg(trim(submenu.split('||')[1]))
                     span= __(subtitle)
-
-  #nav-function
-    if theme.search.enable
-      #search-btn
-        a(href='javascript:void(0);' title=__('search') accesskey='s')
-          != getSvg('search')
-          span= __('search')
-
-    #menu-btn
-      a(href='javascript:void(0);' title=__('toggle'))
-        != getSvg('menu')
+    
+    hr

@@ -1,0 +1,69 @@
+.post-meta
+  margin: .8rem 0
+  color: var(--font-color-light-1)
+  font-size: 1.05rem
+  display: flex
+  flex-direction: column
+  gap: .2rem
+  overflow: hidden
+  a
+    color: var(--font-color-light-1)
+    &:hover
+      color: var(--theme-color)
+
+body[data-mode="dark"] .post-meta .icon
+  filter: invert(70%)
+
+.post-attribute, .post-date, .post-read
+  display: flex
+  align-items: center
+  justify-content: center
+  gap: 1rem
+  >div
+    display: flex
+    flex-wrap: nowrap
+    align-items: center
+    gap: .15rem
+    span
+      white-space: nowrap
+
+.post-attribute
+  flex-wrap: wrap
+  gap: .2rem 1rem
+
+.post-categories, .post-tags
+  overflow: hidden
+  span
+    display: flex
+    align-items: center
+    gap: .5rem
+    text-overflow: ellipsis
+
+.post-info
+  display: flex
+  flex-wrap: nowrap
+  align-items: center
+  justify-content: center
+  gap: 1rem
+
+#vercount_value_page_pv
+  display: flex
+  align-items: center
+  svg
+    height: 1rem
+
++meow-smallscreen()
+  .post-meta
+    margin: .7rem 0
+    font-size: 1.05em
+  
+  .post-info, .post-attribute
+    flex-wrap: wrap
+    gap: .2rem
+  
+  .post-date, .post-read
+    flex-wrap: wrap
+    gap: .2rem .7rem
+  
+  .post-categories, .post-tags
+    flex-wrap: wrap

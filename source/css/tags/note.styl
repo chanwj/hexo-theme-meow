@@ -1,0 +1,29 @@
+.note
+  margin: 1.8rem 0
+  padding: .2rem .9rem
+  border-radius: .25rem
+  box-shadow: var(--meow-box-shadow)
+  line-height: 1.5
+  &.light
+    border-left: .5rem solid var(--font-color-light-3)
+    box-shadow: none
+    color: var(--font-color-light-1) !important
+  &.pink
+    border-left: .5rem solid $color-pink
+    background: $color-pink-light
+  &.purple
+    border-left: .5rem solid $color-purple
+    background: $color-purple-light
+  &.yellow
+    border-left: .5rem solid $color-yellow
+    background: $color-yellow-light
+  &.blue
+    border-left: .5rem solid $color-blue
+    background: $color-blue-light
+  &.green
+    border-left: .5rem solid $color-green
+    background: $color-green-light
+
+body[data-mode="dark"] .note
+  color: $dark-background-color-grey
+  filter: brightness(90%)

@@ -19,7 +19,7 @@ footer
   a
     color: var(--font-color-light-1)
     position: relative
-    padding: 0 .2rem
+    padding: 0 .1rem
     &:after
       content: ''
       position: absolute
@@ -59,3 +59,15 @@ footer
     align-items: center
     svg
       height: 1rem
+
++meow-smallscreen()
+  .footer
+    display: flex
+    flex-direction: column
+  
+  #footer-info, #footer-pageview
+    position: static
+    text-align: center
+  
+  #footer-pageview div
+    justify-content: center

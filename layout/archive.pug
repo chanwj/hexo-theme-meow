@@ -1,0 +1,37 @@
+extends page.pug
+
+block content
+  .archive-container
+    - const archiveList = getArchiveList()
+    - for (yearItem of archiveList)
+      - let yearLink = url_for(config.archive_dir)+ '/' + yearItem.year
+      .archive-year
+        .archive-year-title
+          a(href=yearLink)= yearItem.year
+          span= _p('posts_count', yearItem.yearNum)
+        - for (monthItem of yearItem.yearList)
+          -
+            let monthVar = new Date().setMonth(monthItem.month);
+            let month_name = date(monthVar,'MMMM');
+            let month_full = date(monthVar,'MM');
+          .archive-month
+            .archive-month-title
+              a(href=yearLink + '/' + month_full)= month_name
+              span= _p('posts_count', monthItem.postList.length)
+            .archive-posts-list
+              - for (post of monthItem.postList)
+                - let cover = (post.thumbnail || (theme.archive.thumbnail && post.thumbnail == undefined)) && (post.cover || page.photo)
+                .archive-post(archive-style=cover ? "cover" : "normal")
+                  .archive-post-cover
+                    if cover
+                      img(src=url_for(post.cover || page.photo))
+                  a(href=url_for(post.path))
+                    .archive-post-title
+                      if post.encrypt
+                        .archive-post-encrypt
+                          != getSvg('lock')
+                      | !{post.title}
+                    .archive-post-date= date(post.date)
+  
+  .page-paginator
+    != partial('components/paginator')

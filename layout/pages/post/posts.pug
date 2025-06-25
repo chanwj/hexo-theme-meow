@@ -1,0 +1,35 @@
+.post-content
+  .post-title
+    span= page.title
+  
+  .post-author
+    span= _p('post_author', page.author || config.author)
+  
+  != partial('pages/post/post-meta')
+
+  .post.markdown(indent=page.indent || (theme.post.indent && page.indent==undefined) ? "true" : "false")
+    != page.content
+  
+  if page.status
+    .fiction-status= "～ " + theme.fiction.status[page.status] + " ～"
+
+  if theme.post.reward.enable
+    != partial('pages/post/post-reward')
+
+  if theme.post.copyright.enable
+    != partial('pages/post/post-copyright')
+
+  if theme.post.tail_tags
+    .post-tail-tags
+      != list_tags(page.tags, {class:'post-tail-tags', show_count:false, style:false, separator:''})
+
+  //- .post-page
+  //-   .post-page-prev
+  //-     if page.prev
+  //-       a(href=url_for(page.prev.path) title=__('prev_post'))= "< " + page.prev.title
+  //-   .post-page-next
+  //-     if page.next
+  //-       a(href=url_for(page.next.path) title=__('next_post'))= page.next.title + " >"
+
+  if theme.comment.enable && (page.comment || (theme.comment.display && page.comment == undefined))
+    != partial('components/comment/comment')

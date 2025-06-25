@@ -1,0 +1,100 @@
+#post-sidebar
+  width: 16rem
+  animation: show-up .6s ease-out
+  user-select: none
+  display: block
+  transition: all .3s ease
+  &[status="hide"]
+    display: none
+
+#toc-container
+  position: sticky
+  top: calc(var(--meow-navbar-height) + 1.5rem)
+  padding: 1.2rem 1rem
+  background-color: var(--background-color-page)
+  box-shadow: var(--meow-card-shadow)
+  border-radius: 1rem
+  transition: background-color .2s ease-in
+
+.toc-title
+  margin-bottom: 1rem
+  display: flex
+  align-items: center
+  gap: .5rem
+  font-size: 1.15rem
+  font-weight: bold
+  .icon
+    height: 1.3rem
+
+body[data-mode="dark"] .toc-title .icon
+  filter: invert(70%)
+
+.toc-content
+  max-height: calc(100vh - var(--meow-navbar-height) - 8rem)
+  overflow-y: auto
+  overflow-x: hidden
+  padding-right: 1rem
+  font-size: 1.05rem
+  ol
+    padding-left: 1rem
+    margin: 0
+    list-style: none
+  >ol
+    padding-left: .2rem
+    ol
+      border-left: 1px dotted var(--card-border-color)
+  a
+    display: inline-block
+    width: 100%
+    line-height: 1.8rem
+    color: var(--font-color)
+    white-space: nowrap
+    text-overflow: ellipsis
+    overflow: hidden
+    transition: all .18s ease
+    &:hover
+      color: var(--theme-color)
+      font-weight: bold
+  &::-webkit-scrollbar
+    width: .4rem
+    height: .4rem
+
+@media (max-width 1475px)
+  #post-sidebar
+    animation: none
+    visibility: hidden
+    position: fixed
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    z-index: $z-index-10
+    background: transparent
+    backdrop-filter: blur(0)
+    transition: all .4s ease-in
+    &[active]
+      visibility: visible
+      background: var(--background-color-transparent-2)
+      backdrop-filter: blur(.3rem)
+      #toc-container
+        transform: translateX(0)
+    &[status="hide"]
+      display: block
+  
+  #toc-container
+    position: absolute
+    width: 80%
+    max-width: 400px
+    height: 100%
+    top: 0
+    left: 0
+    background: var(--background-color-transparent-1)
+    box-shadow: var(--meow-box-shadow)
+    display: flex
+    flex-direction: column
+    gap: 1rem
+    padding: 2rem 1.5rem
+    overflow-y: auto
+    transform: translateX(-100%)
+    transition: all .4s ease-in
+    border-radius: 0

@@ -2,11 +2,11 @@ aside#home-sidebar
   if theme.sidebar.info.enable
     .sidebar-card#sidebar-info
       #sidebar-info-img
-        a(href=theme.sidebar.info.link)
+        a(href=url_for(theme.sidebar.info.link))
           if theme.sidebar.info.type == "author"
-            img(src=theme.info.avatar)
+            img(src=url_for(theme.info.avatar))
           else if theme.sidebar.info.type == "site"
-            img(src=theme.info.logo)
+            img(src=url_for(theme.info.logo))
 
         if theme.sidebar.info.status.emoji
           .status(title=theme.sidebar.info.status.desc)= theme.sidebar.info.status.emoji

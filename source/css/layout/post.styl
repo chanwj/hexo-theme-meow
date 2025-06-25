@@ -1,0 +1,108 @@
+.post-container
+  width: 100%
+  height: max-content
+  padding: 1.8rem 0
+
+.post-main
+  width: 95%
+  max-width: var(--meow-main-width)
+  margin: 0 auto
+  display: flex
+  justify-content: center
+  gap: 1rem
+
+.post-content
+  width: 100%
+  max-width: var(--meow-page-width)
+  height: max-content
+  padding: 2.2rem 2.5rem
+  background-color: var(--background-color-page)
+  border-radius: 1rem
+  box-shadow: var(--meow-card-shadow)
+  animation: show-up .6s ease-out
+  transition: background-color .2s ease-in
+
+.post-title
+  line-height: 2.5rem
+  font-size: $font-size-post-title
+  font-weight: bold
+  text-align: center
+  margin-bottom: .8rem
+  animation: show-up 1s ease
+
+.post-author
+  font-size: 1.15rem
+  text-align: center
+
+.post
+  margin: 2.8rem 0 5rem
+  font-size: hexo-config('post.font_size') ? unquote(hexo-config('post.font_size')) : 1rem
+  &[indent="true"]
+    >p
+      text-indent: 2em
+
+.post-tail-tags
+  margin: 1.5rem 0
+  display: flex
+  align-items: center
+  flex-wrap: wrap
+  gap: .2rem .5rem
+  user-select: none
+  a
+    color: var(--font-color-light-2)
+    border-radius: .65rem
+    position: relative
+    padding: .1rem .5rem
+    transition: color .25s ease
+    z-index: 1
+    &:before
+      content: '#'
+      margin-right: .1rem
+    &:after
+      content: ''
+      position: absolute
+      top: 0
+      left: 0
+      width: 0
+      height: 100%
+      border-radius: .5rem
+      background: var(--theme-color)
+      z-index: -1
+      transition: all .25s ease-in
+    &:hover
+      color: var(--link-hover-font-color)
+      &:after
+        width: 100%
+
+.fiction-status
+  text-align: center
+  color: var(--font-color-light-3)
+  font-weight: bold
+  font-size: 1.2rem
+  margin: 2rem 0
+
++meow-smallscreen()
+  .post-container
+    padding: 1.2rem 0
+
+  .post-content
+    padding: 1.6rem 1rem
+  
+  .post-title
+    line-height: 1.6em
+    font-size: 1.5em
+    margin-bottom: .6rem
+  
+  .post-author
+    font-size: 1.1em
+  
+  .post
+    margin: 2em 0 3.5em
+    font-size: hexo-config('post.font_size_small') ? unquote(hexo-config('post.font_size_small')) : 1em
+  
+  .fiction-status
+    font-size: 1.1em
+    margin: 1.1em 0
+  
+  .post-tail-tags
+    margin: 1.2em 0

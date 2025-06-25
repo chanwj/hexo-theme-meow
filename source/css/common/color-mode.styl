@@ -1,28 +1,25 @@
 @require './color'
 
-// $root = hexo-config('info.root')
-
-// getUrl(path)
-//   if match('^(http[s]*://)(.*)$', path)
-//     path
-//   else
-//     $root + path
-
 $banner-background = url-for(hexo-config('banner.image.light'))
 $dark-banner-background = url-for(hexo-config('banner.image.dark'))
 
-switch-mode(mode) {
+switch-mode(mode)
   --theme-color: mode == 'light' ? $theme-color : $dark-theme-color
   --theme-color-light-1: mode == 'light' ? $theme-color-light-1 : $dark-theme-color-light-1
   --theme-color-light-2: mode == 'light' ? $theme-color-light-2 : $dark-theme-color-light-2
+  --theme-color-light-3: mode == 'light' ? $theme-color-light-3 : $dark-theme-color-light-3
   --theme-color-transparent-1: mode == 'light' ? $theme-color-transparent-1 : $dark-theme-color-transparent-1
+  --theme-color-dark-1: mode == 'light' ? $theme-color-dark-1 : $dark-theme-color-dark-1
   --background-color: mode == 'light' ? $background-color : $dark-background-color
   --background-color-transparent-1: mode == 'light' ? $background-color-transparent-1 : $dark-background-color-transparent-1
   --background-color-transparent-2: mode == 'light' ? $background-color-transparent-2 : $dark-background-color-transparent-2
+  --background-color-transparent-3: mode == 'light' ? $background-color-transparent-3 : $dark-background-color-transparent-3
   --background-color-grey: mode == 'light' ? $background-color-grey : $dark-background-color-grey
   --background-color-grey-light-1: mode == 'light' ? $background-color-grey-light-1 : $dark-background-color-grey-light-1
+  --background-color-grey-light-2: mode == 'light' ? $background-color-grey-light-2 : $dark-background-color-grey-light-2
   --background-color-grey-transparent: mode == 'light' ? $background-color-grey-transparent : $dark-background-color-grey-transparent
   --background-color-body: mode == 'light' ? $background-color-body : $dark-background-color-body
+  --background-color-page: mode == 'light' ? $background-color-page : $dark-background-color-page
   --font-color: mode == 'light' ? $font-color : $dark-font-color
   --font-color-invert: mode == 'light' ? $font-color-invert : $dark-font-color-invert
   --font-color-navbar: mode == 'light' ? $font-color-navbar : $dark-font-color
@@ -33,18 +30,17 @@ switch-mode(mode) {
   --banner-background: mode == 'light' ? url($banner-background) : url($dark-banner-background)
   --banner-font-color: mode == 'light' ? unquote(hexo-config('banner.title_color.light')) : unquote(hexo-config('banner.title_color.dark'))
   --nav-background-color: mode == 'light' ? $nav-background-color : $dark-nav-background-color
-}
+  --card-border-color: mode == 'light' ? $card-border-color : $dark-card-border-color
+  --meow-box-shadow: mode == 'light' ? 1px 1px 1px 1px #2a2a2a0d : 1px 1px 1px 1px #bbbbbb03
+  --meow-card-shadow: mode == 'light' ? 0px 3px 8px 6px #2a2a2a0d : none
 
-$config-mode = hexo-config('color.mode.default') == 'light' ? 'light' : 'dark'
+// $config-mode = hexo-config('color.mode.default') == 'light' ? 'light' : 'dark'
 
-:root {
-  switch-mode($config-mode)
-}
+// :root
+//   switch-mode($config-mode)
 
-body[data-mode='light'] {
+body[data-mode='light']
   switch-mode('light')
-}
 
-body[data-mode='dark'] {
+body[data-mode='dark']
   switch-mode('dark')
-}

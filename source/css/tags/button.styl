@@ -1,0 +1,77 @@
+.button-list
+  width: 100%
+  display: flex
+  flex-wrap: wrap
+  align-items: center
+  justify-content: flex-start
+  gap: 1rem
+  margin: 2rem 0
+
+.button-item
+  width: calc((100% - 2rem)/3)
+  height: 6rem
+  background: var(--background-color)
+  border: 1px solid var(--background-color-grey)
+  border-radius: .8rem
+  box-shadow: var(--meow-box-shadow)
+  padding: 1.1rem 1rem
+  transition: background .3s ease-in
+  a
+    display: flex
+    align-items: center
+    gap: .8rem
+    height: 100%
+    color: var(--font-color)
+    overflow: hidden
+    transition: color .3s ease-in
+  &:hover
+    background: var(--theme-color-light-2)
+    a
+      color: var(--link-hover-font-color)
+    .button-item-desc
+      color: var(--background-color-transparent-1)
+    .button-item-icon
+      transform: scale(0)
+      width: 0
+
+.button-item-icon
+  flex-shrink: 0
+  width: 20%
+  height: 100%
+  overflow: hidden
+  display: flex
+  align-items: center
+  justify-content: center
+  transition: transform .3s ease-in, width .3s ease-in
+  img
+    height: 100%
+    object-fit: contain
+  svg
+    height: 85%
+
+.button-item-info
+  display: flex
+  flex-direction: column
+  overflow: hidden
+  div
+    overflow: hidden
+    text-overflow: ellipsis
+    white-space: nowrap
+
+.button-item-name
+  font-size: 1.1em
+  font-weight: bold
+
+.button-item-desc
+  color: var(--font-color-light-1)
+  font-size: .95em
+  transition: color .3s ease-in
+
++meow-smallscreen()
+  .button-item
+    width: 100%
+    padding: .8em 1em
+    height: 5em
+  
+  .button-item-icon
+    width: 15%

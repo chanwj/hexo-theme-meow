@@ -1,0 +1,44 @@
+!= partial('components/banner')
+
+.page-container
+  .page-content
+    .page-title
+      .page-title-content
+        if is_archive()
+          !=getSvg('archive')
+          span= __('archives')
+        else if is_category() || page.type == "category"
+          !=getSvg('category')
+          span= __('categories') + (page.type != "category" ? (": " + page.category) : "")
+        else if is_tag() || page.type == "tag"
+          !=getSvg('tag')
+          span= __('tags') + (page.type != "tag" ? (": " + page.tag) : "")
+        else
+          span= page.title
+      
+      if theme.page_view.enable && theme.page_view.page_pv && page.count
+        .pageview
+          != getSvg('ta-fire')
+          span= __('page_view.page_pv') + ": "
+          span#vercount_value_page_pv
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 6l0 -3" /><path d="M16.25 7.75l2.15 -2.15" /><path d="M18 12l3 0" /><path d="M16.25 16.25l2.15 2.15" /><path d="M12 18l0 3" /><path d="M7.75 16.25l-2.15 2.15" /><path d="M6 12l-3 0" /><path d="M7.75 7.75l-2.15 -2.15" /></svg>
+
+    .page-main
+      block content
+
+      case page.type
+        when "category"
+          != partial('pages/categories')
+        when "tag"
+          != partial('pages/tags')
+        when "essay"
+          != partial('pages/essay')
+        when "friends"
+          != partial('pages/friends')
+        when "404"
+          != partial('pages/404')
+        default
+          != partial('pages/page-template')
+    
+    if theme.comment.enable && page.comment
+      != partial('components/comment/comment')

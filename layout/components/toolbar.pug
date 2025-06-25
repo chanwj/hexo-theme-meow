@@ -1,0 +1,36 @@
+#toolbar(hide="")
+  if theme.toolbar.setting_enable
+    #toolbar-setting-container(hide="")
+      if theme.toolbar.color_mode
+        .toolbar-item
+          button#tool-color-mode(title=__('dark_mode') type='button')
+            - const mode_svg = theme.color.mode.default=="light" ? "ta-moon" : "ta-sun"
+            != getSvg(mode_svg)
+
+      if theme.toolbar.share
+        .toolbar-item
+          button#tool-share.copy-text(title=__('share') type='button' data-text=full_url_for(page.path))
+            != getSvg('ta-share')
+
+      if is_post() && theme.toolbar.font_size_setting
+        .toolbar-item
+          button#tool-font-size-plus(title=__('font_size_plus') type='button')
+            != getSvg('ta-text-plus')
+        .toolbar-item
+          button#tool-font-size-minus(title=__('font_size_minus') type='button')
+            != getSvg('ta-text-minus')
+
+  .toolbar-container
+    if theme.toolbar.setting_enable
+      .toolbar-item
+        button#tool-setting(title=__('setting') type='button')
+          != getSvg('ta-setting')
+    
+    if is_post() && (page.toc || (theme.post.toc.enable && page.toc == undefined))
+      .toolbar-item
+        button#tool-toc(title=__('toc') type='button')
+          != getSvg('ta-toc')
+    
+    .toolbar-item
+      button#tool-gototop(title=__('go_to_top') type='button')
+        != getSvg('ta-up')

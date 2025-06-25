@@ -1,0 +1,108 @@
+.search-overlay
+  visibility: hidden
+  width: 100%
+  height: 100%
+  position: fixed
+  top: 0
+  left: 0
+  z-index: $z-index-8
+  background: transparent
+  backdrop-filter: blur(0)
+  transition: visibility .35s ease, background .35s ease, backdrop-filter .5s ease-in
+  display: flex
+  align-items: center
+  justify-content: center
+  &[active]
+    visibility: visible
+    background: var(--background-color-transparent-3)
+    backdrop-filter: blur(.3rem)
+    .search-container
+      transform: scale(1)
+
+.search-container
+  background: var(--background-color)
+  width: 90%
+  max-width: 1000px
+  height: 70%
+  padding: 1rem 1.2rem
+  border-radius: .8rem
+  box-shadow: var(--meow-card-shadow)
+  transform: scale(0)
+  transition: transform .35s ease
+
+body[data-mode="dark"] .search-container
+  box-shadow: 0px 3px 8px 1px #bbbbbb0f
+
+.search-header
+  display: flex
+  align-items: center
+  justify-content: space-between
+  font-size: 1.2rem
+  font-weight: bold
+  >div
+    display: flex
+    align-items: center
+    gap: .3rem
+  svg
+    height: 1.4rem
+    cursor: pointer
+
+.search-close-btn:hover
+  color: var(--theme-color)
+
+#search-input
+  width: 100%
+  padding: .65rem 1rem
+  margin: 1.1rem 0
+  border-radius: .8rem
+  border: 0
+  outline: 0
+  background: var(--background-color-grey-light-2)
+
+.search-count
+  margin-bottom: 1.1rem
+
+.search-result-container
+  display: flex
+  flex-direction: column
+  height: calc(100% - 9rem)
+  padding: 0 1rem 0 .5rem
+  overflow-y: auto
+
+.search-result-icon
+  color: var(--font-color-light-2)
+  margin: auto
+  svg
+    height: 6rem
+    opacity: .5
+
+.search-result-list
+  padding-left: 1rem
+  margin: 1rem 0 0 0
+  a
+    color: var(--font-color)
+  li:hover
+    .search-result-title
+      font-weight: bold
+    .search-result
+      color: var(--font-color-light-1)
+
+.search-result
+  color: var(--font-color-light-2)
+
+.search-result-title
+  font-size: 1.1rem
+
+.search-keyword
+  background: none
+  border-radius: 0
+  padding: 0
+  color: var(--theme-color)
+  font-weight: bold
+
++meow-smallscreen()
+  .search-header
+    font-size: 1.2em
+  
+  .search-result-title
+    font-size: 1.1em

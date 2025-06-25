@@ -1,8 +1,22 @@
 @import 'common/variables'
+// @import 'common/swup'
 @import 'common/animation'
 @import 'common/basic'
 @import 'common/markdown'
 @import 'common/images'
 
-@import 'layout/*'
+@import 'layout/page'
+@import 'layout/homepage'
+@import 'layout/archive'
+@import 'layout/categories'
+@import 'layout/tags'
+@import 'layout/post'
 @import 'layout/_partial/*'
+@import 'layout/_partial/post/*'
+
+@import 'tags/*'
+
+if hexo-config('comment.enable')
+  @import 'common/comment/comment'
+  if hexo-config('comment.type') == 'waline'
+    @import 'common/comment/waline'

@@ -1,0 +1,25 @@
+.post-reward
+  .post-reward-btn(title=__('reward'))
+    != getSvg('gift')
+    span= theme.post.reward.outer_text
+
+  .post-reward-content
+    .post-reward-text= theme.post.reward.inner_text
+
+    if typeof theme.reward.qrcode == 'object'
+      .post-reward-qrcode
+        each url, item in theme.reward.qrcode
+          .post-reward-qrcode-item
+            a(href=url_for(url) target='_blank')
+              img.noview(src=url_for(url))
+            span= item
+
+    if typeof theme.reward.link == 'object'
+      .post-reward-link
+        each url, item in theme.reward.link
+          .post-reward-link-item
+            a(href=url_for(url) target='_blank')= item
+
+    if theme.post.reward.reward_list.enable
+      .post-reward-list
+        a(href=url_for(theme.post.reward.reward_list.link) target='_blank')= __('reward_list')

@@ -1,0 +1,25 @@
+.error-page
+  display: flex
+  flex-direction: column
+  align-items: center
+  gap: 2rem
+  margin: 4rem 0
+  animation: show-ease .8s ease-in
+  span
+    font-size: 1.8rem
+  a
+    display: block
+    padding: .3rem 2rem
+    background: var(--theme-color)
+    border-radius: 1rem
+    color: var(--link-hover-font-color)
+    text-align: center
+    &:hover
+      background: var(--theme-color-light-2)
+      box-shadow: var(--meow-box-shadow)
+
+@media (max-width 900px)
+  .error-page
+    gap: 1em
+    span
+      font-size: 1.35em

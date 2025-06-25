@@ -4,8 +4,7 @@ header
   left: 0
   z-index: $z-index-9
   width: 100%
-  height: $meow-navbar-height
-  // background-color: var(--background-color)
+  height: var(--meow-navbar-height)
   background-color: var(--nav-background-color)
   backdrop-filter: blur(8px)
   box-shadow: var(--meow-box-shadow)
@@ -31,10 +30,13 @@ header
   align-items: center
   gap: 0.1rem
 
-#site-icon img
-  height: 2rem
-  &:hover
-    animation fade 1s ease infinite
+#site-icon
+  display: flex
+  align-items: center
+  img
+    height: 2rem
+    &:hover
+      animation fade 1s ease infinite
 
 #site-name
   padding: .25rem .4rem .1rem
@@ -50,7 +52,7 @@ header
     color: var(--font-color-navbar)
   .icon
     position: absolute
-    height: 1.4em
+    height: 1.4rem
     opacity: 0
   &:hover
     background-color: var(--theme-color)
@@ -60,11 +62,11 @@ header
       opacity: 1
 
 #nav-menu
-  font-size: 1.3em
+  font-size: 1.3rem
   display: flex
   align-items: center
 
-.menu_item
+.menu-item
   padding: .2rem 1rem
   border-radius: 10px
   position: relative
@@ -94,11 +96,11 @@ header
       color: var(--link-hover-font-color)
       .icon
         animation fade 1s ease infinite
-    .sub_menu_item
+    .sub-menu-item
       opacity: 1
       max-height: 12rem
 
-.sub_menu_item
+.sub-menu-item
   position: absolute
   opacity: 0
   max-height: 0
@@ -120,7 +122,6 @@ header
   transition: all .3s ease
   li
     list-style none
-    gap: .3rem
     padding: .2rem 1.1rem
     border-radius: 8px
     &:hover
@@ -130,7 +131,7 @@ header
 
 #nav-function
   margin: 0 1rem
-  font-size: 1.3em
+  font-size: 1.3rem
   display: flex
   align-items: center
   gap: .8rem
@@ -161,4 +162,98 @@ header
     display: none
     &:hover img
       transform: rotate(360deg)
-      transition: transform .8s ease
+      transition: transform 1s ease
+
+#menu-aside
+  user-select: none
+  visibility: hidden
+  position: fixed
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  z-index: $z-index-10
+  background: transparent
+  backdrop-filter: blur(0)
+  transition: all .4s ease-in
+  hr
+    margin: 1.5rem 0 0 0
+
+#menu-aside-container
+  position: absolute
+  width: 80%
+  max-width: 400px
+  height: 100%
+  top: 0
+  left: 0
+  background: var(--background-color-transparent-1)
+  box-shadow: var(--meow-box-shadow)
+  display: flex
+  flex-direction: column
+  gap: 1rem
+  padding: 2rem 1.5rem
+  overflow-y: auto
+  transform: translateX(-100%)
+  transition: all .4s ease-in
+
+.menu-aside-item
+  font-size: 1.05rem
+  a
+    color: var(--font-color-navbar)
+    display: flex
+    align-items: center
+    gap: .3rem
+  .icon
+    height: 1.1rem
+
+.menu-aside-sub-item
+  display: flex
+  flex-wrap: wrap
+  gap: .5rem .8rem
+  padding: 0
+  overflow: hidden
+  text-align center
+  transition: all .3s ease
+  li
+    list-style: none
+    width: calc(50% - .4rem)
+    a
+      padding: .35rem .8rem
+      border-radius: .5rem
+      border: 1px solid var(--card-border-color)
+      justify-content: center
+      &:hover
+        background: var(--theme-color)
+        color: var(--link-hover-font-color)
+
+#menu-aside-info
+  display: flex
+  align-items: center
+  gap: 0.3rem
+  font-size: 1.6rem
+  font-family: var(--meow-font-title)
+  font-weight: bold
+  padding-bottom: .6rem
+  border-bottom: 1px solid var(--card-border-color)
+  margin-bottom: .6rem
+  img
+    height: 1.8rem
+
++meow-smallscreen()
+  #menu-btn
+    display: block
+    opacity: .7
+  #search-btn span
+    display: none
+    opacity: .7
+  #site-name div
+    font-size: 1.5rem
+  #nav-menu
+    display: none
+  #menu-aside
+    &[open]
+      visibility: visible
+      background: var(--background-color-transparent-2)
+      backdrop-filter: blur(.3rem)
+      #menu-aside-container
+        transform: translateX(0)

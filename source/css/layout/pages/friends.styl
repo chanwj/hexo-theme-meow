@@ -1,0 +1,118 @@
+#friends-content
+  margin: 2.8rem 0 2rem
+  min-height: 50vh
+
+.friends-class
+  margin: 4rem 0
+  animation: show-ease 1s ease-in
+
+.friends-class-title
+  font-size: 1.4rem
+  font-weight: bold
+  margin: 1.5rem 0
+  span
+    margin-left: .5rem
+    font-size: 1rem
+    font-weight: normal
+    color: var(--font-color-light-2)
+
+.friends-class-desc
+  font-size: 1.1rem
+  color: var(--font-color-light-1)
+
+.friends-class-list
+  display: flex
+  flex-wrap: wrap
+  align-items: center
+  gap: 1rem
+  margin: 1.5rem 0
+
+.friends-item
+  width: calc((100% - 2rem)/3)
+  height: 6.1rem
+  background: var(--background-color)
+  border: 1px solid var(--background-color-grey)
+  border-radius: .8rem
+  box-shadow: var(--meow-box-shadow)
+  padding: 1.1rem 1rem
+  transition: background .3s ease-in
+  a
+    display: flex
+    align-items: center
+    gap: .8rem
+    height: 100%
+    color: var(--font-color)
+    overflow: hidden
+    transition: color .3s ease-in
+  &:hover
+    background: var(--theme-color-light-2)
+    a
+      color: var(--link-hover-font-color)
+    .friends-item-desc
+      color: var(--background-color-transparent-1)
+    .friends-item-avatar
+      transform: scale(0)
+      width: 0
+
+.friends-item-avatar
+  flex-shrink: 0
+  width: 3.8rem
+  height: 3.8rem
+  border-radius: 50%
+  overflow: hidden
+  display: flex
+  align-items: center
+  justify-content: center
+  transition: transform .3s ease-in, width .3s ease-in
+  img
+    height: 100%
+    object-fit: contain
+  svg
+    height: 88%
+
+.friends-item-info
+  display: flex
+  flex-direction: column
+  gap: .3rem
+  overflow: hidden
+  div
+    overflow: hidden
+    text-overflow: ellipsis
+    white-space: nowrap
+
+.friends-item-name
+  font-size: 1.05em
+  font-weight: bold
+
+.friends-item-desc
+  color: var(--font-color-light-1)
+  font-size: .95em
+  transition: color .3s ease-in
+
+@media (max-width 900px)
+  #friends-content
+    margin: 2em 0
+
+  .friends-class
+    margin-top: 2em
+  
+  .friends-class-title
+    font-size: 1.35rem
+    margin: .8rem 0
+    span
+      font-size: .85rem
+  
+  .friends-class-desc
+    font-size: 1.15em
+  
+  .friends-class-list
+    margin: .8rem 0
+    gap: .5rem
+  
+  .friends-item
+    width: 100%
+    padding: 0 1em
+    height: 5rem
+  
+  .friends-item-info
+    gap: .1rem

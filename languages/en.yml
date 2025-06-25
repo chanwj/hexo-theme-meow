@@ -19,29 +19,48 @@ toggle: Toggle Menu
 # Toolbar
 toc: Table Of Content
 setting: Settings
+go_to_top: Go To Top
+dark_mode: Dark Mode
+font_size_plus: Increase Font Size
+font_size_minus: Decrease Font Size
+copy: Copy
+share: Share
 
-# Article
+# search panel item
+search_fn:
+  tips: Please enter keyword to search...
+
+# Posts
 read_more: Read More
+posts_count: "(%s Posts)"
+sticky: Pinned
+pubdate: "Created: %s"
+update: "Updated: %s"
+wordcount: "Word Count: %s"
+readtime: "Reading time: %smins"
+post_author: "Author: %s"
+prev_post: Previous post
+next_post: Next post
 
 # Sidebar
 announcement: Announcement
 
 # Footer
 footer:
-  runtime: "Blog Runtime: . Years . Months . Days"
-  framework: "Powered by %s"
+  runtime: "🌻Blog Runtime: . Years . Months . Days"
+  framework: "🚀Powered by %s"
   site_statistic: "%s posts and %s words in total"
 
 # Page View Counting
 page_view:
-  site_pv: TOTAL PAGE VIEWS
-  site_uv: TOTAL VISITORS
+  site_pv: 🔥TOTAL PAGE VIEWS
+  site_uv: 🐈TOTAL VISITORS
   page_pv: Hits
 
 # Social Info
 social:
   email: EMail
-  github: Github
+  github: GitHub
   qq: QQ
   wechat: Wechat
   ao3: Archive of Our Own
@@ -54,3 +73,22 @@ social:
   mastodon: Mastodon
   steam: Steam
   xiaohongshu: Red Note
+
+# Essay
+essay_max_num: "- Display %s recent essays. -"
+
+# Reward Module
+reward: Reward The Author
+reward_list: Credits
+
+# Copyright Module
+copyright:
+  info: "This work is published by %s at %s"
+  link: "Link: "
+  text: "This work is licensed under %s. Please indicate %s when reprinting."
+  share_text: "🐱Shared From Meow"
+  notify_info: Copied successfully! Please mark the address of this post if redistribute.
+  F12_info: Turned on developer mode, please follow the copyright license of this website
+
+# Others
+error_page_text: The page is gone...

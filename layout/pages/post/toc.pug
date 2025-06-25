@@ -1,0 +1,11 @@
+- const toc_show = theme.post.toc.show && page.encrypt != true ? "show" : "hide"
+- const encrypt_style = page.encrypt ? "display:none" : ""
+
+aside#post-sidebar(status=toc_show)
+  #toc-container
+    .toc-title
+      != getSvg('ta-toc')
+      span= __('toc')
+
+    .toc-content#toc-div(style=encrypt_style)
+      != toc(page.encrypt ? page.origin : page.content, { class: 'toc-list', list_number: theme.post.toc.number, max_depth: theme.post.toc.max_depth, max_items: theme.post.toc.max_items})

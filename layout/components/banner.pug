@@ -1,0 +1,12 @@
+.banner
+  .banner-info
+    if theme.banner.avatar.type
+      .banner-avatar
+        if theme.banner.avatar.type == "author"
+          img(src=url_for(theme.info.avatar))
+        else if theme.banner.avatar.type == "site"
+          img(src=url_for(theme.info.logo))
+
+    if theme.banner.title.enable
+      .banner-title
+        = theme.banner.title.text || config.title || "MEOW"

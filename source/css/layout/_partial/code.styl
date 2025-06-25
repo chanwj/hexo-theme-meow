@@ -1,0 +1,188 @@
+@require '../../common/code-highlight/highlight'
+
+code
+  padding: .1rem .6rem
+  margin: 0 .12rem
+  border-radius: .3rem
+  background-color: var(--background-color-grey-light-1)
+  font-family: var(--meow-font-default)
+  font-size: .95em
+  color: var(--font-color-light-1)
+
+.code-container
+  position relative
+  background var(--background-color-grey-light-2)
+  border-radius .8rem
+  box-shadow var(--meow-box-shadow)
+  padding-top 2.5rem
+  margin 2rem 0
+  font-family: var(--meow-font-code)
+  font-size: 1.1rem
+  figcaption
+    position absolute
+    top 0
+    left 50%
+    transform translateX(-50%)
+    color var(--font-color)
+    font-weight bold
+    line-height 2.5rem
+    a
+      margin-left .7rem
+  &:before
+    position absolute
+    content attr(code-lang)
+    line-height 2.5rem
+    width auto
+    top 0
+    left .75rem
+    margin-left 4.8rem
+    font-weight bold
+  &:after
+    content ' '
+    position absolute
+    border-radius 50%
+    background #fc625d
+    width .75rem
+    height .75rem
+    top 0
+    left 1.5rem
+    margin-top .875rem
+    box-shadow 20px 0px #fdbc40, 40px 0px #35cd4b
+    z-index $z-index-2
+  .folded
+    height 0 !important
+    overflow hidden
+    figure.highlight
+      height 0 !important
+      width 0 !important
+      overflow hidden !important
+  &:hover
+    .code-fold, .code-copy
+      opacity .8
+
+.code-fold, .code-copy
+  opacity 0
+  cursor pointer
+  display flex
+  align-items: center
+  height 2.5rem
+  position absolute
+  top 0
+  transition opacity .3s ease
+  user-select none
+  svg
+    height 1.3rem
+    animation: show-ease 1s ease-in-out
+
+.code-fold
+  right 4.2rem
+
+.code-copy
+  right 1.5rem
+
+figure.highlight
+  overflow auto
+  if hexo-config('code.max_height')
+    max-height: unquote(hexo-config('code.max_height'))
+  margin 1.25rem 0
+  padding 1rem .4rem
+  color var(--highlight-foreground)
+  background var(--highlight-background)
+  margin 0
+  border-radius 0 0 .8rem .8rem
+  border-top 1px solid var(--background-color-grey)
+
+  &:hover::-webkit-scrollbar-thumb
+    background var(--background-color-grey-light-1)
+
+  &::-webkit-scrollbar
+    width .45rem
+    height .45rem
+
+  &::-webkit-scrollbar-track
+    background transparent
+    border none
+
+  &::-webkit-scrollbar-thumb
+    border-radius 3rem
+    background transparent
+    transition background 0.2s ease
+    &:hover
+      background var(--theme-color-light-1)
+  
+  @-moz-document url-prefix()
+    scrollbar-color: var(--background-color-grey-light-1) transparent
+    scrollbar-width: thin
+
+  table
+    margin 0
+    border none
+    box-shadow none
+
+  td
+    border none
+    padding 0
+
+  .gutter
+    width: 2.1rem
+    user-select none
+    padding .1rem .6rem
+    border-right: 1px solid var(--background-color-grey)
+    opacity: .3
+    pre
+      text-align center
+
+  .code pre
+    width 100%
+    padding .1rem .8rem
+
+  pre
+    border none
+    margin 0
+    font-family: var(--meow-font-code)
+    font-size: .95em
+    line-height: 1.45
+
+    .comment
+      color var(--highlight-comment)
+    .built_in, .quote, .doctag, .keyword.atrule, .regexp
+      color var(--highlight-built-in)
+    .type, .keyword, .diff .meta, .template-tag, .selector-attr, .selector-pseudo
+      color var(--highlight-keyword)
+    .attr, .literal, .symbol, .link, .number, .variable.constant_
+      color var(--highlight-attr)
+    .section, .function .title, .attribute, .title.function_, .ruby .property
+      color var(--highlight-section)
+    .bullet, .name, .deletion, .selector-tag, .variable, .template-variable
+      color var(--highlight-bullet)
+    .title, .class .title, .title.class_
+      color var(--highlight-title)
+    .tag
+      color var(--highlight-tag)
+    .operator, .punctuation, .subst
+      color var(--highlight-subst)
+    .operator
+      opacity: .7
+    .strong
+      font-weight bold
+      color var(--highlight-strong)
+    .addition, .code, .string, .title.class_.inherited__, .selector-class
+      color var(--highlight-string)
+    .emphasis
+      color var(--highlight-emphasis)
+      font-style italic
+    .meta, .meta .keyword, .meta .string
+      color var(--highlight-meta)
+    .meta .keyword, .meta-keyword
+      font-weight: bold
+
++meow-smallscreen()
+  .code-container
+    font-size: 1em
+  
+  .code-container figcaption
+    visibility: hidden
+  
+  code
+    padding: .08rem .45rem
+    margin: 0 .05rem
