@@ -76,9 +76,9 @@ npm install hexo-renderer-pug --save
 
 ## ⏳️ TO DO
 
-- [ ] RSS支持
 - [ ] 相册页&图片画廊
 - [ ] 更多的标签插件
+- [ ] 动态版动态页
 - [ ] ……
 
 希望你能给本主题项目点⭐Star，你的支持十分重要，谢谢～

@@ -76,9 +76,9 @@ Please update Hexo to version 7.0.0+.
 
 ## ⏳️ TO DO
 
-- [ ] RSS support
 - [ ] Albums & photos gallery
 - [ ] More Tag Plugins
+- [ ] Online essay page
 - [ ] ...
 
 Please give this project a ⭐star. Your support for *Meow* means a lot. Thanks!
