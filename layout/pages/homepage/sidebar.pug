@@ -33,7 +33,7 @@ aside#home-sidebar
             - var social_link = trim(value.split('||')[1])
             if profile == "email" || profile == "mail"
               - social_link = "mailto:" + social_link
-            a(href=social_link title=__('social.' + profile) target='_blank')
+            a(href=url_for(social_link) title=__('social.' + profile) target='_blank')
               != getSvg(trim(value.split('||')[0]))
   
   if theme.sidebar.announcement
