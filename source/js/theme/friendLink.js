@@ -3,8 +3,6 @@
  * friend link scripts
  */
 
-import friendsData from "../../friends/friends.js";
-
 const initFriendLink = () => {
   const friendsContainer = document.querySelector('#friends-content');
   if (!friendsContainer) return;
