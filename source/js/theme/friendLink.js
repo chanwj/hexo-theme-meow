@@ -16,7 +16,7 @@ const initFriendLink = () => {
       if (!friendAvatar.match(/^((https?:)?(\/\/[^/]+))/)) {
         friendAvatar = GLOBALCONFIG.root + friendAvatar;
       }
-      classContainer.querySelector('.friends-class-list').innerHTML += `<div class="friends-item"><a href="${friend.url}" target="_blank" rel="nofollow"><div class="friends-item-avatar"><img src="${friendAvatar}" no-view /></div><div class="friends-item-info"><div class="friends-item-name">${friend.name}</div><div class="friends-item-desc">${friend.desc}</div></div></a></div>`;
+      classContainer.querySelector('.friends-class-list').innerHTML += `<div class="friends-item"><a href="${friend.url}" target="_blank" rel="nofollow"><div class="friends-item-avatar"><img src="${friendAvatar}" no-view alt="Avatar" /></div><div class="friends-item-info"><div class="friends-item-name">${friend.name}</div><div class="friends-item-desc">${friend.desc}</div></div></a></div>`;
     });
   };
 
