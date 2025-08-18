@@ -33,6 +33,7 @@
 - Floating toolbar
 - Reward module
 - Light/Dark mode
+- Customizable theme color
 - Comment
 - Image lazyload + light box
 - Search function
