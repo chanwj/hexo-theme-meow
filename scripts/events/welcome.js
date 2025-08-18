@@ -18,11 +18,11 @@ hexo.on('ready', () => {
            ███   ███   ███   ███    ███ ███    ███ ███ ▄█▄ ███ 
            ▀█   ███   █▀    ██████████  ▀██████▀   ▀███▀███▀  
 
-                               v3.0.1
+                               v3.0.2
 
   =====================================================================
    Meow's Github Repository: https://github.com/chanwj/hexo-theme-meow
-   Documentation & Preview Station: https://meow.jumaoo.top
+   Meow's Documentation & Preview Station: https://meow.jumaoo.top
   ---------------------------------------------------------------------
   `);
 });
