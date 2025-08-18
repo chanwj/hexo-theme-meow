@@ -24,7 +24,7 @@ block content
                 .archive-post(archive-style=cover ? "cover" : "normal")
                   .archive-post-cover
                     if cover
-                      img(src=url_for(post.cover || page.photo))
+                      img(src=url_for(post.cover || page.photo) alt='Post Cover')
                   a(href=url_for(post.path))
                     .archive-post-title
                       if post.encrypt

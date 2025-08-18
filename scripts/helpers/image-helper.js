@@ -22,5 +22,5 @@ hexo.extend.helper.register('getSvg', function (svg_file, options = {}) {
     path = `/assets/images/svg/${prefix}/${prefix}-${svg_file}.svg`;
   }
 
-  return this.image_tag(path, Object.assign({ class: 'icon noview' }, options));
+  return this.image_tag(path, Object.assign({ class: 'icon noview', alt: 'Icon' }, options));
 })

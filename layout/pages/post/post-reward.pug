@@ -11,7 +11,7 @@
         each url, item in theme.reward.qrcode
           .post-reward-qrcode-item
             a(href=url_for(url) target='_blank')
-              img.noview(src=url_for(url))
+              img.noview(src=url_for(url) alt='QRCode')
             span= item
 
     if typeof theme.reward.link == 'object'

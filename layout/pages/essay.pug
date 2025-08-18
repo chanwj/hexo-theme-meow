@@ -12,7 +12,7 @@
           li.essay-item
             .essay-avatar
               if essayList[i].from && authorList[essayList[i].from]
-                img.essay-avatar-img(src=authorList[essayList[i].from] no-view="")
+                img.essay-avatar-img(src=authorList[essayList[i].from] no-view="" alt='Avatar')
             .essay-main
               .essay-content
                 .essay-text.markdown
@@ -21,7 +21,7 @@
                   .essay-container-img
                     each item, index in essayList[i].image
                       a(href=url_for(item), target="_blank")
-                        img(src=url_for(item))
+                        img(src=url_for(item) alt='Essay Image')
               .essay-bottom
                 .essay-info
                   time= full_date(moment(essayList[i].date).tz('utc'), 'LLL')

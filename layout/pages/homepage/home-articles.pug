@@ -5,7 +5,7 @@
       if article_cover
         .home-article-cover
           a(href=url_for(post.path))
-            img(src=url_for(article_cover))
+            img(src=url_for(article_cover) alt='Post Cover')
 
       .home-article-content(cover=article_cover ? '' : 'nocover')
         .home-article-title

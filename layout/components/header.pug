@@ -2,7 +2,7 @@ header
   #navbar
     #nav-info
       a#site-icon(href=url_for('/') title=__('home'))
-        img(src=url_for(theme.info.logo))
+        img(src=url_for(theme.info.logo) alt='Logo')
 
       a#site-name(href=url_for('/') title=__('home'))
         div= config.title || "MEOW"
@@ -46,7 +46,7 @@ header
   #menu-aside-container
     #menu-aside-info
       a(href=url_for('/') title=__('home'))
-        img(src=url_for(theme.info.logo))
+        img(src=url_for(theme.info.logo) alt='Logo')
 
       a(href=url_for('/') title=__('home'))= config.title || "MEOW"
 
