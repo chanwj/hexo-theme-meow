@@ -1,0 +1,77 @@
+.timeline
+  border-left: 2px solid var(--background-color-grey)
+  margin: 1.6rem 0 2rem 1rem
+  padding: .7rem 1.5rem 1rem
+  &.blue
+    & .timeline-icon:before
+      border-color: $color-blue
+    & .timeline-item:hover .timeline-icon:before
+      background: $color-blue
+  &.pink
+    & .timeline-icon:before
+      border-color: $color-pink
+    & .timeline-item:hover .timeline-icon:before
+      background: $color-pink
+  &.purple
+    & .timeline-icon:before
+      border-color: $color-purple
+    & .timeline-item:hover .timeline-icon:before
+      background: $color-purple
+  &.yellow
+    & .timeline-icon:before
+      border-color: $color-yellow
+    & .timeline-item:hover .timeline-icon:before
+      background: $color-yellow
+  &.green
+    & .timeline-icon:before
+      border-color: $color-green
+    & .timeline-item:hover .timeline-icon:before
+      background: $color-green
+
+.timeline-item
+  margin-bottom: 1.35rem
+  &:last-child
+    margin-bottom: 0
+  &.timeline-head
+    & .timeline-item-title p
+      font-size: 1.2em
+    & .timeline-icon:before
+      border-width: 5px
+      left: -2.05rem
+      width: 1rem
+      height: 1rem
+  &:hover .timeline-icon:before
+    border-color: var(--background-color-grey-light-1)
+    border-width: 3.5px
+    background: var(--theme-color)
+
+.timeline-item-title
+  position: relative
+  & p
+    margin: 0 0 .7rem
+    font-weight: bold
+    font-size: 1.05em
+
+.timeline-icon:before
+  position: absolute
+  content: ''
+  top: 50%
+  left: -1.95rem
+  width: .8rem
+  height: .8rem
+  border: 3px solid var(--theme-color)
+  border-radius: 50%
+  background: #fff
+  transition: all .3s ease-in
+  transform: translateY(-50%)
+  box-sizing: border-box
+
+.timeline-item-content
+  border: 1px solid var(--background-color-grey)
+  border-radius: .8rem
+  padding: .8rem 1rem
+  & p
+    margin: 0
+
+body[data-mode="dark"] .timeline .timeline-icon:before
+  filter: brightness(90%)
