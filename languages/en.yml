@@ -86,7 +86,6 @@ copyright:
   info: "This work is published by %s at %s"
   link: "Link: "
   text: "This work is licensed under %s. Please indicate %s when reprinting."
-  share_text: "🐱Shared From Meow"
   notify_info: Copied successfully! Please mark the address of this post if redistribute.
   F12_info: Turned on developer mode, please follow the copyright license of this website
 

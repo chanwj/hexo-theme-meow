@@ -6,7 +6,7 @@
       lazyload_src: '#{url_for(theme.image.loding_image)}',
       friends: #{page.type == "friends"},
       codeblock: #{theme.code.func && (page.layout == "post" || page.layout == "page")},
-      share_text: '#{__('copyright.share_text')}',
+      share_text: '#{theme.share.share_text}',
       onblur_title: '#{theme.global.onblur_title}',
       mouse_click: #{theme.global.mouse_click_style},
       notify:{
