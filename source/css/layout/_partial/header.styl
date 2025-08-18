@@ -66,6 +66,9 @@ header
   font-size: 1.3rem
   display: flex
   align-items: center
+  position: absolute
+  left: 50%
+  transform: translateX(-50%)
 
 .menu-item
   border-radius: 10px
@@ -78,10 +81,10 @@ header
   transition: all .5s ease
   &:after
     position: absolute
-    top: 1rem
+    top: 1.7rem
     left: 0
     width: 100%
-    height: 1.5rem
+    height: 1rem
     content: ''
   a
     padding: .2rem 1rem
@@ -123,14 +126,13 @@ header
   transition: all .3s ease
   li
     list-style none
-    padding: .2rem 1.1rem
     border-radius: 8px
     &:hover
       background-color: var(--theme-color)
       a
         color: var(--link-hover-font-color)
   a
-    padding: 0
+    padding: .2rem 1.1rem
 
 #nav-function
   margin: 0 1rem
