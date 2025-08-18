@@ -37,9 +37,9 @@ const initToolbar = () => {
   const color_mode = document.getElementById('tool-color-mode');
   if (color_mode) {
     if (localStorage.getItem('color-mode') == 'light') {
-      color_mode.innerHTML = '<img src="' + GLOBALCONFIG.root + 'assets/images/svg/ta/ta-moon.svg" class="icon noview">';
+      color_mode.innerHTML = '<img src="' + GLOBALCONFIG.root + 'assets/images/svg/ta/ta-moon.svg" class="icon noview" alt="Dark Mode">';
     } else {
-      color_mode.innerHTML = '<img src="' + GLOBALCONFIG.root + 'assets/images/svg/ta/ta-sun.svg" class="icon noview">';
+      color_mode.innerHTML = '<img src="' + GLOBALCONFIG.root + 'assets/images/svg/ta/ta-sun.svg" class="icon noview" alt="Light Mode">';
     }
 
     color_mode.addEventListener('click', function () {
@@ -47,9 +47,9 @@ const initToolbar = () => {
       document.body.setAttribute('data-mode', mode);
       localStorage.setItem('color-mode', mode);
       if (mode == 'light') {
-        color_mode.innerHTML = '<img src="' + GLOBALCONFIG.root + 'assets/images/svg/ta/ta-moon.svg" class="icon noview">';
+        color_mode.innerHTML = '<img src="' + GLOBALCONFIG.root + 'assets/images/svg/ta/ta-moon.svg" class="icon noview" alt="Dark Mode">';
       } else {
-        color_mode.innerHTML = '<img src="' + GLOBALCONFIG.root + 'assets/images/svg/ta/ta-sun.svg" class="icon noview">';
+        color_mode.innerHTML = '<img src="' + GLOBALCONFIG.root + 'assets/images/svg/ta/ta-sun.svg" class="icon noview" alt="Light Mode">';
       }
     })
   }
