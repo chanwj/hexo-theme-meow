@@ -6,15 +6,15 @@
       .page-title-content
         if is_archive()
           !=getSvg('archive')
-          span= __('archives')
+          h1= __('archives')
         else if is_category() || page.type == "category"
           !=getSvg('category')
-          span= __('categories') + (page.type != "category" ? (": " + page.category) : "")
+          h1= __('categories') + (page.type != "category" ? (": " + page.category) : "")
         else if is_tag() || page.type == "tag"
           !=getSvg('tag')
-          span= __('tags') + (page.type != "tag" ? (": " + page.tag) : "")
+          h1= __('tags') + (page.type != "tag" ? (": " + page.tag) : "")
         else
-          span= page.title
+          h1= page.title
       
       if theme.page_view.enable && theme.page_view.page_pv && page.count
         .pageview

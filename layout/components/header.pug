@@ -5,7 +5,7 @@ header
         img(src=url_for(theme.info.logo) alt='Logo')
 
       a#site-name(href=url_for('/') title=__('home'))
-        div= config.title || "MEOW"
+        h1= config.title || "MEOW"
         != getSvg('home')
 
     #nav-menu
