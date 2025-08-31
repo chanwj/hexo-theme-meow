@@ -1,0 +1,67 @@
+#artitalk_main
+  .cbp_tmlabel
+    border: 1px solid var(--card-border-color)
+    border-radius: .8rem !important
+    box-shadow: none !important
+    margin: 0 0 1.5rem 3.5rem !important
+    img
+      width: 100%
+      height: 100%
+      border-radius: .5rem
+      overflow: hidden
+      object-fit: contain
+    p
+      strong
+        font-weight: bold
+    .atemoji
+      margin: 0
+    .shuoshuo_time
+      color: var(--font-color-light-2)
+      font-size: .875rem
+      span:last-child
+        &:hover
+          span
+            color: var(--theme-color) !important
+          svg path
+            fill: var(--theme-color)
+  .power
+    a
+      color: var(--theme-color) !important
+    svg:hover path
+      fill: var(--theme-color)
+  #shuoshuo_content
+    padding: 0
+  #readmore
+    background: var(--background-color-grey-light-1)
+    &:hover
+      background: var(--theme-color-light-1)
+      color: var(--font-color-invert)
+      box-shadow: none
+
+#operare_artitalk
+  #userinfo, #shuoshuo-modal
+    center p
+      text-align: center
+    input[type='button']
+      background: var(--background-color-grey-light-1)
+  #shanchu, #shanchur
+    p
+      text-align: center
+
+body[data-mode="dark"]
+  #operare_artitalk
+    #userinfo, #shuoshuo-modal
+      input[type='button']
+        background: var(--background-color-grey-transparent)
+        color: var(--font-color-light-1)
+
+@media (max-width 900px)
+  #artitalk_main
+    .cbp_tmtimeline>li
+      display: flex
+      flex-direction: column
+      align-items: center
+    
+    .cbp_tmlabel
+      margin: 0 !important
+      width: 100%

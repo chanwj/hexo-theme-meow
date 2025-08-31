@@ -262,8 +262,20 @@ share:
 # Essay Page
 essay:
   desc: # Additional message of essay
-  avatar_shape: 2 # Shape of avatar. 1(normal) or 2(circle)
-  max_num: 30 # Max number of essays to display
+  type: local # Essay type: local or artitalk
+  # Artitalk config, https://artitalk.js.org/
+  artitalk:
+    app_id: # LeanCloud AppID
+    app_key: # LeanCloud AppKey
+    server_url: # API domain
+    lang: en # Language, e.g. en, zh, es
+    page_size: 5 # How many essay to be displayed when loaded
+    avatar_pla: # Essay avatar url
+    emoji: # Format in list: custom emoji name: custom emoji image url
+    comment: 0 # Whether to enable comment function for each essay, 0(disable) or 1(enable)
+  local:
+    avatar_shape: 2 # Shape of avatar. 1(normal) or 2(circle)
+    max_num: 30 # Max number of essays to display
 
 # Friend Link Page
 friends:

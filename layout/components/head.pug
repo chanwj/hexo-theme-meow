@@ -75,7 +75,10 @@ if theme.font.custom
 
 case page.type
   when "essay"
-    != css('css/layout/pages/essay')
+    if theme.essay.type == "local"
+      != css('css/layout/pages/essay/local-essay')
+    else
+      != css('css/layout/pages/essay/artitalk')
   when "friends"
     != css('css/layout/pages/friends')
   when "404"

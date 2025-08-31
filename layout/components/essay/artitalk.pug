@@ -1,0 +1,15 @@
+- const { app_id, app_key, server_url, lang, page_size, avatar_pla, emoji, comment } = theme.essay.artitalk
+script.
+  new Artitalk({
+    appId: '!{app_id}',
+    appKey: '!{app_key}',
+    serverURL: '!{server_url}',
+    lang: '!{lang}',
+    pageSize: !{page_size},
+    avatarPla: '!{avatar_pla}',
+    color1: 'var(--background-color-grey-transparent-2)',
+    color2: 'var(--background-color-grey-transparent-2)',
+    color3: 'var(--font-color)',
+    atEmoji: !{JSON.stringify(emoji)},
+    atComment: !{comment}
+  })
