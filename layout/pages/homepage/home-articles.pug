@@ -32,15 +32,17 @@
               != getSvg('ta-pubdate')
               span= date(post.date)
 
-            .home-article-categories
-              != getSvg('ta-category')
-              each cat in post.categories.toArray()
-                a(href=url_for(cat.path))= cat.name
+            if post.categories.length > 0
+              .home-article-categories
+                != getSvg('ta-category')
+                each cat in post.categories.toArray()
+                  a(href=url_for(cat.path))= cat.name
             
-            .home-article-tags
-              != getSvg('ta-tag')
-              each tag in post.tags.toArray()
-                a(href=url_for(tag.path))= tag.name
+            if post.tags.length > 0
+              .home-article-tags
+                != getSvg('ta-tag')
+                each tag in post.tags.toArray()
+                  a(href=url_for(tag.path))= tag.name
             
           .home-article-func
             a.read-more-btn(href=url_for(post.path))= __('read_more') + " >>"
