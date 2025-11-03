@@ -9,7 +9,7 @@ hexo.extend.filter.register('after_post_render', function (data) {
   if (data.layout === 'post' || data.layout === 'page') {
     if (this.theme.config.image.image_caption) {
       const caption_class = 'img-caption';
-      data.content = data.content.replace(/(<img(?=[^>]*alt="([^"]+)")(?![^>]*class="[^"]*\bposticon\b[^"]*")[^>]*>)/g, `<figure class="${caption_class}">$1<figcaption>$2</figcaption></figure>`);
+      data.content = data.content.replace(/(<img(?=[^>]*alt="([^"]+)")(?![^>]*class="[^"]*\b(?:posticon|postcover)\b[^"]*")[^>]*>)/g, `<figure class="${caption_class}">$1<figcaption>$2</figcaption></figure>`);
     }
   }
   return data;
