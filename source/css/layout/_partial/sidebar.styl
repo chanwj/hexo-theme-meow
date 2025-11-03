@@ -73,20 +73,18 @@
 .site-statistic
   width: 100%
   margin-top: 0.3rem
-  display: flex
-  align-items: center
-  justify-content: space-evenly
+  display: table-row
+  text-align: center
+  justify-items: stretch
   a
     color: var(--font-color)
     text-decoration: none
-    display: flex
-    flex-direction: column
-    align-items: center
-    gap: .2rem
+    display: table-cell
     width: 30%
-    border-right: 1px dotted lightgrey
-    &:last-child
-      border-right: none
+    padding: 0 .5em
+    &:nth-child(2)
+      border-right: 1px dotted lightgrey
+      border-left: 1px dotted lightgrey
     &:hover
       color: var(--theme-color)
 
