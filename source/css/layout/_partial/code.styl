@@ -142,6 +142,10 @@ figure.highlight
     font-size: .95em
     line-height: 1.45
 
+    .line
+      display: inline-block
+      width: 100%
+
     .comment
       color var(--highlight-comment)
     .built_in, .quote, .doctag, .keyword.atrule, .regexp
@@ -174,6 +178,8 @@ figure.highlight
       color var(--highlight-meta)
     .meta .keyword, .meta-keyword
       font-weight: bold
+    .marked
+      background-color: var(--highlight-marked)
 
 +meow-smallscreen()
   .code-container
