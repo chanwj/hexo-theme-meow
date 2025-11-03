@@ -208,6 +208,7 @@ post:
     license_desc: 'Attribution-NonCommercial-ShareAlike' # Description of cc license, display when hover
     custom_text: Only for reading, do NOT redistribute, remix, transform and build upon the material. # Description of custom copyright announcement
   tail_tags: true # Whether to show post's tags at the end of post content
+  cover: true # Whether to display cover image in front of post content
 
 # Image Configuration
 image:
