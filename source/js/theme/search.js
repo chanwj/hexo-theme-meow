@@ -6,7 +6,7 @@
 const initSearch = () => {
   const initLocalSearch = () => {
     if (!GLOBALCONFIG.search.path) {
-      console.warn('`hexo-generator-searchdb` plugin is not installed!');
+      console.warn('`hexo-generator-searchdb` plugin is not installed or configured!');
       return;
     }
     const localSearch = new LocalSearch({

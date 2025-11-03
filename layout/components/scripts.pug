@@ -16,7 +16,7 @@
       },
       search: {
         enable: #{theme.search.enable},
-        path: '#{config.search.path}',
+        path: '#{theme.search.enable && config.search ? config.search.path : ""}',
         local: {
           top_n_per_article: #{theme.search.local.top_n_per_article},
           preload: #{theme.search.local.preload}
