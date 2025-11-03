@@ -50,5 +50,9 @@
     max-width: 100%
     object-fit: contain
   
+  img:not([no-view]):not(.noview)
+    &:hover
+      box-shadow: var(--meow-card-shadow)
+  
   .img-caption img
     margin: 0 auto
