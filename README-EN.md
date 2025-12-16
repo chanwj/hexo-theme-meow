@@ -27,7 +27,7 @@
 - Various tag plugins
 - Novel/Fanfition improvment
 - Card style archives page, sort by years and months
-- Essay page
+- Essay page (Static/Dynamic Deploy)
 - Friend links page
 - Support TOC
 - Floating toolbar
@@ -41,6 +41,7 @@
 - Adapted to encryption plugin
 - Built-in 404 page
 - SEO friendly
+- Support building team blog (Articles can be signed by different authors or even multiple authors. When adding essay, different authors and avatars can also be specified.)
 
 <br/>
 
@@ -75,10 +76,12 @@ Please update Hexo to version 7.0.0+.
 
 <br/>
 
-## ⏳️ TO DO
+## ⏳️ Maintenance and Updates
 
-- [ ] Albums & photos gallery
-- [ ] More Tag Plugins
-- [ ] ...
+See changelog at [Releases](https://github.com/chanwj/hexo-theme-meow/releases) page or theme preview station.
 
-Please give this project a ⭐star. Your support for *Meow* means a lot. Thanks!
+Theme Meow will be in a long-term update and maintenance state. If you encounter any problems while using it, feel free go to [GitHub Issues](https://github.com/chanwj/hexo-theme-meow/issues) to ask for help. (When asking questions, please describe the problem clearly and provide a method to reproduce the problem.)
+
+**If you like theme Meow, hope you could give it a ⭐ Star on this page to support this project.**
+
+If you are willing to sponsor theme Meow and encourage the author, you could visit [Reward](https://meow.jumaoo.top/reward) page on theme preview station and scan the QR code. Thank you very much!
