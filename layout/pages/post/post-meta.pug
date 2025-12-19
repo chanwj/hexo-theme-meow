@@ -6,7 +6,7 @@
         span= _p('pubdate', date(page.date))
       .post-update
         != getSvg('ta-update')
-        span= _p('update', date(page.update))
+        span= _p('update', date(page.updated))
 
     .post-read
       if theme.post.wordcount
