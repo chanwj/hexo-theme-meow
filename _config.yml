@@ -215,6 +215,7 @@ post:
 image:
   image_caption: false # Whether to display image caption(alt text) in posts and pages
   loding_image: assets/images/Meow-Loading.webp # Display loading image when target image is not loaded
+  rounded_corners: true # Whether to display images with rounded corners
 
 # Code Block
 code:
