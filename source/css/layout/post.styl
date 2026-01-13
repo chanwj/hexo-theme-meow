@@ -74,6 +74,60 @@
       &:after
         width: 100%
 
+.post-nav
+  width: 100%
+  margin: 1.5rem 0
+  display: flex
+  justify-content: space-between
+  gap: .5rem
+  >a
+    width: 50%
+    padding: .5rem 1.2rem
+    border: 1px dotted var(--font-color-light-3)
+    border-radius: .8rem
+    display: flex
+    flex-direction: column
+    font-size: .8rem
+    color: var(--font-color-light-2)
+    white-space: nowrap
+    overflow: hidden
+    position: relative
+    span
+      font-size: 1.25em
+      overflow: hidden
+      text-overflow: ellipsis
+      color: var(--font-color-light-1)
+      transition: all .5s ease
+    &:after
+      content: ""
+      background-image: url(url-for(hexo-config('info.logo')))
+      background-size: cover
+      position: absolute
+      top: 0
+      width: 13%
+      height: 100%
+      opacity: 0
+      transition: opacity .4s ease-in
+    &:hover
+      box-shadow: var(--meow-box-shadow)
+      color: var(--font-color-light-1)
+      &:after
+        opacity: .7
+      span
+        font-weight: bold
+        color: var(--theme-color)
+    &[nopost]
+      opacity: 0
+
+.post-nav-prev:after
+  right: 1.2rem
+
+.post-nav-next
+  text-align: right
+  &:after
+    left: 1.2rem
+    transform: scaleX(-1)
+
 .fiction-status
   text-align: center
   color: var(--font-color-light-3)
@@ -105,3 +159,8 @@
   
   .post-tail-tags
     margin: 1.2em 0
+  
+  .post-nav>a
+    font-size: .8em
+    &:after
+      display: none

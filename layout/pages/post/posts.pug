@@ -22,13 +22,20 @@
     .post-tail-tags
       != list_tags(page.tags, {class:'post-tail-tags', show_count:false, style:false, separator:''})
 
-  //- .post-page
-  //-   .post-page-prev
-  //-     if page.prev
-  //-       a(href=url_for(page.prev.path) title=__('prev_post'))= "< " + page.prev.title
-  //-   .post-page-next
-  //-     if page.next
-  //-       a(href=url_for(page.next.path) title=__('next_post'))= page.next.title + " >"
+  if theme.post.navigator
+    .post-nav
+      if page.prev
+        a.post-nav-prev(href=url_for(page.prev.path) title=page.prev.title)
+          = __('prev_post')
+          span= page.prev.title
+      else
+        a.post-nav-prev(nopost="")
+      if page.next
+        a.post-nav-next(href=url_for(page.next.path) title=page.next.title)
+          = __('next_post')
+          span= page.next.title
+      else
+        a.post-nav-prev(nopost="")
 
   if theme.comment.enable && (page.comment || (theme.comment.display && page.comment == undefined))
     != partial('components/comment/comment')

@@ -209,6 +209,7 @@ post:
     custom_text: Only for reading, do NOT redistribute, remix, transform and build upon the material. # Description of custom copyright announcement
   tail_tags: true # Whether to show post's tags at the end of post content
   cover: true # Whether to display cover image in front of post content
+  navigator: true # Whether to show previous post and next post.
 
 # Image Configuration
 image:
