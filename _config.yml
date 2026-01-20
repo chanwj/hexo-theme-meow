@@ -129,7 +129,7 @@ sidebar:
   announcement: 
   # Links card
   links:
-    enable: true # Whether to show additional links
+    enable: false # Whether to show additional links
     title: Links # The title of links card
     list: # List of links. link name: url
       # 📦 Meow's Repository: https://github.com/chanwj/hexo-theme-meow
