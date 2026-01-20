@@ -55,6 +55,9 @@
   background-repeat: unquote(hexo-config('banner.image.repeat'))
   user-select: none
   transition: background .35s ease-in
+  display: flex
+  justify-content: center
+  align-items: center
 
 .banner-info
   display: flex
@@ -62,7 +65,7 @@
   align-items: center
   justify-content: center
   gap: .7rem
-  padding-top: calc(var(--meow-navbar-height) + 3rem)
+  padding-top: var(--meow-navbar-height)
 
 .banner-avatar img
   width: 7.5rem
