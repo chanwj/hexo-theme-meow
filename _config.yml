@@ -220,6 +220,7 @@ image:
 # Code Block
 code:
   func: true # Whether to add function(copy&fold) to code block
+  copy_with_text: false # Whether to attach copyright share text after clicking copy button (See share.share_text below)
   max_height: 22em # Max height of codeblock, false or height with unit
   # Color scheme for code highlighting
   theme:
