@@ -135,21 +135,22 @@ body[data-mode="dark"] .home-article-info .icon
     color: var(--theme-color)
 
 if hexo-config('home.cover_position') == 'left'
-  .home-article-cover
-    position: absolute
-    top: 0
-    bottom: 0
-    left: 0
-    width: 33%
-    height: 100%
-    border-radius: 0
-    img
-      position: static
-      transform: none
-  .home-article-content[cover='']
-      margin-left: 33%
-  .home-article-info
-    max-width: 65%
+  +meow-normalscreen()
+    .home-article-cover
+      position: absolute
+      top: 0
+      bottom: 0
+      left: 0
+      width: 33%
+      height: 100%
+      border-radius: 0
+      img
+        position: static
+        transform: none
+    .home-article-content[cover='']
+        margin-left: 33%
+    .home-article-info
+      max-width: 65%
 
 +meow-smallscreen()
   #home-content
@@ -190,12 +191,3 @@ if hexo-config('home.cover_position') == 'left'
   .home-article-content
     padding: .5rem 1.8rem
     margin: .5rem 0
-  
-  if hexo-config('home.cover_position') == 'left'
-    .home-article
-      display: block
-    .home-article-cover
-      height: 9rem
-      img
-        position: absolute
-        transform: translateY(-50%)
