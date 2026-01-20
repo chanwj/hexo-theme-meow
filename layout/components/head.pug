@@ -85,7 +85,7 @@ case page.type
     != css('css/layout/pages/404')
 
 if theme.comment.enable && (page.comment || (is_post() && theme.comment.display && page.comment == undefined))
-  != importCSS('@waline/client','3.5.7','dist/waline.css')
+  != importCSS('@waline/client','v3','dist/waline.css')
 
 if theme.share.notify
   if theme.cdn.enable

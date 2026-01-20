@@ -21,7 +21,7 @@ script.
       else {
         let jsPath = ''
         if (!{theme.cdn.enable}) {
-          jsPath = '!{getCDNPath('@waline/client', '3.5.7', 'dist/waline.js')}'
+          jsPath = '!{getCDNPath('@waline/client', 'v3', 'dist/waline.js')}'
         } else {
           jsPath = '!{url_for('js/plugins/dist/waline.js')}'
         }
