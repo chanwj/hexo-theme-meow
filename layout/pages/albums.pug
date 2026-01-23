@@ -1,0 +1,44 @@
+#albums-container
+  .page-body.markdown
+    != page.content
+
+  if page.type == 'albums'
+    - const albumsList = site.data.albums.albums_list
+    #albums-content
+      each item, index in albumsList
+        a.album-item(href=url_for('albums/'+index) column=item.span)
+          .album-cover
+            img.album-cover-img(src=url_for(item.cover) alt='Album Cover')
+          .album-name
+            if item.encrypt
+              != getSvg('lock')
+            | #{item.name}
+  else
+    - const encryptFlag = page.encrypt ? '' : false
+    if page.album_type != 1
+      #album-count(encrypt=encryptFlag)= __('album_img_num')
+      
+      #album-content
+
+      #album-loader(encrypt=encryptFlag)
+        span= __('loading')
+
+    else
+      - const albumInfo = site.data.albums.albums_list[page.album]
+      - let column = albumInfo.column ? albumInfo.column : '3'
+      - const imgList = albumInfo.images
+
+      #album-count(encrypt=encryptFlag)= __('album_img_num').replace('...', Object.keys(imgList).length)
+
+      if Array.isArray(imgList)
+        #album-content-links(column=column notitle='' encrypt=encryptFlag)
+          - for(let i = 0; i < imgList.length; i++)
+            .album-link-item
+              img(src=url_for(imgList[i]) alt='Album Image')
+      else if imgList != null && imgList.constructor === Object
+        #album-content-links(column=column encrypt=encryptFlag)
+          each link, name in imgList
+            .album-link-item
+              div
+                img(src=url_for(link) title=name alt=name)
+              div= name

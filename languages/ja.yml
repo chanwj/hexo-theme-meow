@@ -77,6 +77,9 @@ social:
 # つぶやき
 essay_max_num: "- 最近の%s件のつぶやきを表示 -"
 
+# アルバム
+album_img_num: "- 全部で...枚の画像があります -"
+
 # サポートコーナー
 reward: 著者を応援する
 reward_list: 特別感謝リスト
@@ -91,3 +94,4 @@ copyright:
 
 # その他の項目
 error_page_text: ページが見つかりません_(:з」∠)_
+loading: 読み込み中……

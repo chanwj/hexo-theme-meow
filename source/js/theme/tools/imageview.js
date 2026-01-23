@@ -8,7 +8,7 @@ const initImageView = () => {
     element.setAttribute("no-view", "");
   });
 
-  window.ViewImage && ViewImage.init('.post img:not(.noview), .page-main img:not(.noview,.artitalk_avatar,.atemoji)');
+  window.ViewImage && ViewImage.init('.post img:not(.noview), .page-main img:not(.noview,.artitalk_avatar,.atemoji,.album-cover-img)');
 };
 
 export default initImageView;

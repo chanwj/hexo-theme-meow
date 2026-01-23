@@ -77,6 +77,9 @@ social:
 # Essay
 essay_max_num: "- Display %s recent essays. -"
 
+# Album
+album_img_num: "- TOTAL IMAGES: ... -"
+
 # Reward Module
 reward: Reward The Author
 reward_list: Credits
@@ -91,3 +94,4 @@ copyright:
 
 # Others
 error_page_text: The page is gone...
+loading: LOADING...

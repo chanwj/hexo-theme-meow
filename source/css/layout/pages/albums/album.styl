@@ -1,0 +1,113 @@
+#album-content
+  position: relative
+  margin: 0 auto
+
+#album-count
+  margin: 2rem auto
+  text-align: center
+  color: var(--font-color-light-1)
+  &[encrypt]
+    visibility: hidden
+
+.album-img
+  position: absolute
+  background: var(--background-color)
+  width: 329px
+  padding: 14px
+  animation: show-up .45s ease-in
+  display: flex
+  flex-direction: column
+  gap: .5rem
+  border-radius: .8rem
+  box-shadow: var(--meow-card-shadow)
+  transition: all .25s ease-in-out
+  &[pending]
+    opacity: 0
+  &[hide]
+    visibility: hidden
+  &:hover
+    transform: scale(1.05)
+    -webkit-transform: scale(1.05)
+
+.album-img>div:first-child
+  img
+    width: 100%
+    border-radius: .65rem
+
+.album-img>div:last-child
+  text-align: center
+  white-space: nowrap
+  overflow: hidden
+  text-overflow: ellipsis
+
+#album-loader
+  margin: 2rem auto
+  text-align: center
+  span
+    background: url("data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwoKCggAAAAAAAAAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADGwi6MjRiSenIm9hqPOvljAOBZGmeaKqubOu6CQAh+QQJCgAAACwAAAAAEAAQAAADHAi63A5ikCEek2TalftWmPZFU/WdaKqubOu+bwIAIfkECQoAAAAsAAAAABAAEAAAAxwIutz+UIlBhoiKkorB/p3GYVN1dWiqrmzrvmkCACH5BAkKAAAALAAAAAAQABAAAAMbCLrc/jDKycQgQ8xL8OzgBg6ThWlUqq5s604JACH5BAkKAAAALAAAAAAQABAAAAMbCLrc/jDKSautYpAhpibbBI7eOEzZ1l1s6yoJACH5BAkKAAAALAAAAAAQABAAAAMaCLrc/jDKSau9OOspBhnC5BHfRJ7iOXAe2CQAIfkECQoAAAAsAAAAABAAEAAAAxoIutz+MMpJ6xSDDDEz0dMnduJwZZulrmzbJAAh+QQJCgAAACwAAAAAEAAQAAADGwi63P4wRjHIEBJUYjP/2dZJlIVlaKqubOuyCQAh+QQJCgAAACwAAAAAEAAQAAADHAi63A5ikCEek2TalftWmPZFU/WdaKqubOu+bwIAOwAAAAAAAAAAAA==") left center no-repeat
+    padding: 0 0 0 18px
+    font-weight: bold
+    color: var(--font-color-light-1)
+    &[end]
+      background: none
+  &[encrypt]
+    visibility: hidden
+
+@media (max-width 1157px)
+  .album-img
+    width: calc((100% - .875rem)/2)
+    padding: 12px
+
+#album-content-links
+  display: flex
+  flex-wrap: wrap
+  gap: 1rem
+  &[notitle]>div
+    padding: 0
+    border-radius: .65rem
+    overflow: hidden
+  &[column='4']
+    .album-link-item
+      width: calc((100% - 3rem)/4)
+  &[column='2']
+    .album-link-item
+      width: calc((100% - 1rem)/2)
+  &[encrypt]
+    display: none
+
+.album-link-item
+  background: var(--background-color)
+  width: calc((100% - 2rem)/3)
+  padding: 14px
+  animation: show-up .45s ease-in
+  display: flex
+  flex-direction: column
+  gap: .5rem
+  border-radius: .8rem
+  box-shadow: var(--meow-card-shadow)
+  transition: all .25s ease-in-out
+  aspect-ratio: 4/3
+  &:hover
+    transform: scale(1.05)
+    -webkit-transform: scale(1.05)
+  >div:first-child
+    height: 100%
+    background: white
+    border-radius: .65rem
+    overflow: hidden
+  img
+    width: 100%
+    height: 100%
+    object-fit: cover
+  >div:last-child
+    text-align: center
+    white-space: nowrap
+    overflow: hidden
+    text-overflow: ellipsis
+
+@media (max-width 900px)
+  .album-link-item
+    width: calc((100% - 1rem)/2) !important
+
+  #album-content-links
+    gap: .8rem

@@ -77,6 +77,9 @@ social:
 # 說說
 essay_max_num: "- 只展示最近%s條說說 -"
 
+# 相冊
+album_img_num: "- 共有...張圖片 -"
+
 # 讚賞欄目
 reward: 讚賞作者
 reward_list: 致謝名單
@@ -91,3 +94,4 @@ copyright:
 
 # 其他項
 error_page_text: 頁面失蹤了_(:з」∠)_
+loading: 正在加載中……

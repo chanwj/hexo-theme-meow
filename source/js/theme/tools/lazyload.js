@@ -6,7 +6,7 @@
 let lazyload_instance = null;
 
 const initLazyLoad = () => {
-  document.querySelectorAll(".home-article-cover img, .archive-post-cover img, .essay-content img").forEach((element) => {
+  document.querySelectorAll(".home-article-cover img, .archive-post-cover img, .essay-content img, .album-cover-img, #album-content-links img").forEach((element) => {
     if (!element.hasAttribute("lazyload")) {
       element.setAttribute("data-lazy-src", element.getAttribute("src"));
       element.setAttribute("src", GLOBALCONFIG.lazyload_src);

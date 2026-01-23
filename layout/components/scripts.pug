@@ -5,6 +5,7 @@
       toolbar: #{theme.toolbar.enable},
       lazyload_src: '#{url_for(theme.image.loding_image)}',
       friends: #{page.type == "friends"},
+      album: '#{page.type == "album" ? (page.album_type == 1 ? 'external' : page.album ? page.album : "") : ""}',
       codeblock: #{theme.code.func && (page.layout == "post" || page.layout == "page")},
       code_copy_text: #{theme.code.func && theme.code.copy_with_text},
       share_text: '#{theme.share.share_text}',

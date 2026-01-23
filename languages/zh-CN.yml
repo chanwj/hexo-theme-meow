@@ -77,6 +77,9 @@ social:
 # 说说
 essay_max_num: "- 只展示最近%s条说说 -"
 
+# 相册
+album_img_num: "- 共有...张图片 -"
+
 # 赞赏栏目
 reward: 赞赏作者
 reward_list: 致谢名单
@@ -91,3 +94,4 @@ copyright:
 
 # 其他项
 error_page_text: 页面失踪了_(:з」∠)_
+loading: 正在加载中……

@@ -28,6 +28,7 @@
 - Novel/Fanfition improvment
 - Card style archives page, sort by years and months
 - Essay page (Static/Dynamic Deploy)
+- Albums page (Lazyload waterfall)
 - Friend links page
 - Support TOC
 - Floating toolbar
@@ -38,7 +39,7 @@
 - Image lazyload + light box
 - Search function
 - Support i18n
-- Adapted to encryption plugin
+- Encryption adapted (Post/Album/Page)
 - Built-in 404 page
 - SEO friendly
 - Support building team blog (Articles can be signed by different authors or even multiple authors. When adding essay, different authors and avatars can also be specified.)
