@@ -13,7 +13,7 @@ import initImageView from "./theme/tools/imageview.js";
 import initFriendLink from "./theme/friendLink.js";
 import initCopy from "./theme/tools/copy.js";
 import initCodeBlock from "./theme/code.js";
-import initTags from "./theme/tags.js";
+import { initTags, initMusicPlayer } from "./theme/tags.js";
 import initKeyboard from "./theme/tools/keyboard.js";
 import initPageFocus from "./theme/focus.js";
 import initMouse from "./theme/tools/mouse.js";
@@ -48,6 +48,7 @@ const refreshFn = () => {
     initLazyLoad();
     if (GLOBALCONFIG.codeblock) initCodeBlock();
     initTags();
+    initMusicPlayer();
   };
 
   refresh();

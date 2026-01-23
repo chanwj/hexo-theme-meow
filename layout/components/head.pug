@@ -87,6 +87,9 @@ case page.type
 if theme.comment.enable && (page.comment || (is_post() && theme.comment.display && page.comment == undefined))
   != importCSS('@waline/client','v3','dist/waline.css')
 
+if theme.music.enable || page.music
+  != importCSS('aplayer','1.10.1','dist/APlayer.min.css')
+
 if theme.share.notify
   if theme.cdn.enable
     != css('https://cdn.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.css')

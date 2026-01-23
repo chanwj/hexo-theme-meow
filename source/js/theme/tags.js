@@ -51,4 +51,24 @@ const initTags = () => {
   tabsFn();
 };
 
-export default initTags;
+const initMusicPlayer = () => {
+  const playerTags = document.querySelectorAll(".music-tag");
+  if (!playerTags.length) return;
+
+  const activePlayer = (item) => {
+    const playerId = item.firstElementChild.id;
+    const playerFnName = "apFn_" + playerId.replace('music-player-', '');
+    for (let i = 0; i < window.apFnList.length; i++) {
+      if (playerFnName == window.apFnList[i].name) {
+        window.apFnList[i]();
+        break;
+      }
+    }
+  };
+
+  playerTags.forEach(item => {
+    activePlayer(item);
+  });
+};
+
+export { initTags, initMusicPlayer };

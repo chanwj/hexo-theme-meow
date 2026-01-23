@@ -59,6 +59,9 @@
 
   if theme.comment.enable && (page.comment || (is_post() && theme.comment.display && page.comment == undefined))
     != partial('components/comment/waline', {}, {cache: true})
+  
+  if theme.music.enable || page.music
+    != partial('components/music/aplayer', {}, {cache: true})
 
   if theme.share.notify
     if theme.cdn.enable

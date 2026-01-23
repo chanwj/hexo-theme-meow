@@ -1,0 +1,49 @@
+!= importJS('aplayer','1.10.1','dist/APlayer.min.js')
+
+if theme.music.enable
+  - const { autoplay, loop, order, volume, lyric } = theme.music
+  - const { api, server, type, id } = theme.music.meting
+  - let meting_api = ''
+  - let musicList = []
+
+  if api
+    //- != importJS('meting','2','dist/Meting.min.js')
+    - meting_api = `${api}?server=${server}&type=${type}&id=${id}&r=${Math.random()}`
+  else
+    - musicList = site.data.music
+
+  script.
+    const initAplayer = (data) => {
+      if (!data.length) return;
+
+      const ap = new APlayer({
+        container: document.getElementById('music-player'),
+        fixed: true,
+        autoplay: !{autoplay},
+        theme: '!{theme.color.light.theme_color || theme.color.dark.theme_color || "#FFB347"}',
+        loop: '!{loop}',
+        order: '!{order}',
+        volume: !{volume},
+        lrcType: !{lyric ? 3 : 0},
+        audio: data
+      });
+
+      ap.on('play', () => {
+        document.getElementById('music-player').setAttribute("play", "");
+      });
+      ap.on('pause', () => {
+        document.getElementById('music-player').removeAttribute("play");
+      });
+    };
+
+    const fetchData = () => {
+      fetch('!{meting_api}')
+        .then(res => res.json())
+        .then(result => initAplayer(result));
+    };
+
+    if ('!{meting_api}') {
+      document.addEventListener("DOMContentLoaded", fetchData);
+    } else {
+      document.addEventListener("DOMContentLoaded", initAplayer(!{JSON.stringify(musicList)}));;
+    }

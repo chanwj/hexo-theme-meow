@@ -323,6 +323,20 @@ comment:
     reaction: # https://waline.js.org/guide/features/reaction.html
     option: # Custom other Waline options, https://waline.js.org/reference/client/props.html
 
+# Music Player Module
+music:
+  enable: true # Whether to enable global music player
+  autoplay: false # Whether to play music automatically
+  loop: all # How to loop music, all or one or none
+  order: list # Play Music in which order, list or random
+  volume: 0.7 # Default volume, 0-1
+  lyric: true # Whether to display lyric
+  meting: # Meting api config
+    api: # Custom Meting api url
+    server: # Music platform: netease, tencent, kugou, xiami, baidu
+    type: # Audio type: song, playlist, album, search, artist
+    id: # Audio source: song id / playlist id / album id / search keyword / artist
+
 # CDN Configuration
 cdn:
   # Whether to enable CDN

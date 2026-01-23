@@ -15,6 +15,9 @@ html(lang= config.language)
       
       if theme.search.enable
         != partial('components/search')
+      
+      if theme.music.enable
+        #music-player
 
     footer
       != partial('components/footer')
