@@ -40,16 +40,15 @@ const initScroll = () => {
 
   const scrollTOC = () => {
     const clickTOC = event => {
+      event.preventDefault();
       const target = event.target.closest(".toc-list-link");
       if (!target) return;
-
-      event.preventDefault();
       meow.debounce(meow.scrollFn(document.getElementById(decodeURI(target.getAttribute("href")).replace("#", "")).offsetTop - 76), 300);
     };
 
     const toc = document.getElementById('toc-container');
     if (toc) {
-      toc.addEventListener('click', clickTOC);
+      toc.addEventListener('click', clickTOC, true);
     }
   };
 
