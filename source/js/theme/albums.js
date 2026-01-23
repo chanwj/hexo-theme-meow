@@ -30,7 +30,7 @@ const initAlbum = (refreshFalg = 0) => {
 
   const getImageJson = () => {
     let xmlhttpRequest = new XMLHttpRequest();
-    xmlhttpRequest.open('GET', '../ImageList.json', false);
+    xmlhttpRequest.open('GET', '/albums/ImageList.json', false);
     xmlhttpRequest.onreadystatechange = () => {
       if (xmlhttpRequest.readyState == 4 && xmlhttpRequest.status == 200) {
         imagesJsonList = JSON.parse(xmlhttpRequest.responseText);
