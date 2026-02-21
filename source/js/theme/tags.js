@@ -79,8 +79,21 @@ const initTags = () => {
     });
   };
 
+  const maskFn = () => {
+    const maskTextElement = document.querySelector("span.mask[type='1']");
+    if (!maskTextElement) return;
+
+    document.querySelector(".post").addEventListener("click", e => {
+      if (e.target.tagName != "SPAN" || !e.target.classList.contains("mask") || e.target.getAttribute("type") == "0") {
+        return;
+      }
+      e.target.classList.toggle("visited");
+    });
+  };
+
   tabsFn();
   chatboxFn();
+  maskFn();
 };
 
 const initMusicPlayer = () => {

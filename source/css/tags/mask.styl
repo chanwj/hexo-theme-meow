@@ -1,0 +1,15 @@
+span.mask
+  position: relative
+  margin: 0 .12rem
+  background: var(--font-color)
+  border-radius: .2rem
+  color: #00000000
+  transition: all .2s ease-in-out
+  &[type='0']:hover, &[type='1'].visited
+    background: none
+    color: var(--font-color)
+  &[type='2']
+    background: none
+    text-decoration: underline var(--font-color-light-2)
+    &.visited
+      color: var(--font-color)
