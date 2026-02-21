@@ -49,16 +49,13 @@
 
 .home-article-title
   margin: .2rem 0 .6rem
-  display: flex
-  flex-wrap: nowrap
-  align-items: flex-start
-  gap: .5rem
   overflow: hidden
   line-height: 2rem
   a
     font-size: 1.5rem
     font-weight: bold
     color: var(--font-color)
+    vertical-align: middle
     &:hover
       color: var(--theme-color)
 
@@ -74,8 +71,9 @@
   padding: 0 .5rem
   border-radius: .5rem
   color: var(--link-hover-font-color)
-  height: 2rem
   white-space: nowrap
+  display: inline-block
+  margin-right: .5rem
 
 .home-article-excerpt
   text-align: justify
