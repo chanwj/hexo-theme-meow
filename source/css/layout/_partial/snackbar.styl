@@ -1,0 +1,18 @@
+.snackbar-container
+  background: var(--background-color-transparent-1) !important
+  backdrop-filter: blur(4px)
+  font-family: var(--meow-font-default) !important
+  border-radius: .4rem !important
+  box-shadow: var(--meow-box-shadow)
+  font-size: 1em !important
+  p
+    color: var(--font-color) !important
+    font-size: 1em !important
+
+.snackbar-container .action
+  color: var(--theme-color) !important
+  background: none !important
+
++meow-smallscreen()
+  .snackbar-container
+    border-radius: 0 !important
