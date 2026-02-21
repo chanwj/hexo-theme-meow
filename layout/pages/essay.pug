@@ -28,8 +28,6 @@
                     time= full_date(moment(essayList[i].date).tz('utc'), 'LLL')
                     if essayList[i].from
                       span= "By " + essayList[i].from
-                  //- .essay-reply(onclick="anzhiyu.commentText(" + `'${essayList[i].content}'` + ")")
-                  //-     != getSvg('ta-comment')
           else
             - break
     #essay-tips= _p('essay_max_num', maxNum)

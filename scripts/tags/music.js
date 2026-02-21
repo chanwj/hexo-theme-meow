@@ -12,47 +12,6 @@ const music = (args, content) => {
   const { config: themeCfg } = hexo.theme;
   let scriptContent;
 
-  // if (type == "local" || (!type && !themeCfg.music.meting.api)) {
-  //   let musicList = hexo.render.renderSync({ text: content, engine: 'yaml' });
-  //   scriptContent = `
-  //     document.addEventListener("DOMContentLoaded", () => {
-  //       if (!${musicList.length}) return;
-  //       const ap_${id} = new APlayer({
-  //         container: document.getElementById('${playerId}'),
-  //         autoplay: ${themeCfg.music.autoplay},
-  //         theme: '${themeCfg.color.light.theme_color || themeCfg.color.dark.theme_color || "#FFB347"}',
-  //         loop: '${themeCfg.music.loop}',
-  //         order: '${themeCfg.music.order}',
-  //         volume: ${themeCfg.music.volume},
-  //         lrcType: ${themeCfg.music.lyric ? 3 : 0},
-  //         audio: ${JSON.stringify(musicList)}
-  //       });
-  //     });
-  //   `;
-  // } else {
-  //   let metingParams = hexo.render.renderSync({ text: content, engine: 'yaml' });
-  //   let meting_api = `${themeCfg.music.meting.api}?server=${metingParams.server}&type=${metingParams.type}&id=${metingParams.id}&r=${Math.random()}`;
-  //   scriptContent = `
-  //     document.addEventListener("DOMContentLoaded", () => {
-  //       fetch('${meting_api}')
-  //         .then(res => res.json())
-  //         .then(result => {
-  //           if (!result.length) return;
-  //           const ap_${id} = new APlayer({
-  //             container: document.getElementById('${playerId}'),
-  //             autoplay: ${themeCfg.music.autoplay},
-  //             theme: '${themeCfg.color.light.theme_color || themeCfg.color.dark.theme_color || "#FFB347"}',
-  //             loop: '${themeCfg.music.loop}',
-  //             order: '${themeCfg.music.order}',
-  //             volume: ${themeCfg.music.volume},
-  //             lrcType: ${themeCfg.music.lyric ? 3 : 0},
-  //             audio: result
-  //           });
-  //         });
-  //     });
-  //   `;
-  // }
-
   if (type == "local" || (!type && !themeCfg.music.meting.api)) {
     let musicList = hexo.render.renderSync({ text: content, engine: 'yaml' });
     scriptContent = `
