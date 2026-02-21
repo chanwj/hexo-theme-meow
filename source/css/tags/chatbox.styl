@@ -1,0 +1,134 @@
+.chatbox
+  background: var(--background-color)
+  border: 1px solid var(--card-border-color)
+  width: 80%
+  border-radius: .8rem
+  margin: 2rem auto
+  overflow: hidden
+  position: relative
+  &:not([open])
+    max-height: 45rem
+
+.chatbox-toggle
+  position: absolute
+  bottom: 0
+  left: 0
+  width: 100%
+  height: 2.5rem
+  transition: background .2s ease-in-out
+  display: flex
+  align-items: center
+  justify-content: center
+  cursor: pointer
+  svg
+    width: 2rem
+    height: 2rem
+    color: var(--font-color-light-3)
+    animation: bounce 1.2s ease infinite
+    transition: color .3s ease-in-out
+  &:hover
+    background: var(--background-color)
+    box-shadow: var(--meow-card-shadow)
+    svg
+      color: var(--theme-color)
+
+.chatbox-title
+  height: 4rem
+  background: var(--font-color-light-1)
+  color: var(--font-color-invert)
+  font-size: 1.15em
+  font-weight: bold
+  text-align: center
+  line-height: 4rem
+
+.chatbox-main
+  padding: 1.2rem 1.5rem
+
+.chatbox-time
+  text-align: center
+  margin-bottom: 1rem
+  color: var(--font-color-light-2)
+  font-size: .8em
+
+.chatbox-item
+  display: flex
+  margin-bottom: 1.2rem
+  align-items: flex-start
+
+.chatbox-item>div:nth-child(2)
+  margin: 0 1rem
+  display: flex
+  flex-direction: column
+  gap: .1rem
+  max-width: calc(100% - 6rem - 2rem)
+
+.chatbox-item[right]
+  flex-direction: row-reverse
+  >div:nth-child(2)
+    align-items: flex-end
+  .chatbox-content
+    background: var(--theme-color-light-3)
+
+.chatbox-avatar
+  width: 3rem
+  height: 3rem
+  aspect-ratio: 1
+  border-radius: .8rem
+  &:has(svg)
+    background: var(--background-color-grey-light-1)
+    display: flex
+    justify-content: center
+  img
+    margin: 0
+  svg
+    width: 2rem
+
+.chatbox-name
+  color: var(--font-color-light-2)
+  font-size: .8em
+  margin: 0 .25rem
+
+.chatbox-content
+  min-height: 3rem
+  background: var(--background-color)
+  box-shadow: var(--meow-card-shadow)
+  padding: .66rem .75rem
+  border-radius: .8rem
+  display: flex
+  flex-direction: column
+  justify-content: center
+  width: 100%
+  p
+    margin: 0
+
+.chatbox-img img
+  margin: .8rem auto
+
+body[data-mode="dark"]
+  .chatbox-title
+    background: var(--background-color-grey-light-2)
+    color: var(--font-color)
+  .chatbox-content
+    background: var(--background-color-grey-light-2)
+  .chatbox-item[right] .chatbox-content
+    color: var(--font-color-light-3)
+
++meow-smallscreen()
+  .chatbox
+    width: 100%
+  .chatbox-title
+    height: 3rem
+    line-height: 3rem
+  .chatbox-main
+    padding: .8rem
+  .chatbox-item>div:nth-child(2)
+    margin: 0 .55rem
+    max-width: calc(100% - 5rem - 1.1rem)
+  .chatbox-toggle
+    height: 2rem
+    background: var(--background-color-transparent-3)
+  .chatbox-img img
+    margin: .6rem auto
+  .chatbox-avatar
+    width: 2.5rem
+    height: 2.5rem
