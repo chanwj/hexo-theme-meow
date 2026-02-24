@@ -1,0 +1,17 @@
+.post-progressbar-container
+  position: fixed
+  top: 0
+  width: 100%
+  height: 4px
+  z-index: $z-index-10
+
+.post-progressbar
+  height: 100%
+  background: var(--theme-color)
+  animation-name: expand-width-to-right
+  animation-timeline: scroll(y root)
+  transition: width .3s ease
+
++meow-smallscreen()
+  .post-progressbar-container
+    height: 3px

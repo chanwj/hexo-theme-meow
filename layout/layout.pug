@@ -5,6 +5,9 @@ html(lang= config.language)
     != partial('components/head')
 
   body(bg-style=is_home() && theme.banner.image.is_fixed ? 'fixed' : 'none')
+    if is_post() && theme.post.progress_bar
+      != partial('pages/post/post-progressbar')
+
     != partial('components/header')
 
     main
