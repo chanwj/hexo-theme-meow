@@ -57,6 +57,43 @@ const initScroll = () => {
     }
   };
 
+  const scrollTOCHighlight = () => {
+    const toc = document.querySelector('.toc-content');
+    if (!toc) return;
+
+    let titleList = [];
+    const tocList = document.querySelectorAll('.toc-list-link');
+    tocList.forEach(item => {
+      titleList.push(document.getElementById(decodeURI(item.getAttribute("href")).replace("#", "")));
+    });
+
+    titleList.forEach(section => {
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            let titleId = entry.target.id;
+            tocList.forEach(link => { link.removeAttribute('active') });
+            let targetToc = document.querySelector(`.toc-list-link[href='${"#" + encodeURI(titleId)}']`);
+            targetToc.setAttribute('active', '');
+
+            let targetView = targetToc.getBoundingClientRect();
+            let tocView = toc.getBoundingClientRect();
+            if (targetView.top >= (tocView.top + tocView.height)) {
+              requestAnimationFrame(() => {
+                toc.scrollTop += 35;
+              });
+            } else if (targetView.top <= tocView.top) {
+              requestAnimationFrame(() => {
+                toc.scrollTop -= 35;
+              });
+            }
+          }
+        });
+      }, { threshold: [1], rootMargin: '-10% 0% -60%' });
+      observer.observe(section);
+    });
+  };
+
   const scrollToTop = () => {
     const toolbar = document.getElementById('toolbar');
     if (toolbar) {
@@ -83,6 +120,7 @@ const initScroll = () => {
   scrollToolbar();
   scrollToTop();
   scrollTOC();
+  scrollTOCHighlight();
 };
 
 export default initScroll;
