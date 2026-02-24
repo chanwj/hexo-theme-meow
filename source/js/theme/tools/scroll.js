@@ -9,23 +9,28 @@ const initScroll = () => {
       const scroll_y = window.scrollY || window.pageYOffset || document.body.scrollTop;
       const bg_color = document.body.getAttribute('data-mode') == 'light' ? 'rgba(255,255,255,0.8)' : 'rgba(45, 45, 45, 0.85)';
       const new_color = scroll_y >= (window.innerHeight * 0.6) ? bg_color : 'transparent';
+      const headerElement = document.querySelector('header');
       requestAnimationFrame(() => {
-        document.querySelector('header').style.background = new_color;
+        headerElement.style.background = new_color;
       });
+      if (new_color == 'transparent') {
+        headerElement.setAttribute('custom', '');
+      } else {
+        headerElement.removeAttribute('custom');
+      }
     };
 
     window.addEventListener('scroll', meow.debounce(() => updateHeaderStyle(), 200));
   };
 
   const scrollHomeBg = () => {
+    if (document.body.getAttribute('bg-style') != 'fixed') return;
     const updateBgStyle = () => {
-      if (document.body.getAttribute('bg-style') == 'fixed') {
-        const scroll_y = window.scrollY || window.pageYOffset || document.body.scrollTop;
-        if (scroll_y >= (window.innerHeight * 0.6)) {
-          document.body.setAttribute('blur', '');
-        } else {
-          document.body.removeAttribute('blur');
-        }
+      const scroll_y = window.scrollY || window.pageYOffset || document.body.scrollTop;
+      if (scroll_y >= (window.innerHeight * 0.6)) {
+        document.body.setAttribute('blur', '');
+      } else {
+        document.body.removeAttribute('blur');
       }
     };
     window.addEventListener('scroll', meow.debounce(() => updateBgStyle(), 200));
