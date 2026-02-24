@@ -57,6 +57,12 @@ menu:
   #   tags: /tags || uc-tag
   # about: /about || uc-about
 
+# Navigation Bar Configuration
+menu_options:
+  font_color: # Menu font color under light/dark mode
+    light: '#4b4b4b'
+    dark: '#bebec6'
+
 # Search Function
 search:
   enable: false # Whether to enable search function
@@ -210,6 +216,7 @@ post:
   tail_tags: true # Whether to show post's tags at the end of post content
   cover: true # Whether to display cover image in front of post content
   navigator: true # Whether to show previous post and next post.
+  progress_bar: true # Whether to show post's reading progress bar on the top
 
 # Image Configuration
 image:

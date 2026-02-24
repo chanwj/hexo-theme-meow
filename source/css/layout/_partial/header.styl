@@ -5,7 +5,7 @@ header
   z-index: $z-index-9
   width: 100%
   height: var(--meow-navbar-height)
-  background-color: var(--nav-background-color)
+  background-color: transparent
   backdrop-filter: blur(8px)
   box-shadow: var(--meow-box-shadow)
   transition: background .45s ease-in-out
@@ -249,6 +249,15 @@ header
   margin-bottom: .6rem
   img
     height: 1.8rem
+
+header[custom]
+  #site-name
+    h1,div
+      color: var(--font-color-navbar-custom)
+  .menu-item a
+    color: var(--font-color-navbar-custom)
+  #nav-function div a
+    color: var(--font-color-navbar-custom)
 
 +meow-smallscreen()
   #menu-btn
