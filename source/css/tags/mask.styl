@@ -9,7 +9,34 @@ span.mask
     background: none
     color: var(--font-color)
   &[type='2']
-    background: none
+    background: none !important
     text-decoration: underline var(--font-color-light-2)
     &.visited
       color: var(--font-color)
+  &.theme
+    background: var(--theme-color)
+    &[type='0']:hover, &[type='1'].visited, &[type='2'].visited
+      color: var(--theme-color)
+  &.pink
+    background: $color-pink-light
+    &[type='0']:hover, &[type='1'].visited, &[type='2'].visited
+      color: $color-pink
+  &.purple
+    background: $color-purple-light
+    &[type='0']:hover, &[type='1'].visited, &[type='2'].visited
+      color: $color-purple
+  &.yellow
+    background: $color-yellow-light
+    &[type='0']:hover, &[type='1'].visited, &[type='2'].visited
+      color: $color-yellow
+  &.blue
+    background: $color-blue-light
+    &[type='0']:hover, &[type='1'].visited, &[type='2'].visited
+      color: $color-blue
+  &.green
+    background: $color-green-light
+    &[type='0']:hover, &[type='1'].visited, &[type='2'].visited
+      color: $color-green
+
+body[data-mode="dark"] span.mask
+  filter: brightness(90%)
