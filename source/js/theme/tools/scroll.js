@@ -48,7 +48,7 @@ const initScroll = () => {
       event.preventDefault();
       const target = event.target.closest(".toc-list-link");
       if (!target) return;
-      meow.debounce(meow.scrollFn(document.getElementById(decodeURI(target.getAttribute("href")).replace("#", "")).offsetTop - 76), 300);
+      meow.debounce(meow.scrollFn(document.getElementById(decodeURI(target.getAttribute("href")).replace("#", "")).offsetTop - window.innerHeight * 0.15), 300);
     };
 
     const toc = document.getElementById('toc-container');
