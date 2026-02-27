@@ -13,6 +13,7 @@ script.
         dark: 'body[data-mode="dark"]',
         emoji: !{JSON.stringify(emoji)},
         reaction: !{JSON.stringify(reaction)},
+        path: window.location.pathname.replace(/([^\/#]+)(?:#.+|)$/,'$1/'),
       }, !{JSON.stringify(option)}))
     }
 
