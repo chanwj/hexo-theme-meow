@@ -16,7 +16,7 @@
   backdrop-filter: blur(4px)
   box-shadow: var(--meow-card-shadow)
   border-radius: 1rem
-  padding: 1.8rem 1.5rem
+  padding: 1.65rem 1.5rem
   overflow: hidden
 
 #sidebar-info
@@ -27,6 +27,7 @@
 
 #sidebar-info-img
   position: relative
+  margin-top: .25rem
   img
     width: 6.5rem
     border-radius: 1.1rem
@@ -115,8 +116,12 @@ body[data-mode="dark"] .social .icon
   justify-content: flex-start
   align-items: center
   gap: .5rem
+  margin-bottom: .8rem
   span
     font-size: 1.25rem
+
+#sidebar-announcement p
+  margin: .5em 0
 
 #sidebar-announcement .icon
   animation: beat .8s ease infinite
@@ -129,6 +134,7 @@ body[data-mode="dark"] .social .icon
   display: flex
   flex-direction: column
   gap: .25rem
+  margin: .5rem 0
   li
     list-style: none
     line-height: 1.8rem
@@ -174,7 +180,6 @@ body[data-mode="dark"] .social .icon
   width: 100%
   height: max-content
   max-height: 23rem
-  margin-top: .8rem
   display: flex
   flex-wrap: wrap
   gap: .3rem .75rem
@@ -194,7 +199,6 @@ body[data-mode="dark"] .social .icon
 
 #sidebar-links-content
   width: 100%
-  margin-top: 1rem
   display: flex
   flex-direction: column
   gap: .3rem
