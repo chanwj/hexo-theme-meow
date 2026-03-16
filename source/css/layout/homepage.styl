@@ -51,22 +51,25 @@
   margin: .2rem 0 .6rem
   overflow: hidden
   line-height: 2rem
-  display: flex
-  gap: .5rem
   a
     font-size: 1.5rem
     font-weight: bold
     color: var(--font-color)
-    vertical-align: middle
+    vertical-align: bottom
     &:hover
       color: var(--theme-color)
 
 .home-article-encrypt
-  display: flex
-  align-items: center
+  display: inline-block
   height: 2rem
+  width: 1.5rem
+  position: relative
+  margin-right: .3rem
   .icon
+    position: absolute
     height: 1.35rem
+    width: 100%
+    top: 50%
 
 .home-article-sticky
   background-color: var(--theme-color)
@@ -169,11 +172,13 @@ if hexo-config('home.cover_position') == 'left'
   
   .home-article-encrypt
     height: 1.5rem
+    margin-right: .1rem
     .icon
-      height: 1.2em
+      height: 1em
 
   .home-article-sticky
     height: 1.5rem
+    margin-right: .2rem
   
   .home-article-excerpt
     font-size: 1em
