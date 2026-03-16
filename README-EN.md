@@ -27,6 +27,7 @@
 - Various tag plugins
 - Novel/Fanfition improvment
 - Card style archives page, sort by years and months
+- Hierarchical categories page
 - Essay page (Static/Dynamic Deploy)
 - Albums page (Lazyload waterfall)
 - Friend links page
@@ -72,7 +73,7 @@ Please update Hexo to version 7.0.0+.
 
 ## 📚️ Documentation
 
-- [Meow Docs](https://meow.jumaoo.top/categories/Docs文档/)
+- [Meow Docs](https://meow.jumaoo.top/posts/38ece08b/)
 - [Meow Migration Guide](https://meow.jumaoo.top/posts/7287f6a/)
 
 <br/>

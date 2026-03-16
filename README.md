@@ -27,6 +27,7 @@
 - 多样化的标签插件
 - 小说/同人作品适配优化
 - 按年份与月份归类的卡片式归档页面
+- 可显示层级的分类页面
 - 动态页（静态/动态部署）
 - 相册页（懒加载瀑布流）
 - 友链页
@@ -72,7 +73,7 @@ npm install hexo-renderer-pug --save
 
 ## 📚️ 配置文档
 
-- [Meow 主题文档](https://meow.jumaoo.top/categories/Docs文档/中文文档/)
+- [Meow 主题文档](https://meow.jumaoo.top/posts/38ece08b/)
 - [Meow 版本迁移指南](https://meow.jumaoo.top/posts/7287f6a/)
 
 <br/>
