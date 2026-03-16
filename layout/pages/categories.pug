@@ -1,2 +1,35 @@
 .category-container
-  != list_categories(site.categories, {class:'categories', depth:theme.category.depth, show_count:theme.category.show_count})
+  //- != list_categories(site.categories, {class:'categories', depth:theme.category.depth, show_count:theme.category.show_count})
+  - const catList = getCategoryList()
+  - for(cat of catList)
+    .category-content
+      .category-item
+        .category-name
+          a(href=url_for(cat.path))= cat.name
+          if cat.child.length > 0
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="icon" fold=!{theme.category.fold}><path stroke="none" d="M0 0h24v24H0z"/><path d="m6 9 6 6 6-6"/></svg>
+        a.category-count(href=url_for(cat.path))
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="icon" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z"/><path d="M10 19H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h6a2 2 0 0 1 2 2 2 2 0 0 1 2-2h6a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1h-6a2 2 0 0 0-2 2 2 2 0 0 0-2-2M12 5v16M7 7h1M7 11h1M16 7h1M16 11h1M16 15h1"/></svg>
+          span= cat.count
+      if cat.child.length > 0
+        .category-child(show=theme.category.fold?null:"")
+          - for(childCat of cat.child)
+            .category-item
+              .category-name
+                i
+                a(href=url_for(childCat.path))= childCat.name
+                if childCat.child.length > 0
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="icon" fold=!{theme.category.fold}><path stroke="none" d="M0 0h24v24H0z"/><path d="m6 9 6 6 6-6"/></svg>
+              a.category-count(href=url_for(childCat.path))
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="icon" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z"/><path d="M10 19H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h6a2 2 0 0 1 2 2 2 2 0 0 1 2-2h6a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1h-6a2 2 0 0 0-2 2 2 2 0 0 0-2-2M12 5v16M7 7h1M7 11h1M16 7h1M16 11h1M16 15h1"/></svg>
+                span= childCat.count
+            if childCat.child.length > 0
+              .category-child(show=theme.category.fold?null:"")
+                - for(childCat2 of childCat.child)
+                  .category-item
+                    .category-name
+                      i
+                      a(href=url_for(childCat2.path))= childCat2.name
+                    a.category-count(href=url_for(childCat2.path))
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="icon" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z"/><path d="M10 19H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h6a2 2 0 0 1 2 2 2 2 0 0 1 2-2h6a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1h-6a2 2 0 0 0-2 2 2 2 0 0 0-2-2M12 5v16M7 7h1M7 11h1M16 7h1M16 11h1M16 15h1"/></svg>
+                      span= childCat2.count

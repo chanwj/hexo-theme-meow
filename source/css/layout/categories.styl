@@ -1,78 +1,110 @@
 .category-container
-  width: 85%
-  min-height: 80px
-  margin: 0 auto
-  position: relative
   user-select: none
-  if hexo-config('category.icon')
-    &:after
-      content: ""
-      background-image: url(url-for(hexo-config('category.icon')))
-      background-size: cover
-      position: absolute
-      bottom: 0
-      right: 0
-      width: 100px
-      height: 100px
-      opacity: .7
-      animation: run-bounce 1.5s linear infinite alternate
-      z-index: -1
 
-.categories-list
-  padding: 0
+.category-content .category-item
   display: flex
-  flex-direction: column
-  gap: .5rem
+  justify-content: space-between
+  align-items: center
+  padding: 1rem 3rem
+  border-radius: .8rem
+  transition: background .2s ease-in
+  &:hover
+    background: var(--background-color-grey-transparent)
+    .category-name
+      a
+        padding-left: .5rem
+      .icon
+        margin-left: .35rem
+
+.category-name
+  display: flex
+  align-items: center
+  gap: .1rem
+  .icon
+    height: 1.5rem
+    stroke-width: 3
+    transition: all .3s ease
+    &[fold='true']
+      transform: rotate(-90deg)
   a
     color: var(--font-color)
-    display: inline-block
-    max-width: 80%
-    white-space: nowrap
-    text-overflow: ellipsis
-    overflow: hidden
-    transition: all .3s ease
+    font-size: 1.25rem
+    font-weight: bold
+    transition: all .2s ease-in-out
     &:hover
       color: var(--theme-color)
-      &:before
-        content: '> '
-  li
-    list-style: none
-  >li
-    padding: .5rem 1.3rem
-    >a
-      font-size: 1.3rem
-      font-weight: bold
-  span
-    color: var(--font-color-light-2)
-    margin-left: .5rem
-    vertical-align: super
-    font-size: .9rem
 
-.categories-list-child
-  padding-left: 1.3rem
-  margin: .6rem 0 0 .3rem
-  border-left: 1px solid var(--card-border-color)
-  a
+.category-count
+  display: flex
+  align-items: center
+  gap: .1rem
+  width: 3rem
+  color: var(--font-color-light-1)
+  transition: color .2s ease-in-out
+  .icon
+    height: 1.3rem
+    transition: all .2s ease-in-out
+  &:hover
+    color: var(--theme-color)
+    .icon
+      stroke: var(--theme-color)
+
+.category-child
+  margin-left: 2rem
+  height: 0
+  opacity: 0
+  overflow: hidden
+  &[show]
+    height: max-content
+    animation: show-ease .4s ease-in forwards
+  .category-name a
     font-size: 1.15rem
-  li
-    margin-top: .6rem
+  .category-item
+    padding: .8rem 3rem .8rem 2rem
+    &:hover
+      i:before
+        height: 1.25rem
+  i
+    position: relative
+    width: 1.8rem
+    height: 100%
+    &:before
+      content: ''
+      position: absolute
+      background: var(--font-color-light-1)
+      border-radius: .35rem
+      top: 50%
+      left: 50%
+      transform: translate(-50%, -50%)
+      width: .35rem
+      height: .35rem
+      transition: all .2s ease-in-out
+      z-index: $z-index-1
+    &:after
+      content: "";
+      position: absolute
+      width: .175rem
+      height: 1.3rem
+      left: calc(50% + .0875rem)
+      bottom: 0
+      transform: translate(-50%, -60%)
+      border-left: 2px dashed var(--font-color-light-3)
 
 +meow-smallscreen()
-  .category-container
-    width: 100%
-    margin: 0
-    if hexo-config('category.icon')
-      &:after
-        display: none
-
-  .categories-list
-    gap: 0
-    >li
-      padding: .3rem .5rem
-      >a
-        font-size: 1.2em
-    span
-      font-size: .85rem
-  
-  .categories-list-child a
+  .category-name a
     font-size: 1.1em
+  .category-child .category-name a
+    font-size: 1em
+  .category-count
+    font-size: .9em
+    .icon
+      height: 1.3em
+  .category-content .category-item
+    padding: .5rem
+  .category-child
+    margin-left: .5rem
+    .category-item
+      padding: .5rem .5rem .5rem 1rem
+    i:after
+      height: 1em
+      transform: translate(-50%, -80%)

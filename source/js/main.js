@@ -8,6 +8,7 @@ import initMenu from "./theme/menu.js";
 import initToolbar from "./theme/toolbar.js";
 import initScroll from "./theme/tools/scroll.js";
 import initDatetime from "./theme/tools/datetime.js";
+import initCategoryPage from "./theme/category.js";
 import initLazyLoad from "./theme/tools/lazyload.js";
 import initImageView from "./theme/tools/imageview.js";
 import initFriendLink from "./theme/friendLink.js";
@@ -27,6 +28,7 @@ const initMain = () => {
     if (GLOBALCONFIG.toolbar) initToolbar();
     initScroll();
     initDatetime();
+    if (GLOBALCONFIG.category) initCategoryPage();
     initLazyLoad();
     initImageView();
     if (GLOBALCONFIG.friends) initFriendLink();

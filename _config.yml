@@ -164,9 +164,8 @@ archive:
 
 # Category Customization
 category:
-  depth: 0 # Levels of categories to be displayed. 0 displays all categories and child categories; 1 displays only top level categories.
-  icon: assets/images/Hexo-Theme-MEOW.png # Show icon at the right bottom corner
-  show_count: false # Whether to show posts count of each category
+  depth: 0 # Levels of categories to be displayed. 0 displays all categories and child categories; 1 displays only top level categories. Max depth is 3
+  fold: false # Whether to fold child categories by default
 
 # Tags Customization
 tag:
