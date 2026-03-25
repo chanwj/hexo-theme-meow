@@ -5,7 +5,16 @@
 
 const fs = require("fs");
 const path = require('path');
-const { imageSize } = require('image-size');
+try {
+  var { imageSize } = require('image-size');
+} catch (error) {
+  // if (error.code === 'MODULE_NOT_FOUND') {
+  //   console.log('Image-size Module Not Found.');
+  // } else {
+  //   console.log(' Error occurs when importing image-size module: ', error);
+  // }
+  var imageSize = null;
+}
 
 function readDirFileList(dirPath) {
   const results = {};
@@ -80,6 +89,11 @@ async function handleAlbumImage(imgList) {
 }
 
 hexo.extend.generator.register("getAlbumImage", function (locals) {
+  if (!hexo.theme.config.album.local) return;
+  if (!imageSize){
+    hexo.log.warn('Image-size module not found and ImageList.json of local albums can not be generated. ');
+    return;
+  }
   return {
     path: "albums/ImageList.json",
     data: async function () {

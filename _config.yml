@@ -329,6 +329,10 @@ comment:
     reaction: # https://waline.js.org/guide/features/reaction.html
     option: # Custom other Waline options, https://waline.js.org/reference/client/props.html
 
+# Album Module
+album:
+  local: false # Whether to enable local alubm (require image-size installed)
+
 # Music Player Module
 music:
   enable: true # Whether to enable global music player
