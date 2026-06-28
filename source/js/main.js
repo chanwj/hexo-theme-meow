@@ -6,7 +6,7 @@
 // import initSwup from "./theme/tools/swup.js";
 import initMenu from "./theme/menu.js";
 import initToolbar from "./theme/toolbar.js";
-import initScroll from "./theme/tools/scroll.js";
+import {initScroll, initTOCHighlight} from "./theme/tools/scroll.js";
 import initDatetime from "./theme/tools/datetime.js";
 import initCategoryPage from "./theme/category.js";
 import initLazyLoad from "./theme/tools/lazyload.js";
@@ -64,6 +64,7 @@ const refreshFn = () => {
     if (GLOBALCONFIG.album) {
       GLOBALCONFIG.album != 'external' ? initAlbum(1) : initLinkAlbum(1);
     }
+    initTOCHighlight();
   };
 
   refresh();
