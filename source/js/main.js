@@ -72,7 +72,13 @@ const refreshFn = () => {
 document.addEventListener("DOMContentLoaded", initMain);
 
 if (GLOBALCONFIG.encrypt) {
-  window.addEventListener("hexo-blog-decrypt", refreshFn);
+  window.addEventListener("hexo-blog-decrypt", () => {
+    refreshFn();
+    var tocDiv = document.getElementById("toc-div");
+    if (tocDiv) {
+      tocDiv.style.display = 'block';
+    }
+  });
 }
 
 if (GLOBALCONFIG.album && GLOBALCONFIG.album != 'external') {
