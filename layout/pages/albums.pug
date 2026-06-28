@@ -16,11 +16,11 @@
   else
     - const encryptFlag = page.encrypt ? '' : false
     if page.album_type != 1
-      #album-count(encrypt=encryptFlag)= __('album_img_num')
+      #album-count(encryptFlag=encryptFlag)= __('album_img_num')
       
       #album-content
 
-      #album-loader(encrypt=encryptFlag)
+      #album-loader(encryptFlag=encryptFlag)
         span= __('loading')
 
     else
@@ -28,15 +28,15 @@
       - let column = albumInfo.column ? albumInfo.column : '3'
       - const imgList = albumInfo.images
 
-      #album-count(encrypt=encryptFlag)= __('album_img_num').replace('...', Object.keys(imgList).length)
+      #album-count(encryptFlag=encryptFlag)= __('album_img_num').replace('...', Object.keys(imgList).length)
 
       if Array.isArray(imgList)
-        #album-content-links(column=column notitle='' encrypt=encryptFlag)
+        #album-content-links(column=column notitle='' encryptFlag=encryptFlag)
           - for(let i = 0; i < imgList.length; i++)
             .album-link-item
               img(src=url_for(imgList[i]) alt='Album Image')
       else if imgList != null && imgList.constructor === Object
-        #album-content-links(column=column encrypt=encryptFlag)
+        #album-content-links(column=column encryptFlag=encryptFlag)
           each link, name in imgList
             .album-link-item
               div

@@ -180,9 +180,9 @@ const initAlbum = (refreshFalg = 0) => {
     manageImage();
   };
 
-  if (refreshFalg == 1 || (refreshFalg == 2 && document.querySelector('.hbe-button'))) {
-    document.querySelector('#album-count').removeAttribute('encrypt');
-    document.querySelector('#album-loader').removeAttribute('encrypt');
+  if (refreshFalg == 1 || (refreshFalg == 2 && !document.querySelector('.hbe-button'))) {
+    document.querySelector('#album-count').removeAttribute('encryptFlag');
+    document.querySelector('#album-loader').removeAttribute('encryptFlag');
     initAlbumHandler();
   } else if (refreshFalg == 0) {
     window.addEventListener('load', initAlbumHandler);
@@ -190,9 +190,9 @@ const initAlbum = (refreshFalg = 0) => {
 };
 
 const initLinkAlbum = (refreshFalg = 0) => {
-  if (refreshFalg == 1 || (refreshFalg == 2 && document.querySelector('.hbe-button'))) {
-    document.querySelector('#album-count').removeAttribute('encrypt');
-    document.querySelector('#album-content-links').removeAttribute('encrypt');
+  if (refreshFalg == 1 || (refreshFalg == 2 && !document.querySelector('.hbe-button'))) {
+    document.querySelector('#album-count').removeAttribute('encryptFlag');
+    document.querySelector('#album-content-links').removeAttribute('encryptFlag');
   }
 };
 
