@@ -19,9 +19,9 @@ const initCopy = () => {
 
   const handleCopyText = () => {
     document.addEventListener('copy', function (event) {
+      event.preventDefault();
       let clipboardData = event.clipboardData || window.clipboardData;
       if (clipboardData) {
-        event.preventDefault();
         let copyText = window.getSelection().toString();
         clipboardData.setData('text/plain', GLOBALCONFIG.share_text + '\nLink: ' + document.URL + '\n\n' + copyText);
         meow.snackbarFn(GLOBALCONFIG.notify.info);

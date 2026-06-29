@@ -1,5 +1,5 @@
 if hexo-config('font.custom')
-  if hexo-config('.font.default_font_link')
+  if hexo-config('font.default_font_link')
     @import url(url-for(hexo-config('font.default_font_link')))
   if hexo-config('font.title_font_link')
     @import url(url-for(hexo-config('font.title_font_link')))
@@ -7,7 +7,7 @@ if hexo-config('font.custom')
     @import url(url-for(hexo-config('font.code_font_link')))
 
 $meow-font-default = 'vivo Sans', 'PingFang SC', 'Microsoft YaHei', Sans-serif, Serif
-$meow-font-title = 'MaokenZhuyuanTi', 'vivo Sans', 'PingFang SC', 'Microsoft YaHei', Sans-serif, Serif
+$meow-font-title = 'vivo Sans', 'PingFang SC', 'Microsoft YaHei', Sans-serif, Serif
 $meow-font-code = 'SF Mono', 'vivo Sans', 'PingFang SC', 'Microsoft YaHei', Courier, Consolas, Sans-serif
 
 @require './color-mode'
