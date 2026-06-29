@@ -135,6 +135,8 @@ body[data-mode="dark"] .social .icon
   flex-direction: column
   gap: .25rem
   margin: .5rem 0
+  height: hexo-config('sidebar.categories.height') ? unit(hexo-config('sidebar.categories.height'),px) : max-content
+  overflow-y: auto
   li
     list-style: none
     line-height: 1.8rem
@@ -178,14 +180,12 @@ body[data-mode="dark"] .social .icon
 
 #sidebar-tags-content
   width: 100%
-  height: max-content
-  max-height: 23rem
+  height: hexo-config('sidebar.tags.height') ? unit(hexo-config('sidebar.tags.height'),px) : max-content
   display: flex
   flex-wrap: wrap
   gap: .3rem .75rem
   overflow-x: hidden
   overflow-y: auto
-  scrollbar-width: none
 
 .sidebar-tags-link
   color: var(--font-color)

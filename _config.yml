@@ -142,8 +142,12 @@ sidebar:
   # Categories card
   categories:
     enable: true # Whether to show categories card
-    depth: 0 # Levels of categories to be displayed. 0 displays all categories and child categories; 1 displays only top level categories. Better be less than 3.
-  tags: true # Whether to show tags card
+    depth: 2 # Levels of categories to be displayed. 0 displays all categories and child categories; 1 displays only top level categories. Better be 1~3.
+    height: # Categories card inner height, number or stay blank (no limit)
+  # Tags card
+  tags:
+    enable: true # Whether to show tags card
+    height: # Tags card inner height, number or stay blank (no limit)
 
 # Floating Toolbar
 toolbar:
