@@ -1,0 +1,24 @@
+span.text-tag
+  color: var(--theme-color)
+  &.pink
+    color: $color-pink
+  &.purple
+    color: $color-purple
+  &.yellow
+    color: darken(#ffdf6a, 20%)
+  &.blue
+    color: $color-blue
+  &.green
+    color: $color-green
+  &[type="2"]
+    text-decoration: underline wavy
+  &[type="3"]
+    text-decoration: underline dashed
+    text-underline-offset: 4.5px
+  &[type="4"]
+    text-decoration: underline dotted
+    text-underline-offset: 4.5px
+  &[type="5"]
+    text-decoration: line-through
+  &[type="6"]
+    animation: color-change 2.5s ease-in-out infinite
