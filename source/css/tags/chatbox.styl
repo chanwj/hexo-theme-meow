@@ -1,36 +1,33 @@
 .chatbox
   background: var(--background-color)
   border: 1px solid var(--card-border-color)
-  width: 80%
+  width: 70%
   border-radius: .8rem
   margin: 2rem auto
   overflow: hidden
-  position: relative
-  &:not([open])
-    max-height: 45rem
 
-.chatbox-toggle
-  position: absolute
-  bottom: 0
-  left: 0
-  width: 100%
-  height: 2.5rem
-  transition: background .2s ease-in-out
-  display: flex
-  align-items: center
-  justify-content: center
-  cursor: pointer
-  svg
-    width: 2rem
-    height: 2rem
-    color: var(--font-color-light-3)
-    animation: bounce 1.2s ease infinite
-    transition: color .3s ease-in-out
-  &:hover
-    background: var(--background-color)
-    box-shadow: var(--meow-card-shadow)
-    svg
-      color: var(--theme-color)
+// .chatbox-toggle
+//   position: absolute
+//   bottom: 0
+//   left: 0
+//   width: 100%
+//   height: 2.5rem
+//   transition: background .2s ease-in-out
+//   display: flex
+//   align-items: center
+//   justify-content: center
+//   cursor: pointer
+//   svg
+//     width: 2rem
+//     height: 2rem
+//     color: var(--font-color-light-3)
+//     animation: bounce 1.2s ease infinite
+//     transition: color .3s ease-in-out
+//   &:hover
+//     background: var(--background-color)
+//     box-shadow: var(--meow-card-shadow)
+//     svg
+//       color: var(--theme-color)
 
 .chatbox-title
   height: 4rem
@@ -40,9 +37,24 @@
   font-weight: bold
   text-align: center
   line-height: 4rem
+  position: relative
+  &:before
+    content: '<'
+    position: absolute
+    top: 0
+    left: 1.5rem
+    font-size: 1.3em
+  &:after
+    content: '···'
+    position: absolute
+    top: 0
+    right: 1.5rem
+    font-size: 1.3em
 
 .chatbox-main
   padding: 1.2rem 1.5rem
+  max-height: 80vh
+  overflow-y: auto
 
 .chatbox-time
   text-align: center
@@ -54,6 +66,8 @@
   display: flex
   margin-bottom: 1.2rem
   align-items: flex-start
+  &:last-child
+    margin-bottom: 0
 
 .chatbox-item>div:nth-child(2)
   margin: 0 1rem
@@ -119,14 +133,18 @@ body[data-mode="dark"]
   .chatbox-title
     height: 3rem
     line-height: 3rem
+    &:before
+      left: .8rem
+    &:after
+      right: .8rem
   .chatbox-main
     padding: .8rem
   .chatbox-item>div:nth-child(2)
     margin: 0 .55rem
     max-width: calc(100% - 5rem - 1.1rem)
-  .chatbox-toggle
-    height: 2rem
-    background: var(--background-color-transparent-3)
+  // .chatbox-toggle
+  //   height: 2rem
+  //   background: var(--background-color-transparent-3)
   .chatbox-img img
     margin: .6rem auto
   .chatbox-avatar

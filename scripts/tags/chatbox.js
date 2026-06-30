@@ -9,7 +9,7 @@ const url_for = hexo.extend.helper.get("url_for").bind(hexo);
 
 const chat = (args, content) => {
   let title = args[0] ? args[0] : "";
-  let status = args.length > 1 ? args[1] : "";
+  // let status = args.length > 1 ? args[1] : "";
   let chatInfo = hexo.render.renderSync({ text: content, engine: 'yaml' });
   let authorInfo = chatInfo.author ? chatInfo.author : {};
   let result = "";
@@ -47,12 +47,12 @@ const chat = (args, content) => {
     result += `<div class="chatbox-item" ${(item.right && item.right == "Y") ? "right" : ""}><div class="chatbox-avatar">${avatar}</div><div>${item.from ? '<div class="chatbox-name">' + item.from + '</div>' : ''}<div class="chatbox-content">${chatContent}${images ? images : ''}</div></div></div>`;
   }
 
-  let toggleBox = "";
-  if (!status) {
-    toggleBox = `<div class="chatbox-toggle" title="Open/Fold"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 9l6 6l6 -6" /></svg></div>`;
-  }
+  // let toggleBox = "";
+  // if (!status) {
+  //   toggleBox = `<div class="chatbox-toggle" title="Open/Fold"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 9l6 6l6 -6" /></svg></div>`;
+  // }
 
-  return `<div class="chatbox" ${status}><div class="chatbox-title">${title}</div><div class="chatbox-main">${result}</div>${toggleBox}</div>`;
+  return `<div class="chatbox"><div class="chatbox-title">${title}</div><div class="chatbox-main">${result}</div></div>`;
 };
 
 hexo.extend.tag.register('chat', chat, { ends: true });
