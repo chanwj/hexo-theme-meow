@@ -95,3 +95,8 @@ copyright:
 # その他の項目
 error_page_text: ページが見つかりません_(:з」∠)_
 loading: 読み込み中……
+
+# コメント
+comment:
+  latest_comment: 最新のコメント
+  no_comment: 😭コメントはありません……

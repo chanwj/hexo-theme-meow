@@ -2,3 +2,71 @@
   margin-top: 3.5rem
   +meow-smallscreen()
     margin-top: 3em
+
+$recent-comments-time = unquote(hexo-config('sidebar.recent_comments.loop_time'))
+$recent-comments-count = (-60px - 0.6rem)*(sum(hexo-config('sidebar.recent_comments.count') -3))
+
+@keyframes roll-loop {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY($recent-comments-count);
+  }
+}
+
+.recent-comments
+  overflow: hidden
+
+.recent-comments-container
+  display: flex
+  flex-direction: column
+  row-gap: .6rem
+  font-size: .9em
+  &[loaded]
+    height: 190px
+    animation: roll-loop $recent-comments-time cubic-bezier(0.17, 0.02, 0.88, 0.99) 1s infinite alternate
+  img
+    cursor: auto !important
+    vertical-align: middle
+  br
+    display: none
+  .recent-comments-item
+    width: 100%
+    height: max-content
+    display: flex
+    flex-direction: column
+    flex-wrap: wrap
+    gap: .3rem
+    border-left: 4px solid var(--background-color-grey)
+    padding: .2rem 0 .2rem .5rem
+    transition: all .3s ease-in-out
+    color: var(--font-color)
+    &:hover
+      border-left-color: var(--theme-color)
+      transform: translateX(10px)
+  .recent-comments-content
+    width: 100%
+    text-overflow: ellipsis
+    white-space: nowrap
+    overflow: hidden
+    margin: 0
+    color: var(--font-color-light-1)
+    img
+      width: 1rem
+      margin: 0 1px
+  .recent-comments-user
+    display: flex
+    align-items: center
+    gap: .25rem
+    width: 100%
+    span
+      text-overflow: ellipsis
+      white-space: nowrap
+      overflow: hidden
+      background: var(--background-color-grey-transparent)
+      border-radius: .4rem
+      padding: 0 .3em
+    img
+      width: 1.2rem
+      border-radius: 50%

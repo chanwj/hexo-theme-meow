@@ -69,3 +69,11 @@ aside#home-sidebar
         span= __('tags')
       #sidebar-tags-content
         != list_tags(site.tags, {class:'sidebar-tags', style: false, separator:' ', orderby:'count', order: -1})
+  
+  if theme.sidebar.recent_comments.enable
+    .sidebar-card#sidebar-recent-comments
+      .sidebar-card-headline
+        != getSvg('comment', {class:'icon box-icon'})
+        span= __('comment.latest_comment')
+      .recent-comments
+        .recent-comments-container= __('loading')

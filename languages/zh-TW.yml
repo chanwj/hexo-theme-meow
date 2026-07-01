@@ -95,3 +95,8 @@ copyright:
 # 其他項
 error_page_text: 頁面失蹤了_(:з」∠)_
 loading: 正在加載中……
+
+# 評論
+comment:
+  latest_comment: 最新評論
+  no_comment: 😭暫無評論……

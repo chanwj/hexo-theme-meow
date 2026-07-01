@@ -61,6 +61,9 @@
 
   if theme.comment.enable && (page.comment || (is_post() && theme.comment.display && page.comment == undefined))
     != partial('components/comment/waline', {}, {cache: true})
+
+  if is_home() && theme.sidebar.recent_comments.enable && theme.comment.enable
+    != partial('components/comment/waline-widget', {}, {cache: true})
   
   if theme.music.enable || page.music
     != partial('components/music/aplayer', {}, {cache: true})

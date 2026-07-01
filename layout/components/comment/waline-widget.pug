@@ -1,0 +1,44 @@
+script.
+  let recentCommentsFn = window.recentCommentsFn || null
+
+  const initRecentComments = (Fn) => {
+    Fn({
+      serverURL: '!{theme.comment.waline.server_url}',
+      count: !{theme.sidebar.recent_comments.count},
+    }).then(({ comments }) => {
+      let result = ""
+      if(comments.data.length > 0) {
+        comments.data.forEach((comment) => {
+          result += `<a class='recent-comments-item' href='${comment.url}' target='_blank'><div class='recent-comments-user'><img src='${comment.avatar}' alt='User Avatar' /><span>${comment.nick}</span></div><div class='recent-comments-content'>${comment.orig}</div></a><br>`
+        })
+      } else {
+        result = "!{__('comment.no_comment')}"
+      }
+      const el = document.querySelector('#sidebar-recent-comments .recent-comments-container')
+      el.setAttribute('loaded', '')
+      el.innerHTML = result
+    })
+  }
+
+  const loadRecentCommentsFn = async () => {
+    if (recentCommentsFn) {
+      initRecentComments(recentCommentsFn)
+    } else {
+      let jsPath = ''
+      if (!{theme.cdn.enable}) {
+        jsPath = '!{getCDNPath('@waline/client', 'v3', 'dist/waline.js')}'
+      } else {
+        jsPath = '!{url_for('js/plugins/dist/waline.js')}'
+      }
+      const { RecentComments } = await import(jsPath)
+      recentCommentsFn = RecentComments || Waline.RecentComments
+      initRecentComments(recentCommentsFn)
+      window.recentCommentsFn = recentCommentsFn
+    }
+  }
+
+  if (!{theme.comment.lazyload}) {
+    meow.lazyloadFn(document.getElementById('sidebar-recent-comments'), loadRecentCommentsFn)
+  } else {
+    loadRecentCommentsFn()
+  }
